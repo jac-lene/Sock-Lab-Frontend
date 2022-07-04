@@ -13,14 +13,6 @@
   color: black;
 }
 
-.dash-divider {
-  border-top: 10px dashed black;
-  min-height: fit-content;
-  width: 200vw;
-  animation: dash-border-slide infinite alternate 10s linear;
-  z-index: 0;
-}
-
 body {
   background-color: white;
   /* min-height: 100vh; */
@@ -50,14 +42,6 @@ body {
   }
 } */
 
-
-
-
-
-.App-link {
-  color: #61dafb;
-}
-
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -67,11 +51,24 @@ body {
   }
 }
 
-@keyframes dash-border-slide {
-  from {
-    transform: translateX(0px);
+
+@media (max-width : 400px) {
+
+  .App-header {
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 30px;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0px 20px 0px 10px;
   }
-  to {
-    transform: translateX(-500px);
+  
+  .check-cont {
+    display: none;
   }
+
+
+  
 }

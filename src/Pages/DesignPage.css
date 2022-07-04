@@ -2,23 +2,11 @@
     text-align: center;
   }
   
-  .App-header {
-    background-color: #f3bb00;
-    height: 120px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    font-size: calc(10px + 2vmin);
-    color: black;
-  }
-  
   .dash-divider {
     border-top: 10px dashed black;
     min-height: fit-content;
-    width: 200vw;
-    animation: dash-border-slide infinite alternate 10s linear;
-    z-index: 0;
+    width: 120vw;
+    animation: dash-border-slide infinite alternate 5s linear;
   }
   
   body {
@@ -56,7 +44,24 @@
       transform: translateX(0px);
     }
     to {
-      transform: translateX(-500px);
+      transform: translateX(-300px);
     }
+  }
+  
+  @media (max-width : 400px) {
+
+    @keyframes dash-border-slide {
+      from {
+        transform: translateX(0px);
+      }
+      to {
+        transform: translateX(-100px);
+      }
+    }
+  
+    .dash-divider {
+        animation: dash-border-slide infinite alternate 3s linear;
+      }
+  
   }
   

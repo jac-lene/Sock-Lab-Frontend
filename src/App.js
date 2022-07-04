@@ -16,10 +16,10 @@ function App() {
       </header>
       <div className='dash-divider'></div>
       <div className='check-cont'> <div className='checkbord-l'></div>
+
       <div className='checkbord-r'></div></div>
      
-<Routes>
-        {/* <Route path='/app' element={<App users={users}/>} /> */}
+      <Routes>
         <Route path="/the-lab" element={<DesignPage/>}/>
         
       </Routes>
