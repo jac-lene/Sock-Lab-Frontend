@@ -1,0 +1,38 @@
+FRONTEND PLAN
+
+What are my MVP goals?
+    - an image of a sock that can be clicked and change color
+    - a pattern that changes based on the user input
+    - a visual library that stores all of my saved designs
+
+What are my stretch goals? 
+    - user auth
+    - yarn store map
+    - more than one type of garment/pattern
+
+How to accomplish each part: 
+
+Sock Image
+    - Div mask? 
+    - image cut into pieces and placed in an absolute positioning
+    - information will link to a form internally
+    - color overlay?
+    - need color palette plan 
+    - figure out randomizer
+
+Pattern 
+    - "Visible" form element
+    - Is live inputting as the item is clicked - maybe? 
+    - OR, generate pattern button
+    - link to pdf or print
+
+Visual Library
+    - Simply a show page, should be easy.
+
+Layout
+    - Would love checker border
+    - Spinning CHAOS MODE button
+    - generate pattern button
+    - Detail page needs to be designed
+    - Different headers for different parts of the site
+    
