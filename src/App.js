@@ -20,18 +20,6 @@ function App() {
       .then((res) => setDesigns(res))
       .catch(console.error);
     }
-
-
-  //   const createDesigns = async (design) => {
-  //     await fetch(url, {
-  //         method: "post",
-  //         headers: {
-  //             "Content-Type": "application/json",
-  //         },
-  //         body: JSON.stringify(design),
-  //     });
-  //     getDesigns();
-  // };
   
   //   const updateDesigns = async (design, id) => {
   //     await fetch(url + id, {
@@ -75,7 +63,7 @@ function App() {
      
       <Routes>
       <Route path="/" element={<Home/>}/>
-      <Route path="/the-lab" element={<DesignPage/>}/>
+      <Route path="/the-lab" element={<DesignPage url={url}/>}/>
       <Route path="/design-library" element={<Library designs={designs}/>}/>
       <Route path="/sock-detail" element={<SockDetail/>}/>
       </Routes>

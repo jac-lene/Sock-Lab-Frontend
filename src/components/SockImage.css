@@ -1,0 +1,40 @@
+/* .sockcomp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} */
+
+.sock-holder {
+    height:600px;
+    margin: 0 auto;
+}
+.rib {
+    position:absolute;
+    top: 200px;
+    left: 200px;
+    width: 180px;
+}
+.ankle {
+    position:absolute;
+    top: 325px;
+    left: 231px;
+    width: 190px;
+}
+.heel {
+    position:absolute;
+    top: 493px;
+    left: 254px;
+    width: 98px;
+}
+.foot {
+    position:absolute;
+    top: 469px;
+    left: 350px;
+    width: 372px;
+}
+.toe {
+    position:absolute;
+    top: 524px;
+    left: 683px;
+    width: 88px;
+}

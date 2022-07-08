@@ -29,6 +29,14 @@
   .sock {
     height: 60vh;
   }
+
+  .create {
+    display: flex;
+    flex-wrap: wrap;
+    gap:30px;
+    justify-content: center;
+    align-items: center;
+  }
   
   /* @media (prefers-reduced-motion: no-preference) {
     .App-logo {
