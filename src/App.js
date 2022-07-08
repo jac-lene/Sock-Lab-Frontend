@@ -9,6 +9,16 @@ import Home from './Pages/Home';
 
 function App() {
 
+  const [designs, setDesigns] = useState(null);
+  const url = "http://localhost:3001/users"
+
+  function getDesigns() {
+    fetch(url)
+      .then((res) => res.json())
+      .then((res) => setDesigns(res))
+      .catch(console.error);
+  }
+
   const [ header, setHeader ] = useState('home')
 
   const headerChange = (page) => {
@@ -16,9 +26,15 @@ function App() {
     console.log(header)
   }
 
-  // useEffect(() => {
-  //   headerChange()
-  // }, [])
+  useEffect(() => {
+    getDesigns()
+  }, [])
+
+  if (!designs) {
+    console.log('loading...')
+  }
+
+  console.log(designs)
 
 
   return (
