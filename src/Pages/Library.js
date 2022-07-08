@@ -14,7 +14,7 @@ if (!designs) {
     <div>
         
         <Header/>
-        {designs.map((design) => 
+        {designs?.map((design) => 
             <>
             <h1>{design.name}</h1>
             <h3>{design.CC1}</h3>

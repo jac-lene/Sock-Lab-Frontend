@@ -46,6 +46,13 @@ body {
   width: 100px;
 }
 
+.dash-divider {
+  border-top: 10px dashed black;
+  min-height: fit-content;
+  width: 120vw;
+  animation: dash-border-slide infinite alternate 5s linear;
+}
+
 /* @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;

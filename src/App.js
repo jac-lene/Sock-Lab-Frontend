@@ -53,9 +53,9 @@ function App() {
 
   if (!designs) {
     console.log('loading...')
-  } 
+  } else {console.log(designs)}
 
-  console.log(designs)
+  
 
 
   return (
