@@ -17,8 +17,14 @@ Sock Image
     - image cut into pieces and placed in an absolute positioning
     - information will link to a form internally
     - color overlay?
-    - need color palette plan 
     - figure out randomizer
+    DONE
+    - need color palette plan 
+
+Design Page    
+    - need to set up form for create
+    - prompt for name upon saving
+    - generate pattern button
 
 Pattern 
     - "Visible" form element
@@ -27,12 +33,19 @@ Pattern
     - link to pdf or print
 
 Visual Library
+    - need to copy image from design page and have it show preview w/sock name
+    - design layout
+    - figure out how to link to details
+    DONE
     - Simply a show page, should be easy.
+
+Detail page
+    - design layout
+    - need form for editing
+    - delete button
 
 Layout
     - Would love checker border
     - Spinning CHAOS MODE button
     - generate pattern button
-    - Detail page needs to be designed
     - Different headers for different parts of the site
-    

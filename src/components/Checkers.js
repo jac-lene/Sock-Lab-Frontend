@@ -1,5 +1,4 @@
 import React from 'react'
-import './Checkers.css'
 
 function Checkers() {
   return (

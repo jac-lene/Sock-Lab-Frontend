@@ -4,6 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import DesignPage from './Pages/DesignPage';
 import Home from './Pages/Home';
 import Library from './Pages/Library';
+import SockDetail from './Pages/SockDetail';
 
 
 
@@ -76,6 +77,7 @@ function App() {
       <Route path="/" element={<Home/>}/>
       <Route path="/the-lab" element={<DesignPage/>}/>
       <Route path="/design-library" element={<Library designs={designs}/>}/>
+      <Route path="/sock-detail" element={<SockDetail/>}/>
       </Routes>
 
     

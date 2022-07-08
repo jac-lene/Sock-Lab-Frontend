@@ -1,6 +1,7 @@
 import React from 'react'
 import Header from '../components/Header'
 import './Library.css'
+import {Link} from 'react-router-dom'
 
 function Library({designs}) {
 if (!designs) {
@@ -17,9 +18,9 @@ if (!designs) {
             <>
             <h1>{design.name}</h1>
             <h3>{design.CC1}</h3>
+            <a href={design.sock_url}>Details</a>
             </>
         )}
-        Library
         
     </div>
   )
