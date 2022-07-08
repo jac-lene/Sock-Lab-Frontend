@@ -3,6 +3,7 @@ import './App.css';
 import { Routes, Route } from "react-router-dom";
 import DesignPage from './Pages/DesignPage';
 import Home from './Pages/Home';
+import Library from './Pages/Library';
 
 
 
@@ -50,20 +51,20 @@ function App() {
   //   };
 
 
-  const [ header, setHeader ] = useState('home')
+  // const [ header, setHeader ] = useState('home')
 
-  const headerChange = (page) => {
-    setHeader(page)
-    console.log(header)
-  }
+  // const headerChange = (page) => {
+  //   setHeader(page)
+  //   // console.log(header)
+  // }
 
   useEffect(() => {
     getDesigns()
   }, [])
 
-  if (designs === null) {
+  if (!designs) {
     console.log('loading...')
-  }
+  } 
 
   console.log(designs)
 
@@ -72,8 +73,9 @@ function App() {
     <div className="App">
      
       <Routes>
-      <Route path="/" element={<Home header={header} headerChange={headerChange} />}/>
+      <Route path="/" element={<Home/>}/>
       <Route path="/the-lab" element={<DesignPage/>}/>
+      <Route path="/design-library" element={<Library designs={designs}/>}/>
       </Routes>
 
     

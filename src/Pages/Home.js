@@ -2,13 +2,12 @@ import React from 'react'
 import Checkers from '../components/Checkers'
 import Header from '../components/Header'
 
-function Home({ header, headerChange }) {
+function Home() {
   return (
     <div>
-    <Header header={header} headerChange={headerChange} />
-      <div className='dash-divider'></div>
+    <Header/>
     <Checkers/>
-    
+
     </div>
   )
 }
