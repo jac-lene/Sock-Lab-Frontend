@@ -10,14 +10,45 @@ import Home from './Pages/Home';
 function App() {
 
   const [designs, setDesigns] = useState(null);
-  const url = "http://localhost:3001/users"
+  const url = "http://localhost:8000/socks/"
 
   function getDesigns() {
     fetch(url)
       .then((res) => res.json())
       .then((res) => setDesigns(res))
       .catch(console.error);
-  }
+    }
+
+
+  //   const createDesigns = async (design) => {
+  //     await fetch(url, {
+  //         method: "post",
+  //         headers: {
+  //             "Content-Type": "application/json",
+  //         },
+  //         body: JSON.stringify(design),
+  //     });
+  //     getDesigns();
+  // };
+  
+  //   const updateDesigns = async (design, id) => {
+  //     await fetch(url + id, {
+  //       method: "put",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify(design),
+  //     });
+  //     getDesigns();
+  //   };
+  
+  //   const deleteDesigns = async (id) => {
+  //     await fetch(url + id, {
+  //       method: "delete",
+  //     });
+  //     getDesigns();
+  //   };
+
 
   const [ header, setHeader ] = useState('home')
 
@@ -30,7 +61,7 @@ function App() {
     getDesigns()
   }, [])
 
-  if (!designs) {
+  if (designs === null) {
     console.log('loading...')
   }
 
@@ -39,7 +70,6 @@ function App() {
 
   return (
     <div className="App">
-   
      
       <Routes>
       <Route path="/" element={<Home header={header} headerChange={headerChange} />}/>
