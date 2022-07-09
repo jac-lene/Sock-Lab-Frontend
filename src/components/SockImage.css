@@ -1,6 +1,7 @@
 .page-cont {
     margin: 0 auto;
     height: 600px;
+    width:750px;
 }
 
 .sock {
@@ -17,7 +18,7 @@
     /* position:absolute; */
     position: relative;
     bottom: 657px;
-    right: 105px;
+    right: 109px;
     width: 185px;
     z-index: -999;
 }
@@ -35,7 +36,7 @@
     /* position:absolute; */
     position: relative;
     bottom: 607px;
-    right: 433px;
+    right: 390px;
     width: 103px;
     z-index: -999;
 }
@@ -43,15 +44,15 @@
     /* position:absolute; */
     position: relative;
     bottom: 565px;
-    left: 54px;
+    left: 100px;
     width: 490px;
     z-index: -999;
 }
 .toe {
     /* position:absolute; */
     position: relative;
-    bottom: 713px;
-    left: 254px;
+    bottom: 565px;
+    right: 42px;
     width: 90px;
     z-index: -999;
 }
