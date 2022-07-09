@@ -4,6 +4,14 @@
     width:750px;
 }
 
+svg {
+    pointer-events: none;
+}
+
+path{
+    pointer-events: auto;
+}
+
 .sock {
     height:600px;
     width: 600px;
@@ -20,7 +28,6 @@
     bottom: 657px;
     right: 109px;
     width: 185px;
-    /* z-index: 0; */
 }
 
 .ankle {

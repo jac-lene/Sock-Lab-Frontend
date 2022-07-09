@@ -1,5 +1,4 @@
 import React from 'react'
-import SockArt from '../images/sockart.svg'
 import './SockImage.css'
 import WholeSock from '../components/sockshapes/Wholesock'
 import AnkleS from '../components/sockshapes/Ankleshape'
@@ -11,30 +10,23 @@ import RibS from '../components/sockshapes/Ribshape'
 
 
 function SockImage() {
+  
+  const clickAlert = (x) => {
+    console.log('clicked', x)
+  }
+
+
+
   return (
     <div className='page-cont'>
 
-        {/* <img src="https://i.imgur.com/1gs2nxk.png" alt='sock design image' className='sock'/> */}
-        {/* <img src={SockArt} alt='sock' className='sock'/> */}
-        
-        {/* <img src={Rib} alt='sock' className='sock rib' />
-        <img src={Ankle} alt='sock' className='sock ankle'/>
-        <img src={Heel} alt='sock' className='sock heel'/>
-        <img src={Foot} alt='sock' className='sock foot' style={{stroke:'red'}}/>
-        <img src={Toe} alt='sock' className='sock toe'/>
-         */}
       <WholeSock />
-      <RibS />
-      <AnkleS />
-      <FootS />
-      <HeelS />
-      <ToeS />
+      <RibS onClick={() => clickAlert('rib')}/>
+      <AnkleS onClick={() => clickAlert('ankle')}/>
+      <FootS onClick={() => clickAlert('foot')}/>
+      <HeelS onClick={() => clickAlert('heel')}/>
+      <ToeS onClick={() => clickAlert('toe')}/>
   
-      
-        
-
-
-
     </div>
   )
 }
