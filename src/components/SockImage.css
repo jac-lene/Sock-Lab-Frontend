@@ -1,49 +1,57 @@
-
-
-.sock-holder {
-    height:600px;
-    width: 1000px;
-    padding-left: 300px;
+.page-cont {
     margin: 0 auto;
+    height: 600px;
+}
+
+.sock {
+    height:600px;
+    width: 600px;
+    /* padding-top: 100px; */
+    /* margin: 0 auto; */
     position: relative;
-    top: -50px;
-    z-index: -999;
+    /* top: -50px; */
+    z-index: -899;
 }
 
 .rib {
     /* position:absolute; */
     position: relative;
-    bottom: 5px;
-    left: 0px;
-    width: 180px;
-    fill: red;
-    stroke: red;
+    bottom: 657px;
+    right: 105px;
+    width: 185px;
+    z-index: -999;
 }
+
 .ankle {
     /* position:absolute; */
     position: relative;
-    top: 120px;
-    right: 149px;
-    width: 190px;
+    bottom: 466px;
+    right: 260px;
+    width: 198px;
+    z-index: -999;
 }
+
 .heel {
     /* position:absolute; */
     position: relative;
-    top: 286px;
-    right: 315px;
-    width: 100px;
+    bottom: 607px;
+    right: 433px;
+    width: 103px;
+    z-index: -999;
 }
 .foot {
     /* position:absolute; */
     position: relative;
-    top: 264px;
-    right: 414px;
-    width: 462px;
+    bottom: 565px;
+    left: 54px;
+    width: 490px;
+    z-index: -999;
 }
 .toe {
     /* position:absolute; */
     position: relative;
-    bottom: 100px;
-    left: 57px;
-    width: 85px;
+    bottom: 713px;
+    left: 254px;
+    width: 90px;
+    z-index: -999;
 }
