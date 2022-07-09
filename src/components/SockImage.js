@@ -28,7 +28,7 @@ function SockImage() {
         <img src={Foot} alt='sock' className='sock foot' style={{stroke:'red'}}/>
         <img src={Toe} alt='sock' className='sock toe'/>
          */}
-      <WholeSock width='400px'/>
+      <WholeSock />
       <RibS />
       <AnkleS />
       <FootS />
