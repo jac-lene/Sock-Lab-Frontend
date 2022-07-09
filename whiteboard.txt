@@ -12,40 +12,42 @@ What are my stretch goals?
 
 How to accomplish each part: 
 
-Sock Image
-    - Div mask? 
-    - image cut into pieces and placed in an absolute positioning
-    - information will link to a form internally
-    - color overlay?
-    - figure out randomizer
-    DONE
-    - need color palette plan 
 
-Design Page    
-    - need to set up form for create
+Design Page  
+    - information will link to a form internally
+        - figure out better model maybe
+    - Create onclick event to change fill styling
+        -need to research how to drill down into svg settings
+    - create save button 
     - prompt for name upon saving
     - generate pattern button
+    - figure out randomizer
+    - create chaos button
+    DONE
+        - need color palette plan 
+        - image cut into pieces and placed in an absolute positioning
+        - need to set up form for create
 
 Pattern 
-    - "Visible" form element
-    - Is live inputting as the item is clicked - maybe? 
-    - OR, generate pattern button
+    - write up pattern logic
+        - think about gauge changes maybe
+    - figure out information needed for model
     - link to pdf or print
 
 Visual Library
     - need to copy image from design page and have it show preview w/sock name
+        - create mini "card" with image like on design page
     - design layout
-    - figure out how to link to details
+    - figure out how to link to details!! q for ernest
     DONE
-    - Simply a show page, should be easy.
+        - Simply a show page, should be easy.
 
 Detail page
-    - design layout
     - need form for editing
+    - edit button
     - delete button
 
-Layout
-    - Would love checker border
-    - Spinning CHAOS MODE button
-    - generate pattern button
-    - Different headers for different parts of the site
+Splash Page 
+    - Option to stop animations
+
+CHECK STRETCH GOALS 

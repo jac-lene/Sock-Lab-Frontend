@@ -13,7 +13,10 @@ if (!designs) {
     
     <div>
         
-        <Header/>
+        <Header />
+        <div className='main'>
+
+        
         {designs?.map((design) => 
             <>
             <h1>{design.name}</h1>
@@ -21,7 +24,7 @@ if (!designs) {
             <a href={design.sock_url}>Details</a>
             </>
         )}
-        
+        </div>
     </div>
   )
 }

@@ -4,10 +4,10 @@ import Header from '../components/Header'
 
 function Home() {
   return (
-    <div>
+    <div >
     <Header/>
-    <Checkers/>
-
+    <div className='main'><h1>Home</h1></div>
+    
     </div>
   )
 }
