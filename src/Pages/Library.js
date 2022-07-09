@@ -15,15 +15,18 @@ if (!designs) {
         
         <Header />
         <div className='main'>
+        <div className='card-cont'>
 
-        
         {designs?.map((design) => 
-            <>
+            <div key={design.id} className='design-card'>
             <h1>{design.name}</h1>
             <h3>{design.CC1}</h3>
             <a href={design.sock_url}>Details</a>
-            </>
+            </div>
         )}
+
+        </div>
+       
         </div>
     </div>
   )
