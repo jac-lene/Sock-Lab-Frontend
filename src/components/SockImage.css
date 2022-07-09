@@ -3,7 +3,7 @@
 .sock-holder {
     height:600px;
     width: 1000px;
-    padding-left: 340px;
+    padding-left: 300px;
     margin: 0 auto;
     position: relative;
     top: -50px;
@@ -13,7 +13,7 @@
 .rib {
     /* position:absolute; */
     position: relative;
-    top: 0px;
+    bottom: 5px;
     left: 0px;
     width: 180px;
     fill: red;
@@ -22,28 +22,28 @@
 .ankle {
     /* position:absolute; */
     position: relative;
-    top: 125px;
+    top: 120px;
     right: 149px;
     width: 190px;
 }
 .heel {
     /* position:absolute; */
     position: relative;
-    top: 292px;
+    top: 286px;
     right: 315px;
-    width: 98px;
+    width: 100px;
 }
 .foot {
     /* position:absolute; */
     position: relative;
-    top: 268px;
-    right: 319px;
-    width: 372px;
+    top: 264px;
+    right: 414px;
+    width: 462px;
 }
 .toe {
     /* position:absolute; */
     position: relative;
-    top: 322px;
-    right: 358px;
-    width: 88px;
+    bottom: 100px;
+    left: 57px;
+    width: 85px;
 }
