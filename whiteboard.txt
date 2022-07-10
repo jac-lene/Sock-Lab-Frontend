@@ -51,3 +51,9 @@ Splash Page
     - Option to stop animations
 
 CHECK STRETCH GOALS 
+
+
+THINGS I LEARNED
+ - PROPs on the SVGS. props.fill wow im screaming
+ - how to use SVGs in general
+ - 
