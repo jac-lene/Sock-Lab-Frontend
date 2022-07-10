@@ -19,9 +19,10 @@ if (!designs) {
 
         {designs?.map((design) => 
             <div key={design.id} className='design-card'>
+            <a href={design.sock_url}>
+            <img src={design.user_photo} alt={`design${design.id}`} width='200px'/>
             <h1>{design.name}</h1>
-            <h3>{design.CC1}</h3>
-            <a href={design.sock_url}>Details</a>
+            </a>
             </div>
         )}
 
