@@ -21,6 +21,10 @@ Design Page
     - create save button 
     - prompt for name upon saving
     - generate pattern button
+    - if there are colors in the sock, have a modal when you try to navigate away from the page
+    - color palette recently used colors
+    - animation on type selection
+    - 
     - figure out randomizer
     - create chaos button
     DONE
@@ -56,4 +60,6 @@ CHECK STRETCH GOALS
 THINGS I LEARNED
  - PROPs on the SVGS. props.fill wow im screaming
  - how to use SVGs in general
- - 
+ - i learned how to use forms the right way lol
+ - how to mass convert svgs to components
+ - animations
