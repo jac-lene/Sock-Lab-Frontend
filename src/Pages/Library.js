@@ -1,13 +1,18 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Header from '../components/Header'
 import './Library.css'
 import {Link} from 'react-router-dom'
 
-function Library({designs}) {
+function Library({getDesigns, designs}) {
 if (!designs) {
     console.log('loading')
 }
     console.log(designs)
+
+  useEffect(() => {
+    getDesigns()
+  }, [])
+
 
   return (
     

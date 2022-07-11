@@ -64,7 +64,7 @@ function App() {
       <Routes>
       <Route path="/" element={<Home/>}/>
       <Route path="/the-lab" element={<DesignPage url={url}/>}/>
-      <Route path="/design-library" element={<Library designs={designs}/>}/>
+      <Route path="/design-library" element={<Library getDesigns={getDesigns} designs={designs}/>}/>
       <Route path="/sock-detail" element={<SockDetail/>}/>
       </Routes>
 
