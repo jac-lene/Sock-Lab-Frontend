@@ -13,24 +13,23 @@ What are my stretch goals?
 How to accomplish each part: 
 
 
-Design Page  
-    - information will link to a form internally
-        - figure out better model maybe
-    - Create onclick event to change fill styling
-        -need to research how to drill down into svg settings
+Design Page 
     - create save button 
     - prompt for name upon saving
     - generate pattern button
     - if there are colors in the sock, have a modal when you try to navigate away from the page
     - color palette recently used colors
-    - animation on type selection
-    - 
+    - animation on selection
     - figure out randomizer
     - create chaos button
     DONE
         - need color palette plan 
         - image cut into pieces and placed in an absolute positioning
         - need to set up form for create
+        - figure out better model maybe
+        - Create onclick event to change fill styling
+            -need to research how to drill down into svg settings
+        - information will link to a form internally
 
 Pattern 
     - write up pattern logic

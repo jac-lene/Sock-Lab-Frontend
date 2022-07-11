@@ -130,7 +130,6 @@ function DesignPage({url}) {
        
             <button className='save'>Save Design</button>
 
-            <p>{name}</p>
         </form>
 
             <div className='page-cont'>

@@ -11,6 +11,7 @@ import SockDetail from './Pages/SockDetail';
 
 function App() {
 
+  const [sock, setSock] = useState(null);
   const [designs, setDesigns] = useState(null);
   const url = "http://localhost:8000/socks/"
 
@@ -20,8 +21,17 @@ function App() {
       .then((res) => setDesigns(res))
       .catch(console.error);
     }
+
+  function getOne(id) {
+    fetch(url + id)
+    .then((res) => res.json())
+    .then((res) => setSock(res))
+    .catch(console.error);
+  }
+
   
-  //   const updateDesigns = async (design, id) => {
+  
+  //   const updateDesign = async (id) => {
   //     await fetch(url + id, {
   //       method: "put",
   //       headers: {
@@ -64,8 +74,8 @@ function App() {
       <Routes>
       <Route path="/" element={<Home/>}/>
       <Route path="/the-lab" element={<DesignPage url={url}/>}/>
-      <Route path="/design-library" element={<Library getDesigns={getDesigns} designs={designs}/>}/>
-      <Route path="/sock-detail" element={<SockDetail/>}/>
+      <Route path="/design-library" element={<Library getDesigns={getDesigns} designs={designs} />}/>
+      <Route path="/design-library/socks/:id" element={<SockDetail sock={sock} setSock={setSock} getOne={getOne}/>}/>
       </Routes>
 
     
