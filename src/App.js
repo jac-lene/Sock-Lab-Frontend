@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import './App.css';
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import DesignPage from './Pages/DesignPage';
 import Home from './Pages/Home';
 import Library from './Pages/Library';
@@ -29,7 +29,12 @@ function App() {
     .catch(console.error);
   }
 
-  
+  const deleteDesign = (id) => {
+    fetch(url + id, {
+      method: "delete",
+    });
+    <Navigate to='/design-library'/>
+  };
   
   //   const updateDesign = async (id) => {
   //     await fetch(url + id, {
@@ -75,7 +80,7 @@ function App() {
       <Route path="/" element={<Home/>}/>
       <Route path="/the-lab" element={<DesignPage url={url}/>}/>
       <Route path="/design-library" element={<Library getDesigns={getDesigns} designs={designs} />}/>
-      <Route path="/design-library/socks/:id" element={<SockDetail sock={sock} setSock={setSock} getOne={getOne}/>}/>
+      <Route path="/design-library/socks/:id" element={<SockDetail sock={sock} setSock={setSock} getOne={getOne} deleteDesign={deleteDesign}/>}/>
       </Routes>
 
     

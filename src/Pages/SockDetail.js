@@ -8,7 +8,7 @@ import ToeS from '../components/sockshapes/Toeshape'
 import RibS from '../components/sockshapes/Ribshape'
 import Header from '../components/Header'
 
-function SockDetail({ getOne, sock }) {
+function SockDetail({ deleteDesign, getOne, sock }) {
  
   const id = useParams().id
 
@@ -18,8 +18,6 @@ function SockDetail({ getOne, sock }) {
   useEffect(() => {
       getOne(id)
   }, [])
-
-  // console.log(bird.image)
 
   if (!sock) {
       return( 
@@ -36,15 +34,17 @@ function SockDetail({ getOne, sock }) {
       <div className='main'>
       <div className='page-cont'>
       <h2>{sock?.name}</h2>
+      <div><br/>
+      <button>Edit</button>
+      <button onClick={() => deleteDesign(id)}>Delete</button></div>
       <WholeSock />
       <RibS style={{fill: sock?.ribColor}}/>
       <AnkleS style={{fill: sock?.ankleColor}}/>
       <FootS  style={{fill: sock?.footColor}}/>
       <HeelS style={{fill: sock?.heelColor}}/>
       <ToeS style={{fill: sock?.toeColor}}/>
-
- 
       </div>
+      
       </div>
      </div>
     );

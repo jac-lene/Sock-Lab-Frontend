@@ -1,3 +1,13 @@
+.card-cont {
+    padding-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+    justify-content: center;
+    gap: 10px;
+    row-gap: 10px;
+}
+
 .design-card {
     height: 300px;
     width: 300px;
@@ -8,12 +18,3 @@
     justify-content: center;
 }
 
-.card-cont {
-    padding-top: 50px;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: center;
-    gap: 10px;
-    row-gap: 10px;
-}

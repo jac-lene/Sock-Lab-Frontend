@@ -22,10 +22,10 @@ if (!designs) {
         <Header />
         <div className='main'>
         <div className='card-cont'>
-        <SmallSockImage style={{width:'200px'}}/>
+        {/* <SmallSockImage style={{width:'200px'}}/> */}
         {designs?.map((design) => 
             <div key={design.id} className='design-card'>
-              
+
             <Link to={`/design-library/socks/${design.id}`} key={design.id}>
 
             <img src={design.user_photo} alt={`design${design.id}`} width='200px' />
