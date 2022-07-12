@@ -8,5 +8,5 @@ Designed and engineered over a 3 week period, SockLab is a fully responsive, ful
 
 ### Wireframes
 
-
-
+![web-01](https://user-images.githubusercontent.com/97763546/178520988-cc19a3b6-fe2d-40d9-8a46-e03e125355e1.jpg)
+![Artboard 1@0 5x](https://user-images.githubusercontent.com/97763546/178521044-d5916722-9047-41ce-8f5c-37904bd17e2d.png)
