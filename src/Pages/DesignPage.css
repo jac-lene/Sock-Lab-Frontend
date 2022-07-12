@@ -25,6 +25,15 @@
     display: none;
   }
 
+  .patternmodal {
+    position: relative;
+    bottom: 550px;
+    left: 0px;
+    z-index: 999;
+    border: 5px solid black;
+    background-color: white;
+  }
+
   .sockpatt {
     display: flex;
     flex-direction: row;

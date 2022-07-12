@@ -138,9 +138,9 @@ function DesignPage({url}) {
        
             <button className='save'>Save Design</button>
 
-        </form>
+          </form>
         <button onClick={clearColor}>Clear Colors</button>
-        <button onClick={() => setShow(prev => !prev)}>Show Pattern</button>
+        <button onClick={() => setShow(prev => !prev)}>Show Pattern Preview</button>
         </div>
             
         <div className='sockpatt'>
@@ -154,8 +154,9 @@ function DesignPage({url}) {
 
             </div>
             
-           {show && <SockPattern/>}
+  
             </div>
+            {show && <div className='patternmodal'><SockPattern/></div>}
           
                   <div className='color-picker'>
                       <br/><br/>
