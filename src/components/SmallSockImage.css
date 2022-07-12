@@ -1,0 +1,68 @@
+.smallpage-cont {
+    margin: 0 auto;
+    height: 600px;
+    width:750px;
+    background-color: red;
+}
+
+svg {
+    pointer-events: none;
+}
+
+path{
+    pointer-events: auto;
+}
+
+.smallsock {
+    height:200px;
+    width: 200px;
+    /* padding-top: 100px; */
+    /* margin: 0 auto; */
+    position: relative;
+    /* top: -50px; */
+    z-index: 1;
+    
+}
+
+.smallrib {
+    /* position:absolute; */
+    position: relative;
+    bottom: 140px;
+    right: 199px;
+    width: 61px;
+    
+}
+
+.smallankle {
+    /* position:absolute; */
+    position: relative;
+    bottom: 77px;
+    right: 250px;
+    width: 65px;
+    /* z-index: -999; */
+}
+
+.smallheel {
+    /* position:absolute; */
+    position: relative;
+    bottom: 35px;
+    right: 497px;
+    width: 35px;
+    /* z-index: -999; */
+}
+.smallfoot {
+    /* position:absolute; */
+    position: relative;
+    top: 85px;
+    left: 100px;
+    width: 190px;
+    /* z-index: -999; */
+}
+.smalltoe {
+    /* position:absolute; */
+    position: relative;
+    bottom: 165px;
+    right: 42px;
+    width: 20px;
+    /* z-index: -999; */
+}

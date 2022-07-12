@@ -1,0 +1,65 @@
+.page-cont {
+    margin: 0 auto;
+    height: 600px;
+    width:750px;
+}
+
+svg {
+    pointer-events: none;
+}
+
+path{
+    pointer-events: auto;
+}
+
+.sock {
+    height:600px;
+    width: 600px;
+    /* padding-top: 100px; */
+    /* margin: 0 auto; */
+    position: relative;
+    /* top: -50px; */
+    z-index: 1;
+}
+
+.rib {
+    /* position:absolute; */
+    position: relative;
+    bottom: 657px;
+    right: 109px;
+    width: 185px;
+}
+
+.ankle {
+    /* position:absolute; */
+    position: relative;
+    bottom: 466px;
+    right: 260px;
+    width: 198px;
+    /* z-index: -999; */
+}
+
+.heel {
+    /* position:absolute; */
+    position: relative;
+    bottom: 607px;
+    right: 390px;
+    width: 103px;
+    /* z-index: -999; */
+}
+.foot {
+    /* position:absolute; */
+    position: relative;
+    bottom: 565px;
+    left: 100px;
+    width: 490px;
+    /* z-index: -999; */
+}
+.toe {
+    /* position:absolute; */
+    position: relative;
+    bottom: 565px;
+    right: 42px;
+    width: 90px;
+    /* z-index: -999; */
+}

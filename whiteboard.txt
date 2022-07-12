@@ -1,0 +1,64 @@
+FRONTEND PLAN
+
+What are my MVP goals?
+    - an image of a sock that can be clicked and change color
+    - a pattern that changes based on the user input
+    - a visual library that stores all of my saved designs
+
+What are my stretch goals? 
+    - user auth
+    - yarn store map
+    - more than one type of garment/pattern
+
+How to accomplish each part: 
+
+
+Design Page 
+    - create save button 
+    - prompt for name upon saving
+    - generate pattern button
+    - if there are colors in the sock, have a modal when you try to navigate away from the page
+    - color palette recently used colors
+    - animation on selection
+    - figure out randomizer
+    - create chaos button
+    DONE
+        - need color palette plan 
+        - image cut into pieces and placed in an absolute positioning
+        - need to set up form for create
+        - figure out better model maybe
+        - Create onclick event to change fill styling
+            -need to research how to drill down into svg settings
+        - information will link to a form internally
+
+Pattern 
+    - write up pattern logic
+        - think about gauge changes maybe
+    - figure out information needed for model
+    - link to pdf or print
+
+Visual Library
+    - need to copy image from design page and have it show preview w/sock name
+        - create mini "card" with image like on design page
+    - design layout
+    - figure out how to link to details!! q for ernest
+    DONE
+        - Simply a show page, should be easy.
+
+Detail page
+    - need form for editing
+    - edit button
+    - delete button
+
+Splash Page 
+    - Option to stop animations
+
+CHECK STRETCH GOALS 
+
+
+THINGS I LEARNED
+ - PROPs on the SVGS. props.fill wow im screaming
+ - how to use SVGs in general
+ - i learned how to use forms the right way lol
+ - how to mass convert svgs to components
+ - animations

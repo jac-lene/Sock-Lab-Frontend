@@ -1,38 +1,112 @@
+
+
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+  background-image: url("https://i.imgur.com/PZUjlvn.png");
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-color: #f3bb00;
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  font-size: calc(10px + 2vmin);
+  color: black;
+  font-family: 'Akzidenz Grotesk', sans-serif;
+}
+
+.main {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: 85%;
+  margin: 0 auto;
+  background-color: white;
 }
 
-.App-link {
-  color: #61dafb;
+a {
+  text-decoration: none;
+  color: black;
 }
 
-@keyframes App-logo-spin {
+body {
+  background-color: white;
+  /* min-height: 100vh; */
+}
+
+.check-cont {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  z-index: 0;
+}
+
+.checkbord-l {
+  background-image: url("https://i.imgur.com/PZUjlvn.png");
+  height:100vh;
+  width: 100px;
+}
+
+.checkbord-r {
+  background-image: url("https://i.imgur.com/PZUjlvn.png");
+  height:100vh;
+  width: 100px;
+}
+
+.dash-divider {
+  border-top: 10px dashed black;
+  min-height: fit-content;
+  width: 120vw;
+  animation: dash-border-slide infinite alternate 5s linear;
+  background-color: white;
+}
+
+@keyframes dash-border-slide {
   from {
-    transform: rotate(0deg);
+    transform: translateX(0px);
   }
   to {
-    transform: rotate(360deg);
+    transform: translateX(-300px);
   }
+}
+
+@media (max-width : 400px) {
+
+  @keyframes dash-border-slide {
+    from {
+      transform: translateX(0px);
+    }
+    to {
+      transform: translateX(-100px);
+    }
+  }
+
+  .dash-divider {
+      animation: dash-border-slide infinite alternate 3s linear;
+    }
+
+}
+
+@media (max-width : 400px) {
+/* 
+  .App-header {
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 30px;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0px 20px 0px 10px;
+  } */
+  
+  .check-cont {
+    display: none;
+  }
+
+
+  
 }
