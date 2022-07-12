@@ -12,22 +12,22 @@ import FootS from '../components/sockshapes/Footshape'
 import HeelS from '../components/sockshapes/Heelshape'
 import ToeS from '../components/sockshapes/Toeshape'
 import RibS from '../components/sockshapes/Ribshape'
+import SockPattern from '../components/SockPattern'
+
+
+
 
 function DesignPage({url}) {
   
   const [color, setColor] = useState('#fff')
 
+  const [show, setShow] = useState(false);
+
   // FORM STUFF
 
   const [name, setName] = useState('');
   const [ankle_height, setAnkle] = useState('crew');
-  const [CC1, setCC1] = useState('');
-  const [CC2, setCC2] = useState('');
-  const [CC3, setCC3] = useState('');
   const [size, setSize] = useState('');
-  const [rib, setRib] = useState('');
-  const [heel, setHeel] = useState('');
-  const [toe, setToe] = useState('');
   const [completed, setCompleted] = useState('no');
   const [inProg, setInProg] = useState('');
 
@@ -73,6 +73,14 @@ function DesignPage({url}) {
     }
   }
 
+  const clearColor = () => {
+      setRibColor('#fff');
+      setAnkleColor('#fff')
+      setFootColor('#fff')
+      setHeelColor('#fff')
+      setToeColor('#fff')
+  }
+
   //END color picker stuff
 
 
@@ -80,8 +88,8 @@ function DesignPage({url}) {
         <div>
             <Header />
             <div className="main">
-        
-            <form className='create' onSubmit={handleSubmit}>
+        <div className='designbuttons'>
+          <form className='create' onSubmit={handleSubmit}>
             
             <label className='invisible'>Rib</label>
             <input
@@ -131,9 +139,12 @@ function DesignPage({url}) {
             <button className='save'>Save Design</button>
 
         </form>
-
+        <button onClick={clearColor}>Clear Colors</button>
+        <button onClick={() => setShow(prev => !prev)}>Show Pattern</button>
+        </div>
+            
+        <div className='sockpatt'>
             <div className='page-cont'>
-
                     <WholeSock />
                     <RibS onClick={() => getColor('rib')} style={{fill: ribColor}}/>
                     <AnkleS onClick={() => getColor('ankle')} style={{fill: ankleColor}}/>
@@ -141,6 +152,9 @@ function DesignPage({url}) {
                     <HeelS onClick={() => getColor('heel')} style={{fill: heelColor}}/>
                     <ToeS onClick={() => getColor('toe')} style={{fill: toeColor}}/>
 
+            </div>
+            
+           {show && <SockPattern/>}
             </div>
           
                   <div className='color-picker'>

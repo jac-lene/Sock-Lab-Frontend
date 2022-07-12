@@ -13,6 +13,21 @@
     align-items: center;
   }
 
+  .designbuttons {
+    display: flex;
+    flex-direction: row;
+    gap:20px;
+    justify-content: center;
+    align-items: center;
+  }
+
   .invisible {
     display: none;
+  }
+
+  .sockpatt {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
   }
