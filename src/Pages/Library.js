@@ -23,13 +23,14 @@ if (!designs) {
         <Header />
         <div className='main'>
         <div className='card-cont'>
-        <SmallSockImage />
+        
         {designs?.map((design) => 
             <div key={design.id} className='design-card'>
 
             <Link to={`/design-library/socks/${design.id}`} key={design.id}>
 
-            <img src={design.user_photo} alt={`design${design.id}`} width='200px' />
+            
+            <SmallSockImage rib={design.ribColor} ankle={design.ankleColor} heel={design.heelColor} foot={design.footColor} toe={design.toeColor}/>
             <h1>{design.name}</h1>
             </Link>
             
@@ -37,7 +38,7 @@ if (!designs) {
         )}
 
         </div>
-       
+        <div style={{height:'200px'}}></div>
         </div>
     </div>
   )
