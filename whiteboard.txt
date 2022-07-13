@@ -12,18 +12,22 @@ What are my stretch goals?
 
 How to accomplish each part: 
 
+Overview
+    - need to style all buttons in fun way
+    - fix white space at the bottom of pages
+
 Pattern 
-    - write up pattern logic
-        - think about gauge changes maybe
     - figure out information needed for model
-    - link to pdf or print
+        - new model needed?
+    - fix modal styling
+    - figure out how to link to pdf or print
+    DONE
+        - write up pattern
 
 Design Page 
-    - generate pattern button
-    - design save button 
-    - prompt for name upon saving
-    - if there are colors in the sock, have a modal when you try to navigate away from the page
-    - color palette recently used colors
+    - prompt for name upon saving or add name as form element
+    - color palette recently used colors or inkwell, undo change maybe
+    - modal when you try to navigate away from the design page
     - animation on selection
     - figure out randomizer
     - create chaos button
@@ -35,21 +39,22 @@ Design Page
         - Create onclick event to change fill styling
             -need to research how to drill down into svg settings
         - information will link to a form internally
+        - generate pattern button
+
+Detail page
+   - add new form for marking as complete/in progress
+    DONE 
+         - need form for editing
 
 Visual Library
-    - need to copy image from design page and have it show preview w/sock name
-        - create mini "card" with image like on design page
+    - create mini "card" with image like on design page
+    - show when design is marked as in progress or complete, maybe have different tabs with completed items
     DONE
         - Simply a show page, should be easy.
         - design layout
         - figure out how to link to details!! q for ernest
 
-Detail page
-    - need form for editing
-    - design edit button
-    - design delete button
-
-Splash Page 
+Splash Page
     - Option to stop animations
 
 CHECK STRETCH GOALS 
