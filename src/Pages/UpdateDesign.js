@@ -18,7 +18,7 @@ import SockPattern from '../components/SockPattern'
 
 
 
-function UpdateDesign({url, getDesigns, getOne, sock, updateDesign }) {
+function UpdateDesign({url, getDesigns, getOne, sock, deleteDesign }) {
 
   const navigate = useNavigate()
 
@@ -164,6 +164,7 @@ console.log(sock)
           </form>
         <button onClick={clearColor}>Clear Colors</button>
         <button onClick={() => setShow(prev => !prev)}>Show Pattern Preview</button>
+        <button onClick={() => deleteDesign(id)}>Delete</button>
         </div>
             
         <div className='sockpatt'>

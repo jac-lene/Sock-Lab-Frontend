@@ -37,8 +37,8 @@ function SockDetail({ deleteDesign, getOne, sock }) {
       <div className='page-cont'>
       <h2>{sock?.name}</h2>
       <div><br/>
-      <Link to={`/design-library/socks/${id}/edit`}><button>Edit Colors</button></Link>
-      <button onClick={() => deleteDesign(id)}>Delete</button></div>
+      <Link to={`/design-library/socks/${id}/edit`}><button>Edit Design</button></Link>
+      </div>
       <WholeSock />
       <RibS style={{fill: sock?.ribColor}}/>
       <AnkleS style={{fill: sock?.ankleColor}}/>
@@ -46,7 +46,7 @@ function SockDetail({ deleteDesign, getOne, sock }) {
       <HeelS style={{fill: sock?.heelColor}}/>
       <ToeS style={{fill: sock?.toeColor}}/>
       </div>
-      
+      <div style={{height: '200px'}}></div>
       </div>
      </div>
     );
