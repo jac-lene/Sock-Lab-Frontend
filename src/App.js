@@ -1,6 +1,6 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect } from 'react';
 import './App.css';
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route, useNavigate } from "react-router-dom";
 import DesignPage from './Pages/DesignPage';
 import Home from './Pages/Home';
 import Library from './Pages/Library';
@@ -9,7 +9,10 @@ import SockDetail from './Pages/SockDetail';
 
 
 
+
 function App() {
+
+  const navigate = useNavigate()
 
   const [sock, setSock] = useState(null);
   const [designs, setDesigns] = useState(null);
@@ -32,8 +35,11 @@ function App() {
   const deleteDesign = (id) => {
     fetch(url + id, {
       method: "delete",
-    });
-    <Navigate to='/design-library'/>
+    })
+    .then(() => {
+      navigate('/design-library')
+      setDesigns(designs)
+    })
   };
   
   //   const updateDesign = async (id) => {
@@ -78,7 +84,7 @@ function App() {
      
       <Routes>
       <Route path="/" element={<Home/>}/>
-      <Route path="/the-lab" element={<DesignPage url={url}/>}/>
+      <Route path="/the-lab" element={<DesignPage url={url} designs={designs} setDesigns={setDesigns}/>}/>
       <Route path="/design-library" element={<Library getDesigns={getDesigns} designs={designs} />}/>
       <Route path="/design-library/socks/:id" element={<SockDetail sock={sock} setSock={setSock} getOne={getOne} deleteDesign={deleteDesign}/>}/>
       </Routes>

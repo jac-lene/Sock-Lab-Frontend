@@ -61,6 +61,8 @@ THINGS I LEARNED
  - i learned how to use forms the right way lol
  - how to mass convert svgs to components
  - animations
+ - useNavigate to redirect
 
  Resources
 https://www.codegrepper.com/code-examples/javascript/how+to+hide+button+in+react
+https://upmostly.com/tutorials/how-to-refresh-a-page-or-component-in-react

@@ -17,7 +17,7 @@ import SockPattern from '../components/SockPattern'
 
 
 
-function DesignPage({url}) {
+function DesignPage({url, designs, setDesigns}) {
   
   const [color, setColor] = useState('#fff')
 
@@ -43,7 +43,7 @@ function DesignPage({url}) {
           toeColor, ankleColor, heelColor, footColor, ribColor
       };
 
-     fetch("http://localhost:8000/socks/", {
+     fetch(url, {
               method: "post",
               headers: {
                   "Content-Type": "application/json",
@@ -51,6 +51,7 @@ function DesignPage({url}) {
               body: JSON.stringify(newDesign),
           }).then(() => {
               console.log('new design', newDesign)
+              setDesigns([...designs], newDesign)
           })
 
   }
