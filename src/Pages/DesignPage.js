@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import './DesignPage.css'
 import Header from '../components/Header'
 import ColorPicker from '../components/ColorPicker'
-import { SwatchesPicker } from 'react-color'
+import { SwatchesPicker, GithubPicker } from 'react-color'
 import '../components/SockImage.css'
 import WholeSock from '../components/sockshapes/Wholesock'
 import AnkleS from '../components/sockshapes/Ankleshape'
@@ -86,7 +86,7 @@ function DesignPage({url, designs, setDesigns}) {
   }
 
   const addSwatch = () => {
-    setSwatches([color, ...swatches])
+    setSwatches([...swatches, color])
   }
 
   useEffect(() => {
@@ -148,8 +148,11 @@ function DesignPage({url, designs, setDesigns}) {
             />
 
        {saveShow === true ?  
-       <div className='saveModal'>
-            <br/><label className='name'>Name your design: </label>
+       <div className='create'>
+            
+            <div>
+            
+            <label className='name'>Name your design: </label>
             <input
                 className='name'
                 type='text' 
@@ -157,11 +160,14 @@ function DesignPage({url, designs, setDesigns}) {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
             />
+            </div>
             
             <button className='save' >REAL Save Design</button>
             <button className='save' onClick={() => setSaveShow(prev => !prev)}>Cancel</button> 
         </div>
-            : <button className='save' onClick={() => setSaveShow(prev => !prev)}>FAKE Save Design</button> }
+            : <div>
+              <button className='save' onClick={() => setSaveShow(prev => !prev)}>FAKE Save Design</button> 
+              </div>}
             
 
           </form>
@@ -173,17 +179,7 @@ function DesignPage({url, designs, setDesigns}) {
             
         <div className='sockpatt'>
 
-        <div className='color-picker'>
-                      <br/><br/>
-                      <SwatchesPicker width={290} height={560} color={color} onChange={updatedColor => setColor(updatedColor.hex)}/>
-                      {/* <h2>You picked {color}</h2>   */}
-                      <div>
-                      <SwatchesPicker width={100} colors={[swatches]} height={560} onChange={updatedColor => setColor(updatedColor.hex)}/></div>
-                      
-        </div>
-
             <div className='page-cont'>
-              <br/>
                     <WholeSock />
                     <RibS onClick={() => getColor('rib')} style={{fill: ribColor}}/>
                     <AnkleS onClick={() => getColor('ankle')} style={{fill: ankleColor}}/>
@@ -193,7 +189,15 @@ function DesignPage({url, designs, setDesigns}) {
 
             </div>
             
-          
+            <div className='color-picker'>
+                      <br/><br/>
+                      <div>
+                      <GithubPicker width={500} colors={swatches} height={75} onChange={updatedColor => setColor(updatedColor.hex)}/></div><br/>
+                      <SwatchesPicker width={1000} height={160} color={color} onChange={updatedColor => setColor(updatedColor.hex)}/>
+                      {/* <h2>You picked {color}</h2>   */}
+                     
+                      
+        </div>
   
             </div>
             {show && <div className='patternmodal'><SockPattern/></div>}

@@ -3,7 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom'
 import './DesignPage.css'
 import Header from '../components/Header'
 import ColorPicker from '../components/ColorPicker'
-import { SwatchesPicker } from 'react-color'
+import { SwatchesPicker, GithubPicker } from 'react-color'
 import SockImage from '../components/SockImage'
 import CreateForm from '../components/CreateForm'
 import '../components/SockImage.css'
@@ -38,8 +38,6 @@ console.log(sock)
   // FORM STUFF
 
   const [name, setName] = useState('');
-  const [ankle_height, setAnkle] = useState('crew');
-  const [size, setSize] = useState('');
   const [completed, setCompleted] = useState('no');
   const [inProg, setInProg] = useState('');
 
@@ -48,6 +46,16 @@ console.log(sock)
   const [heelColor, setHeelColor] = useState(sock?.heelColor)
   const [footColor, setFootColor] = useState(sock?.footColor)
   const [ribColor, setRibColor] = useState(sock?.ribColor)
+
+  const [swatches, setSwatches] = useState([])
+
+  const addSwatch = () => {
+    setSwatches([...swatches, newColor])
+  }
+
+  useEffect(() => {
+    addSwatch()
+  }, [newColor])
   
   const handleSubmit = (e) => {
       e.preventDefault();
@@ -165,6 +173,7 @@ console.log(sock)
         <button onClick={clearColor}>Clear Colors</button>
         <button onClick={() => setShow(prev => !prev)}>Show Pattern Preview</button>
         <button onClick={() => deleteDesign(id)}>Delete</button>
+        <button onClick={() => navigate('/design-library')}>Cancel</button>
         </div>
             
         <div className='sockpatt'>
@@ -184,6 +193,8 @@ console.log(sock)
           
                   <div className='color-picker'>
                       <br/><br/>
+                      <div>
+                      <GithubPicker width={500} colors={swatches} height={75} onChange={updatedColor => setNewColor(updatedColor.hex)}/></div><br/>
                       <SwatchesPicker width={1000} height={160} color={newColor} onChange={updatedColor => setNewColor(updatedColor.hex)}/>
                       <h2>You picked {newColor}</h2>  
                   </div>

@@ -1,7 +1,7 @@
 
   .color-picker {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
   }
@@ -10,10 +10,10 @@
     position: relative;
     z-index: 999;
     display: flex;
-    flex-wrap: wrap;
-    gap:30px;
-    justify-content: center;
+    gap: 30px;
+    justify-content: space-around;
     align-items: center;
+    margin-top: 10px;
   }
 
   .designbuttons {
@@ -39,7 +39,7 @@
 
   .sockpatt {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     gap: 0px;
     justify-content: space-between;
     align-items: center;
