@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import './DesignPage.css'
 import Header from '../components/Header'
@@ -21,6 +21,8 @@ import SockPattern from '../components/SockPattern'
 function DesignPage({url, designs, setDesigns}) {
 
   const navigate = useNavigate()
+
+  const [swatches, setSwatches] = useState([])
   
   const [color, setColor] = useState('#fff')
 
@@ -86,8 +88,15 @@ function DesignPage({url, designs, setDesigns}) {
       setToeColor('#fff')
   }
 
-  //END color picker stuff
+  const addSwatch = () => {
+    setSwatches([color, ...swatches])
+  }
 
+  useEffect(() => {
+    addSwatch()
+  }, [color])
+
+  //END color picker stuff
 
   return (
         <div>
@@ -154,9 +163,13 @@ function DesignPage({url, designs, setDesigns}) {
                       <br/><br/>
                       <SwatchesPicker width={290} height={560} color={color} onChange={updatedColor => setColor(updatedColor.hex)}/>
                       {/* <h2>You picked {color}</h2>   */}
+                      <div>
+                      <SwatchesPicker width={100} colors={[swatches]} height={560} onChange={updatedColor => setColor(updatedColor.hex)}/></div>
+                      
         </div>
 
             <div className='page-cont'>
+              <br/>
                     <WholeSock />
                     <RibS onClick={() => getColor('rib')} style={{fill: ribColor}}/>
                     <AnkleS onClick={() => getColor('ankle')} style={{fill: ankleColor}}/>
@@ -166,12 +179,12 @@ function DesignPage({url, designs, setDesigns}) {
 
             </div>
             
-           
+          
   
             </div>
             {show && <div className='patternmodal'><SockPattern/></div>}
           
-                 
+            <div style={{height:'100px'}}></div>   
         </div>
 
             

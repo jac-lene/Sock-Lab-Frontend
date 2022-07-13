@@ -15,6 +15,7 @@ How to accomplish each part:
 Overview
     - need to style all buttons in fun way
     - fix white space at the bottom of pages
+    - need to make it responsive for 3+ sizes
 
 Pattern 
     - figure out information needed for model

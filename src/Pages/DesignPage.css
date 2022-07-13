@@ -1,8 +1,9 @@
 
   .color-picker {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
+    justify-content: center;
   }
 
   .create {
@@ -37,7 +38,7 @@
   .sockpatt {
     display: flex;
     flex-direction: row;
-    gap: 60px;
+    gap: 0px;
     justify-content: space-between;
     align-items: center;
   }
