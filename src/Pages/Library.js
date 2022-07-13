@@ -2,8 +2,8 @@ import React, { useEffect } from 'react'
 import Header from '../components/Header'
 import './Library.css'
 import {Link} from 'react-router-dom'
+import '../components/SmallSockImage.css'
 import SmallSockImage from '../components/SmallSockImage'
-import SockImage from '../components/SockImage'
 
 function Library({getDesigns, designs}) {
 if (!designs) {
@@ -23,7 +23,7 @@ if (!designs) {
         <Header />
         <div className='main'>
         <div className='card-cont'>
-        {/* <SmallSockImage style={{width:'200px'}}/> */}
+        <SmallSockImage />
         {designs?.map((design) => 
             <div key={design.id} className='design-card'>
 

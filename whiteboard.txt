@@ -26,15 +26,15 @@ Pattern
         - write up pattern
 
 Design Page
-    - isActive state for selecting one segment at a time
     - prompt for name upon saving or add name as form element
-    - color palette recently used colors or inkwell, undo change maybe
+    - undo color change maybe
     - modal when you try to navigate away from the design page
     - animation on selection
     - stripes!!!
     - figure out randomizer
     - create chaos button
     DONE
+        - color palette recently used colors or inkwell
         - need color palette plan 
         - image cut into pieces and placed in an absolute positioning
         - need to set up form for create
@@ -48,6 +48,9 @@ Detail page
    - add new form for marking as complete/in progress
     DONE 
          - need form for editing
+
+Update Page
+    - add swatch palette
 
 Visual Library
     - create mini "card" with image like on design page

@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import './SmallSockImage.css'
-import WholeSock from './sockshapes/Wholesock'
-import AnkleS from './sockshapes/Ankleshape'
-import FootS from './sockshapes/Footshape'
-import HeelS from './sockshapes/Heelshape'
-import ToeS from './sockshapes/Toeshape'
-import RibS from './sockshapes/Ribshape'
+import WholeSock from './sockshapesSmall/Wholesock'
+import AnkleS from './sockshapesSmall/Ankleshape'
+import FootS from './sockshapesSmall/Footshape'
+import HeelS from './sockshapesSmall/Heelshape'
+import ToeS from './sockshapesSmall/Toeshape'
+import RibS from './sockshapesSmall/Ribshape'
 
 
 
@@ -35,7 +35,7 @@ function SmallSockImage({color}) {
 
 
   return (
-    <div className='page-cont'>
+    <div className='smallpage-cont'>
 
       <WholeSock />
       <RibS onClick={() => getColor('rib')} style={{fill: ribColor}}/>
