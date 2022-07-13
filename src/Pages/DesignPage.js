@@ -190,14 +190,11 @@ function DesignPage({url, designs, setDesigns}) {
             </div>
             
             <div className='color-picker'>
-                      <br/><br/>
                       <div>
                       <GithubPicker width={500} colors={swatches} height={75} onChange={updatedColor => setColor(updatedColor.hex)}/></div><br/>
                       <SwatchesPicker width={1000} height={160} color={color} onChange={updatedColor => setColor(updatedColor.hex)}/>
                       {/* <h2>You picked {color}</h2>   */}
-                     
-                      
-        </div>
+            </div>
   
             </div>
             {show && <div className='patternmodal'><SockPattern/></div>}

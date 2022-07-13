@@ -15,6 +15,7 @@ if (!designs) {
     getDesigns()
   }, [])
 
+  const revDesigns = designs.reverse()
 
   return (
     
@@ -24,7 +25,7 @@ if (!designs) {
         <div className='main'>
         <div className='card-cont'>
         
-        {designs?.map((design) => 
+        {revDesigns?.map((design) => 
             <div key={design.id} className='design-card'>
 
             <Link to={`/design-library/socks/${design.id}`} key={design.id}>
