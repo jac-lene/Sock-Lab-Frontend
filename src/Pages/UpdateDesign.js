@@ -14,6 +14,7 @@ import HeelS from '../components/sockshapes/Heelshape'
 import ToeS from '../components/sockshapes/Toeshape'
 import RibS from '../components/sockshapes/Ribshape'
 import SockPattern from '../components/SockPattern'
+import DesignPage from './DesignPage'
 
 
 
@@ -118,7 +119,7 @@ console.log(sock)
         <div>
             <Header />
             <div className="main">
-                <h2>Edit Design</h2>
+                <h2>Edit {sock?.name}</h2>
         <div className='designbuttons'>
           <form className='create' onSubmit={handleSubmit}>
             

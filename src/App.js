@@ -22,6 +22,7 @@ function App() {
   const getDesigns = async () => {
     await fetch(url)
       .then((res) => res.json())
+      .then((res) => res.reverse())
       .then((res) => setDesigns(res))
       .catch(console.error);
     }
@@ -67,6 +68,8 @@ function App() {
     getDesigns()
   }, [])
 
+
+
   if (!designs) {
     console.log('loading...')
   } else {console.log(designs)}
@@ -82,7 +85,7 @@ function App() {
       <Route path="/the-lab" element={<DesignPage url={url} designs={designs} setDesigns={setDesigns}/>}/>
       <Route path="/design-library" element={<Library getDesigns={getDesigns} designs={designs} />}/>
       <Route path="/design-library/socks/:id" element={<SockDetail sock={sock} setSock={setSock} getOne={getOne} deleteDesign={deleteDesign} updateDesign={updateDesign}/>}/>
-      <Route path="/design-library/socks/:id/edit" element={<UpdateDesign  url={url} sock={sock} setSock={setSock} getOne={getOne} deleteDesign={deleteDesign} designs={designs} getDesigns={getDesigns} updateDesign={updateDesign}/>}/>
+      <Route path="/design-library/socks/:id/edit" element={<UpdateDesign  url={url} sock={sock} setSock={setSock} getOne={getOne} deleteDesign={deleteDesign} designs={designs} getDesigns={getDesigns} updateDesign={updateDesign} />}/>
       </Routes>
 
     

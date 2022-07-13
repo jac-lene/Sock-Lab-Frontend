@@ -28,7 +28,7 @@ function SockDetail({ deleteDesign, getOne, sock }) {
       )
   }
 
-  console.log(sock.ankleColor, sock.ribColor, sock.footColor)
+  // console.log(sock.ankleColor, sock.ribColor, sock.footColor)
 
   return (
       <div >

@@ -5,17 +5,15 @@ import {Link} from 'react-router-dom'
 import '../components/SmallSockImage.css'
 import SmallSockImage from '../components/SmallSockImage'
 
-function Library({getDesigns, designs}) {
-if (!designs) {
-    console.log('loading')
-}
-    console.log(designs)
+function Library({getDesigns, designs, revDesigns}) {
+
+    
 
   useEffect(() => {
     getDesigns()
   }, [])
 
-  const revDesigns = designs.reverse()
+  
 
   return (
     
@@ -25,7 +23,7 @@ if (!designs) {
         <div className='main'>
         <div className='card-cont'>
         
-        {revDesigns?.map((design) => 
+        {designs?.map((design) => 
             <div key={design.id} className='design-card'>
 
             <Link to={`/design-library/socks/${design.id}`} key={design.id}>
