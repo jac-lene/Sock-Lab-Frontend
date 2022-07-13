@@ -7,6 +7,8 @@
   }
 
   .create {
+    position: relative;
+    z-index: 999;
     display: flex;
     flex-wrap: wrap;
     gap:30px;

@@ -4,8 +4,6 @@ import './DesignPage.css'
 import Header from '../components/Header'
 import ColorPicker from '../components/ColorPicker'
 import { SwatchesPicker } from 'react-color'
-import SockImage from '../components/SockImage'
-import CreateForm from '../components/CreateForm'
 import '../components/SockImage.css'
 import WholeSock from '../components/sockshapes/Wholesock'
 import AnkleS from '../components/sockshapes/Ankleshape'
@@ -27,12 +25,11 @@ function DesignPage({url, designs, setDesigns}) {
   const [color, setColor] = useState('#fff')
 
   const [show, setShow] = useState(false);
+  const [saveShow, setSaveShow] = useState(false);
 
   // FORM STUFF
 
   const [name, setName] = useState('My Sock Design');
-  const [ankle_height, setAnkle] = useState('crew');
-  const [size, setSize] = useState('');
   const [completed, setCompleted] = useState('no');
   const [inProg, setInProg] = useState('');
 
@@ -102,18 +99,9 @@ function DesignPage({url, designs, setDesigns}) {
         <div>
             <Header />
             <div className="main">
-        <div className='designbuttons'>
+        
           <form className='create' onSubmit={handleSubmit}>
-
-          <label className='name'>Name your design?</label>
-            <input
-                className='name'
-                type='text' 
-                required
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-            />
-
+            
             <label className='invisible'>Rib</label>
             <input
                 className='invisible'
@@ -158,11 +146,27 @@ function DesignPage({url, designs, setDesigns}) {
                 value={toeColor}
                 onChange={(e) => setToeColor(e.target.value)}
             />
-       
-            <button className='save'>REAL Save Design</button>
+
+       {saveShow === true ?  
+       <div className='saveModal'>
+            <br/><label className='name'>Name your design: </label>
+            <input
+                className='name'
+                type='text' 
+                required
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+            />
+            
+            <button className='save' >REAL Save Design</button>
+            <button className='save' onClick={() => setSaveShow(prev => !prev)}>Cancel</button> 
+        </div>
+            : <button className='save' onClick={() => setSaveShow(prev => !prev)}>FAKE Save Design</button> }
+            
 
           </form>
-        <button className='save'>FAKE Save Design</button>
+        <div className='designbuttons'>
+          <br/><br/><br/><br/>
         <button onClick={clearColor}>Clear Colors</button>
         <button onClick={() => setShow(prev => !prev)}>{show === false ? 'Show Pattern Preview' : 'Hide Pattern Preview'}</button>
         </div>
