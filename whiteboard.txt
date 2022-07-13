@@ -13,6 +13,7 @@ What are my stretch goals?
 How to accomplish each part: 
 
 Overview
+    - add Are you sure? to all deletes
     - need to style all buttons in fun way
     - fix white space at the bottom of pages
     - need to make it responsive for 3+ sizes
@@ -45,13 +46,14 @@ Design Page
         - generate pattern button
 
 Detail page
-   - add new form for marking as complete/in progress
-   - add pattern and toggle button
+    - add easy access rename button/form
+    - add new form for marking as complete/in progress
+    - add pattern and toggle button
     DONE 
          - need form for editing
 
 Update Page
-    - add edit name to form 
+    - organize button layout
     DONE
         - add swatch palette
 

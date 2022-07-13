@@ -171,7 +171,7 @@ console.log(sock)
 
           </form>
         <button onClick={clearColor}>Clear Colors</button>
-        <button onClick={() => setShow(prev => !prev)}>Show Pattern Preview</button>
+        <button onClick={() => setShow(prev => !prev)}>{show === false ? 'Show Pattern Preview' : 'Hide Pattern Preview'}</button>
         <button onClick={() => deleteDesign(id)}>Delete</button>
         <button onClick={() => navigate('/design-library')}>Cancel</button>
         </div>
