@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import React, { useState, useEffect } from 'react'
+import { useParams, useNavigate } from 'react-router-dom'
 import './DesignPage.css'
 import Header from '../components/Header'
 import ColorPicker from '../components/ColorPicker'
@@ -18,11 +18,20 @@ import SockPattern from '../components/SockPattern'
 
 
 
-function DesignPage({url, designs, setDesigns}) {
+function UpdateDesign({url, getDesigns, getOne, sock, updateDesign }) {
 
   const navigate = useNavigate()
+
+  const id = useParams().id
+
+
+  useEffect(() => {
+    getOne(id)
+}, [])
+
+console.log(sock)
   
-  const [color, setColor] = useState('#fff')
+  const [newColor, setNewColor] = useState('#fff')
 
   const [show, setShow] = useState(false);
 
@@ -34,28 +43,28 @@ function DesignPage({url, designs, setDesigns}) {
   const [completed, setCompleted] = useState('no');
   const [inProg, setInProg] = useState('');
 
-  const [toeColor, setToeColor] = useState('#fff')
-  const [ankleColor, setAnkleColor] = useState('#fff')
-  const [heelColor, setHeelColor] = useState('#fff')
-  const [footColor, setFootColor] = useState('#fff')
-  const [ribColor, setRibColor] = useState('#fff')
+  const [toeColor, setToeColor] = useState(sock?.toeColor)
+  const [ankleColor, setAnkleColor] = useState(sock?.ankleColor)
+  const [heelColor, setHeelColor] = useState(sock?.heelColor)
+  const [footColor, setFootColor] = useState(sock?.footColor)
+  const [ribColor, setRibColor] = useState(sock?.ribColor)
   
   const handleSubmit = (e) => {
       e.preventDefault();
-      const newDesign = {
+      const updatedDesign = {
           toeColor, ankleColor, heelColor, footColor, ribColor
       };
 
-     fetch(url, {
-              method: "post",
+     fetch(url+id, {
+              method: "put",
               headers: {
                   "Content-Type": "application/json",
               },
-              body: JSON.stringify(newDesign),
+              body: JSON.stringify(updatedDesign),
           }).then(() => {
-              console.log('new design', newDesign)
-              setDesigns([...designs], newDesign)
-              navigate('/design-library')
+              console.log('updated design', updatedDesign)
+              getDesigns()
+              navigate(`/design-library/socks/${id}`)
           })
 
   }
@@ -66,17 +75,25 @@ function DesignPage({url, designs, setDesigns}) {
 
   const getColor = (x) => {
     if (x === 'rib') {
-      setRibColor(color);
+      setRibColor(newColor);
     } else if (x === 'ankle') {
-      setAnkleColor(color)
+      setAnkleColor(newColor)
     } else if (x === 'foot') {
-      setFootColor(color)
+      setFootColor(newColor)
     } else if (x === 'heel') {
-      setHeelColor(color)
+      setHeelColor(newColor)
     } else if (x === 'toe') {
-      setToeColor(color)
+      setToeColor(newColor)
     }
   }
+
+//   const setColor = () => {
+//     setRibColor();
+//     setAnkleColor('#fff')
+//     setFootColor('#fff')
+//     setHeelColor('#fff')
+//     setToeColor('#fff')
+// }
 
   const clearColor = () => {
       setRibColor('#fff');
@@ -93,6 +110,7 @@ function DesignPage({url, designs, setDesigns}) {
         <div>
             <Header />
             <div className="main">
+                <h2>Edit Design</h2>
         <div className='designbuttons'>
           <form className='create' onSubmit={handleSubmit}>
             
@@ -150,12 +168,12 @@ function DesignPage({url, designs, setDesigns}) {
             
         <div className='sockpatt'>
             <div className='page-cont'>
-                    <WholeSock />
-                    <RibS onClick={() => getColor('rib')} style={{fill: ribColor}}/>
-                    <AnkleS onClick={() => getColor('ankle')} style={{fill: ankleColor}}/>
-                    <FootS onClick={() => getColor('foot')} style={{fill: footColor}}/>
-                    <HeelS onClick={() => getColor('heel')} style={{fill: heelColor}}/>
-                    <ToeS onClick={() => getColor('toe')} style={{fill: toeColor}}/>
+            <WholeSock />
+            <RibS onClick={() => getColor('rib')} style={{fill: ribColor}}/>
+            <AnkleS onClick={() => getColor('ankle')} style={{fill: ankleColor}}/>
+            <FootS onClick={() => getColor('foot')} style={{fill: footColor}}/>
+            <HeelS onClick={() => getColor('heel')} style={{fill: heelColor}}/>
+            <ToeS onClick={() => getColor('toe')} style={{fill: toeColor}}/>
 
             </div>
             
@@ -165,8 +183,8 @@ function DesignPage({url, designs, setDesigns}) {
           
                   <div className='color-picker'>
                       <br/><br/>
-                      <SwatchesPicker width={1000} height={160} color={color} onChange={updatedColor => setColor(updatedColor.hex)}/>
-                      <h2>You picked {color}</h2>  
+                      <SwatchesPicker width={1000} height={160} color={newColor} onChange={updatedColor => setNewColor(updatedColor.hex)}/>
+                      <h2>You picked {newColor}</h2>  
                   </div>
         </div>
 
@@ -175,4 +193,4 @@ function DesignPage({url, designs, setDesigns}) {
   )
 }
 
-export default DesignPage
+export default UpdateDesign

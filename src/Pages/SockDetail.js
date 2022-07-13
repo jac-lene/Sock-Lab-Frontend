@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 import WholeSock from '../components/sockshapes/Wholesock'
 import AnkleS from '../components/sockshapes/Ankleshape'
 import FootS from '../components/sockshapes/Footshape'
@@ -14,6 +14,8 @@ function SockDetail({ deleteDesign, getOne, sock }) {
 
   
   console.log(id)
+
+
 
   useEffect(() => {
       getOne(id)
@@ -35,7 +37,7 @@ function SockDetail({ deleteDesign, getOne, sock }) {
       <div className='page-cont'>
       <h2>{sock?.name}</h2>
       <div><br/>
-      <button>Edit</button>
+      <Link to={`/design-library/socks/${id}/edit`}><button>Edit Colors</button></Link>
       <button onClick={() => deleteDesign(id)}>Delete</button></div>
       <WholeSock />
       <RibS style={{fill: sock?.ribColor}}/>
