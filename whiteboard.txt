@@ -26,7 +26,6 @@ Pattern
         - write up pattern
 
 Design Page
-    - prompt for name upon saving or add name as form element
     - undo color change maybe
     - modal when you try to navigate away from the design page
     - animation on selection
@@ -34,6 +33,7 @@ Design Page
     - figure out randomizer
     - create chaos button
     DONE
+        - prompt for name upon saving or add name as form element
         - color palette recently used colors or inkwell
         - need color palette plan 
         - image cut into pieces and placed in an absolute positioning
@@ -46,16 +46,19 @@ Design Page
 
 Detail page
    - add new form for marking as complete/in progress
+   - add pattern and toggle button
     DONE 
          - need form for editing
 
 Update Page
-    - add swatch palette
+    - add edit name to form 
+    DONE
+        - add swatch palette
 
 Visual Library
-    - create mini "card" with image like on design page
     - show when design is marked as in progress or complete, maybe have different tabs with completed items
     DONE
+        - create mini "card" with image like on design page
         - Simply a show page, should be easy.
         - design layout
         - figure out how to link to details!! q for ernest
@@ -67,6 +70,7 @@ CHECK STRETCH GOALS
 
 
 THINGS I LEARNED
+ - React Color
  - PROPs on the SVGS. props.fill wow im screaming
  - how to use SVGs in general
  - i learned how to use forms the right way lol
@@ -75,5 +79,6 @@ THINGS I LEARNED
  - useNavigate to redirect
 
  Resources
+https://casesandberg.github.io/react-color/
 https://www.codegrepper.com/code-examples/javascript/how+to+hide+button+in+react
 https://upmostly.com/tutorials/how-to-refresh-a-page-or-component-in-react
