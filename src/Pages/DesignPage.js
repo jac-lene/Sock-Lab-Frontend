@@ -145,7 +145,7 @@ function DesignPage({url, designs, setDesigns}) {
 
           </form>
         <button onClick={clearColor}>Clear Colors</button>
-        <button onClick={() => setShow(prev => !prev)}>Show Pattern Preview</button>
+        <button onClick={() => setShow(prev => !prev)}>{show === false ? 'Show Pattern Preview' : 'Hide Pattern Preview'}</button>
         </div>
             
         <div className='sockpatt'>

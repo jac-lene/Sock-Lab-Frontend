@@ -24,12 +24,13 @@ Pattern
     DONE
         - write up pattern
 
-Design Page 
+Design Page
     - isActive state for selecting one segment at a time
     - prompt for name upon saving or add name as form element
     - color palette recently used colors or inkwell, undo change maybe
     - modal when you try to navigate away from the design page
     - animation on selection
+    - stripes!!!
     - figure out randomizer
     - create chaos button
     DONE
