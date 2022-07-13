@@ -37,6 +37,7 @@
   .sockpatt {
     display: flex;
     flex-direction: row;
+    gap: 60px;
     justify-content: space-between;
     align-items: center;
   }

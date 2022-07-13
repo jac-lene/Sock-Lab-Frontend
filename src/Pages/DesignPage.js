@@ -149,6 +149,13 @@ function DesignPage({url, designs, setDesigns}) {
         </div>
             
         <div className='sockpatt'>
+
+        <div className='color-picker'>
+                      <br/><br/>
+                      <SwatchesPicker width={290} height={560} color={color} onChange={updatedColor => setColor(updatedColor.hex)}/>
+                      {/* <h2>You picked {color}</h2>   */}
+        </div>
+
             <div className='page-cont'>
                     <WholeSock />
                     <RibS onClick={() => getColor('rib')} style={{fill: ribColor}}/>
@@ -159,15 +166,12 @@ function DesignPage({url, designs, setDesigns}) {
 
             </div>
             
+           
   
             </div>
             {show && <div className='patternmodal'><SockPattern/></div>}
           
-                  <div className='color-picker'>
-                      <br/><br/>
-                      <SwatchesPicker width={1000} height={160} color={color} onChange={updatedColor => setColor(updatedColor.hex)}/>
-                      <h2>You picked {color}</h2>  
-                  </div>
+                 
         </div>
 
             
