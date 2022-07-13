@@ -30,7 +30,7 @@ function DesignPage({url, designs, setDesigns}) {
 
   // FORM STUFF
 
-  const [name, setName] = useState('');
+  const [name, setName] = useState('My Sock Design');
   const [ankle_height, setAnkle] = useState('crew');
   const [size, setSize] = useState('');
   const [completed, setCompleted] = useState('no');
@@ -45,7 +45,7 @@ function DesignPage({url, designs, setDesigns}) {
   const handleSubmit = (e) => {
       e.preventDefault();
       const newDesign = {
-          toeColor, ankleColor, heelColor, footColor, ribColor
+         name, toeColor, ankleColor, heelColor, footColor, ribColor
       };
 
      fetch(url, {
@@ -104,7 +104,16 @@ function DesignPage({url, designs, setDesigns}) {
             <div className="main">
         <div className='designbuttons'>
           <form className='create' onSubmit={handleSubmit}>
-            
+
+          <label className='name'>Name your design?</label>
+            <input
+                className='name'
+                type='text' 
+                required
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+            />
+
             <label className='invisible'>Rib</label>
             <input
                 className='invisible'
@@ -150,9 +159,10 @@ function DesignPage({url, designs, setDesigns}) {
                 onChange={(e) => setToeColor(e.target.value)}
             />
        
-            <button className='save'>Save Design</button>
+            <button className='save'>REAL Save Design</button>
 
           </form>
+        <button className='save'>FAKE Save Design</button>
         <button onClick={clearColor}>Clear Colors</button>
         <button onClick={() => setShow(prev => !prev)}>{show === false ? 'Show Pattern Preview' : 'Hide Pattern Preview'}</button>
         </div>
