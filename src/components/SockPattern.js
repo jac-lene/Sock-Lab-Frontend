@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 
-function SockPattern({ sock, setShow, show}) {
+function SockPattern({ sock, setShow}) {
 
     // function checkColors() {
     //     const desColors =[sock?.ribColor, sock?.ankleColor, sock?.heelColor, sock?.footColor, sock?.toeColor]

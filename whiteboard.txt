@@ -20,15 +20,11 @@ Overview
     - need to make it responsive for 3+ sizes
 
 Pattern 
-    MODEL INFO 
-        -
-
-    - figure out information needed for model
-        - new model needed?
     - fix modal styling
     - figure out how to link to pdf or print
     DONE
         - write up pattern
+        - figure out information needed for model
 
 Design Page
     - undo color change maybe
@@ -50,11 +46,11 @@ Design Page
         - generate pattern button
 
 Detail page
-    - add pattern and toggle button
     - add easy access rename button/form
     - add new form for marking as complete/in progress
     DONE 
          - need form for editing
+         - add pattern and toggle button
 
 Update Page
     - organize button layout
