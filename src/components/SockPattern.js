@@ -1,6 +1,24 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 function SockPattern({ sock, setShow, show}) {
+
+    // function checkColors() {
+    //     const desColors =[sock?.ribColor, sock?.ankleColor, sock?.heelColor, sock?.footColor, sock?.toeColor]
+    //     desColors.forEach((i) => {
+    //         desColors.forEach((j) => {
+    //             if (desColors[0] === j) {
+    //                 return(console.log(j))
+    //             }
+    //         })
+    //     })
+       
+    //     }
+// 
+// useEffect(() => {
+//     checkColors()
+// }, [])
+    
+
   return (
     <div> 
         <div>
@@ -23,31 +41,33 @@ function SockPattern({ sock, setShow, show}) {
             <div style={{display:'flex', justifyContent:'center', alignItems:'center', gap:'20px'}}>
 
             <div style={{display:'flex', flexDirection:'column', justifyContent:'center', alignItems:'center'}}>
-                <p><b>CC1</b> </p>
-                <div style={{height:'30px', width:'30px', backgroundColor:sock.ribColor}}></div>
+                <p><b>Rib</b> </p>
+                <div style={{height:'30px', width:'30px', backgroundColor:sock?.ribColor}}></div>
             </div>
 
-                { sock?.ankleColor !== '#fff' ?<div style={{display:'flex', flexDirection:'column', justifyContent:'center', alignItems:'center'}}><p><b>CC2</b> </p>
-                <div style={{height:'30px', width:'30px', backgroundColor: sock.ankleColor}}></div></div> : null}
+                { sock?.ankleColor !== '#fff' ?<div style={{display:'flex', flexDirection:'column', justifyContent:'center', alignItems:'center'}}><p><b>Leg</b> </p>
+                <div style={{height:'30px', width:'30px', backgroundColor: sock?.ankleColor}}></div></div> : null}
 
-                { sock?.ankleColor !== '#fff' ?<div style={{display:'flex', flexDirection:'column', justifyContent:'center', alignItems:'center'}}><p><b>CC3</b> </p>
-                <div style={{height:'30px', width:'30px', backgroundColor: sock.heelColor}}></div></div> : null}
+                { sock?.ankleColor !== '#fff' ?<div style={{display:'flex', flexDirection:'column', justifyContent:'center', alignItems:'center'}}><p><b>Heel</b> </p>
+                <div style={{height:'30px', width:'30px', backgroundColor: sock?.heelColor}}></div></div> : null}
 
-                { sock?.ankleColor !== '#fff' ?<div style={{display:'flex', flexDirection:'column', justifyContent:'center', alignItems:'center'}}><p><b>CC4</b> </p>
-                <div style={{height:'30px', width:'30px', backgroundColor: sock.footColor}}></div></div> : null}
+                { sock?.ankleColor !== '#fff' ?<div style={{display:'flex', flexDirection:'column', justifyContent:'center', alignItems:'center'}}><p><b>Foot</b> </p>
+                <div style={{height:'30px', width:'30px', backgroundColor: sock?.footColor}}></div></div> : null}
 
-                { sock?.ankleColor !== '#fff' ?<div style={{display:'flex', flexDirection:'column', justifyContent:'center', alignItems:'center'}}><p><b>CC5</b> </p>
-                <div style={{height:'30px', width:'30px', backgroundColor: sock.toeColor}}></div></div> : null}
+                { sock?.ankleColor !== '#fff' ?<div style={{display:'flex', flexDirection:'column', justifyContent:'center', alignItems:'center'}}><p><b>Toe</b> </p>
+                <div style={{height:'30px', width:'30px', backgroundColor: sock?.toeColor}}></div></div> : null}
 
             </div>
             <br/>
 
             <h2>Cuff</h2>
-            <p>With CC1 and US size 1 (2.25mm) needles, CO 39 (48, 57, 63, 72, 81) sts and join for working in the rnd, being careful now to twist your sts. Establish 2 x 1 ribbing pattern: [k2, p1] to end.</p>
-            <p>Work ribbing pattern for 19 more rnds, then break CC1.</p>
+            <p>With Rib yarn and US size 1 (2.25mm) needles, CO 39 (48, 57, 63, 72, 81) sts and join for working in the rnd, being careful now to twist your sts. Establish 2 x 1 ribbing pattern: [k2, p1] to end.</p>
+            <p>Work ribbing pattern for 19 more rnds{ sock?.ribColor === sock?.ankleColor ? '.' : ', then break Rib yarn.'}</p>
 
             <h2>Leg</h2>
-            <p>Join in CC2 and k1 rnd even in stockinetter, making the following increase or decrease according to your size: <br/>
+            <p>{sock?.ribColor === sock?.ankleColor ? 'Knit' : 'Join in Leg yarn and knit'} 1 rnd even in stockinette, making the following increase or decrease according to your size: 
+            </p>
+            <p>
             <b>Toddler:</b> K1, M1, k around to end. <b>40 sts.</b><br/>
             <b>Kid:</b> K around to end with no increase or decrease. <b>48 sts.</b> <br/>
             <b>S:</b> K1, ssk, k around to end. <b>56 sts.</b><br/>
@@ -58,7 +78,7 @@ function SockPattern({ sock, setShow, show}) {
             <p>Continue in stockinette until leg measures 1 (3, 5, 6, 6, 7)" or your desired length from cast on edge.</p>
 
             <h2>Heel Flap</h2>
-            <p>K across the first 20 (24, 28, 32, 36, 40) sts. Break CC2 and join in CC3. Begin working your heel flap back and forth across the remaining 20 (24, 28, 32, 36, 40) sts as follows:</p>
+            <p>K across the first 20 (24, 28, 32, 36, 40) sts. { sock?.ankleColor === sock?.heelColor ? 'Begin working your heel flap back and forth across the remaining 20 (24, 28, 32, 36, 40) sts as follows:' : 'Break Leg yarn and join in Heel yarn. Begin working your heel flap back and forth across the remaining 20 (24, 28, 32, 36, 40) sts as follows:'}</p>
             <p>
                 <b>Row 1:</b> K2, [sl1, k1] to end. Turn work.<br/>
                 <b>Row 2:</b> Sl1, p to end. Turn work. <br/>
@@ -76,11 +96,11 @@ function SockPattern({ sock, setShow, show}) {
                 <b>Row 4:</b> Sl 1, k5, ssk, k1, turn.<br/>
             </p>
             <p>
-                You have now established the following pattern for your heel turn: sl1, k or p to one stitch before the hap created by turning on the previous row, ssk or p2tog, k1 or p1, turn. Continue in this pattern until all your heel stitches have been worked. You should now have 13 (15, 17, 19, 21, 23) heel sts. Break CC3.
+                You have now established the following pattern for your heel turn: sl 1, k or p to one stitch before the hap created by turning on the previous row, ssk or p2tog, k1 or p1, turn. Continue in this pattern until all your heel stitches have been worked. You should now have 13 (15, 17, 19, 21, 23) heel sts. { sock?.heelColor === sock?.footColor ? 'Knit final right side row to end.' : 'Break Heel yarn.'}
             </p>
 
             <h2>Gusset</h2>
-            <p>Join in CC4. With the right side of your work facing, pick up and k 10 (12, 14, 16, 18, 20) sts along the left side of your heel flap.</p>
+            <p>{ sock?.heelColor === sock?.footColor ? '' : 'Join in Foot yarn. '} With the right side of your work facing, pick up and k 10 (12, 14, 16, 18, 20) sts along the left side of your heel flap.</p>
             <p>Next, k 20 (24, 28, 32, 36, 40) sts across the front of your sock. Pm, and pick up 10 (12, 14, 16, 18, 20) sts on the right side of your heel flap. K across the heel sts, then down the first set of new sts on the left side. You've reached the end of the rnd, and all your sts have now been picked up.</p>
 
             <h2>Gusset Decreases</h2>
@@ -98,7 +118,9 @@ function SockPattern({ sock, setShow, show}) {
 
             <h2>Toe Decreases</h2>
             <p>
-                Break CC4 and join in CC5. K 1 rnd even, then begin the following decreases:<br/>
+                {sock?.footColor === sock?.toeColor ? 'Knit 1 rnd even, then begin the following decreases:' : 'Break Foot yarn and join in Toe yarn. K 1 rnd even, then begin the following decreases:'}<br/>
+            </p>
+            <p>
                 <b>Rnd 1:</b> K1, ssk, k 14 (18, 22, 26, 30, 36) sts, k2tog, k1, pm, k1, ssk, k 14 (18, 22, 26, 30, 36), k2tog, k1.<br/>
                 <b>Rnd 1:</b> K.<br/>
                 <b>Rnd 1:</b> K1, ssk, k to 3 sts before marker, k2tog, k1, sl m, k1, ssk, k to 3 sts before end of rnd, k2tog, k1.<br/>
