@@ -120,7 +120,7 @@ function DesignPage({url, designs, setDesigns, randomColors}) {
         <div>
             <div><Header saving={saving} savePrompt={savePrompt}/></div>
             <div className="main">
-        <button onClick={() => chaosMode()}>CHAOS MODE</button>
+  
           <form className='create' onSubmit={handleSubmit}>
             
             <label className='invisible'>Rib</label>
@@ -195,6 +195,9 @@ function DesignPage({url, designs, setDesigns, randomColors}) {
         <button onClick={clearColor}>Clear Colors</button>
         </div>
             
+        <div className='chaosButton' onClick={() => chaosMode()}><div style={{width:'60px'}}>CHAOS MODE</div></div>
+
+
         <div className='sockpatt'>
 
             <div className='page-cont'>
