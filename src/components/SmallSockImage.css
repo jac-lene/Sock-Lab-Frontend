@@ -42,7 +42,7 @@ path{
 }
 
 .smallheel {
-    /* position:absolute; */
+    /* position:fixed; */
     position: relative;
     bottom: 204px;
     right: 146px;

@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 import ReactToPrint from 'react-to-print'
+import SmallSockImage from './SmallSockImage'
 
 
 
@@ -31,10 +32,24 @@ function SockPattern({ sock, setShow}) {
             <button style={{float: 'right'}} onClick={() => setShow(prev => !prev)}>Close</button>
             <ReactToPrint trigger={() => <button style={{float: 'right'}}>Print/Download</button>} content={() => componentRef.current}/>
         </div>
-        <div ref={componentRef} style={{margin:'30px', marginTop:'0px'}}>
+
+        <div ref={componentRef} className='print' >
+            <div className='centered'>
+            <br/><br/>
+
+            <h1>{sock?.name} Pattern</h1>
+            
+            <SmallSockImage rib={sock?.ribColor} ankle={sock?.ankleColor} heel={sock?.heelColor} foot={sock?.footColor} toe={sock?.toeColor}/>
+            
+
+            </div>
+        
+
+
         <div className='pattern'>
-        <br/><br/>
-            <h1>Pattern</h1>
+
+
+            
 
             <h2>Materials</h2>
             <p>Approximately 22 (29, 36, 43, 50, 57) grams/88 (116, 144, 172, 200, 228) yards TOTAL of fingering weight yarn.</p>

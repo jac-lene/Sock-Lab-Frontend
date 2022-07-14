@@ -64,15 +64,17 @@ const handleSubmit = (e) => {
       <div className='sockpatt'>
       
       
+     
+
       <div className='designbuttons' >
-        <h2>{sock?.name}</h2> <h4>{sock?.knitStatus}</h4>
+      <div> <h2>{sock?.name}</h2> <h4 style={{marginTop:'0'}}>{sock?.knitStatus}</h4></div>
         <br/>
 
       <button onClick={() => setFormShow(prev => !prev)}>KNIT STATUS</button>
 
       <Link to={`/design-library/socks/${id}/edit`}><button>Edit Design</button></Link>
 
-      <button onClick={() => setShow(prev => !prev)}>{show === false ? 'Show Pattern' : 'Hide Pattern'}</button>
+      <button onClick={() => setShow(prev => !prev)}>Show Pattern</button>
 
       </div>
 
@@ -102,9 +104,9 @@ const handleSubmit = (e) => {
       <div style={{height: '200px'}}></div>
       </div>
      
-      {show && <div   className='patternmodal'><div style={{margin:'30px'}} >
+      {show && <div className='patternmodal'>
       <SockPattern sock={sock} setShow={setShow} show={show} />
-      </div></div>}
+      </div>}
       </div>
      </div>
     );

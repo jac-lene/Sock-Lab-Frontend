@@ -166,13 +166,10 @@ function DesignPage({url, designs, setDesigns}) {
             : <div>
               <button className='save' onClick={() => setSaveShow(prev => !prev)}>FAKE Save Design</button> 
               </div>}
-            
+            </form>
 
-          </form>
         <div className='designbuttons'>
-          <br/><br/><br/><br/>
         <button onClick={clearColor}>Clear Colors</button>
-        <button onClick={() => setShow(prev => !prev)}>{show === false ? 'Show Pattern Preview' : 'Hide Pattern Preview'}</button>
         </div>
             
         <div className='sockpatt'>
@@ -195,7 +192,6 @@ function DesignPage({url, designs, setDesigns}) {
             </div>
   
             </div>
-            {show && <div className='patternmodal'><SockPattern setShow={setShow} show={show} /></div>}
           
             <div style={{height:'100px'}}></div>   
         </div>

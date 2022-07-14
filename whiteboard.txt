@@ -21,10 +21,10 @@ Overview
 
 Pattern 
     - fix modal styling
-    - figure out how to link to pdf or print
     DONE
         - write up pattern
         - figure out information needed for model
+        - figure out how to link to pdf or print
 
 Design Page
     - undo color change maybe

@@ -1,46 +1,54 @@
+.centered {
+  text-align: center;
+}
 
-  .color-picker {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
+.color-picker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 
-  .create {
-    position: relative;
-    z-index: 999;
-    display: flex;
-    gap: 30px;
-    justify-content: space-around;
-    align-items: center;
-    margin-top: 10px;
-  }
+.create {
+  position: relative;
+  z-index: 999;
+  display: flex;
+  gap: 30px;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 10px;
+}
 
-  .designbuttons {
-    display: flex;
-    flex-direction: row;
-    gap:20px;
-    justify-content: center;
-    align-items: center;
-  }
+.designbuttons {
+  display: flex;
+  flex-direction: row;
+  gap:20px;
+  justify-content: center;
+  align-items: center;
+}
 
-  .invisible {
-    display: none;
-  }
+.invisible {
+  display: none;
+}
 
-  .patternmodal {
-    position: relative;
-    bottom: 830px;
-    left: 0px;
-    z-index: 999;
-    border: 5px solid black;
-    background-color: white;
-  }
+.patternmodal {
+  position: relative;
+  bottom: 910px;
+  left: 0px;
+  z-index: 999;
+  background-color: white;
+  text-align: left;
+}
 
-  .sockpatt {
-    display: flex;
-    flex-direction: column;
-    gap: 0px;
-    justify-content: space-between;
-    align-items: center;
-  }
+.print {
+  margin: 30px;
+  margin-top: 0px;
+}
+
+.sockpatt {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  justify-content: space-between;
+  align-items: center;
+}
