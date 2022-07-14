@@ -4,7 +4,7 @@ QUESTIONS:
     - why status and name aren't getting updated, how to do that
     - where is the white space coming from :(
     - redirect for saving using confirm box???
-    
+
 
 What are my MVP goals?
     - an image of a sock that can be clicked and change color
@@ -37,9 +37,9 @@ Design Page
     - modal when you try to navigate away from the design page
     - animation on selection
     - stripes!!!
-    - figure out randomizer
     - create chaos button
     DONE
+        - figure out randomizer
         - prompt for name upon saving or add name as form element
         - color palette recently used colors or inkwell
         - need color palette plan 

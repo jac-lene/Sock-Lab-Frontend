@@ -12,7 +12,7 @@ function Library({getDesigns, designs, setDesigns, revDesigns}) {
 
   useEffect(() => {
     getDesigns()
-  }, [])
+  }, [designs])
 
   
 
