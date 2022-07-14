@@ -90,3 +90,4 @@ THINGS I LEARNED
 https://casesandberg.github.io/react-color/
 https://www.codegrepper.com/code-examples/javascript/how+to+hide+button+in+react
 https://upmostly.com/tutorials/how-to-refresh-a-page-or-component-in-react
+https://www.npmjs.com/package/react-to-print

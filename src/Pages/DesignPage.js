@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import './DesignPage.css'
 import Header from '../components/Header'
 import ColorPicker from '../components/ColorPicker'
@@ -18,14 +18,16 @@ import SockPattern from '../components/SockPattern'
 
 function DesignPage({url, designs, setDesigns}) {
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
-  const [swatches, setSwatches] = useState([])
+  const [swatches, setSwatches] = useState([]);
   
-  const [color, setColor] = useState('#fff')
+  const [color, setColor] = useState('#fff');
 
   const [show, setShow] = useState(true);
   const [saveShow, setSaveShow] = useState(false);
+
+  const [saving, setSaving] = useState(null)
 
   // FORM STUFF
 
@@ -87,15 +89,26 @@ function DesignPage({url, designs, setDesigns}) {
     setSwatches([...swatches, color])
   }
 
+  const savePrompt = () => {
+    if ( (ribColor !== '#fff') || (ankleColor !== '#fff') || (heelColor !== '#fff') || (footColor !== '#fff') || (toeColor !== '#fff') ) { 
+      let answer = window.confirm('You have an unsaved design. Would you like to save first?')
+      setSaving(answer)
+      }
+  }
+
   useEffect(() => {
     addSwatch()
   }, [color])
+
+  useEffect(() => {
+    savePrompt()
+  }, [])
 
   //END color picker stuff
 
   return (
         <div>
-            <Header />
+            <div><Header saving={saving} savePrompt={savePrompt}/></div>
             <div className="main">
         
           <form className='create' onSubmit={handleSubmit}>
