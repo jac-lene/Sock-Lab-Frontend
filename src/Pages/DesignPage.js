@@ -16,11 +16,13 @@ import SockPattern from '../components/SockPattern'
 
 
 
-function DesignPage({url, designs, setDesigns}) {
+function DesignPage({url, designs, setDesigns, randomColors}) {
 
   const navigate = useNavigate();
 
   const [swatches, setSwatches] = useState([]);
+
+  console.log(swatches)
   
   const [color, setColor] = useState('#fff');
 
@@ -96,6 +98,14 @@ function DesignPage({url, designs, setDesigns}) {
       }
   }
 
+  const chaosMode = () => {
+    setRibColor(randomColors())
+    setAnkleColor(randomColors())
+    setHeelColor(randomColors())
+    setFootColor(randomColors())
+    setToeColor(randomColors())
+  }
+
   useEffect(() => {
     addSwatch()
   }, [color])
@@ -110,7 +120,7 @@ function DesignPage({url, designs, setDesigns}) {
         <div>
             <div><Header saving={saving} savePrompt={savePrompt}/></div>
             <div className="main">
-        
+        <button onClick={() => chaosMode()}>CHAOS MODE</button>
           <form className='create' onSubmit={handleSubmit}>
             
             <label className='invisible'>Rib</label>
@@ -200,8 +210,9 @@ function DesignPage({url, designs, setDesigns}) {
             <div className='color-picker'>
                       <div>
                       <GithubPicker width={500} colors={swatches} height={75} onChange={updatedColor => setColor(updatedColor.hex)}/></div><br/>
-                      <SwatchesPicker width={1000} height={160} color={color} onChange={updatedColor => setColor(updatedColor.hex)}/>
-                      {/* <h2>You picked {color}</h2>   */}
+                      <SwatchesPicker 
+                      width={1000} height={160} color={color} onChange={updatedColor => setColor(updatedColor.hex)}/>
+                      <h2>You picked {color}</h2>  
             </div>
   
             </div>
