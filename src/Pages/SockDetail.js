@@ -1,5 +1,6 @@
 import React, {useEffect, useState } from 'react'
 import { useParams, Link, useNavigate } from 'react-router-dom'
+
 import WholeSock from '../components/sockshapes/Wholesock'
 import AnkleS from '../components/sockshapes/Ankleshape'
 import FootS from '../components/sockshapes/Footshape'
@@ -10,6 +11,7 @@ import Header from '../components/Header'
 import SockPattern from '../components/SockPattern'
 
 function SockDetail({ url, getDesigns, deleteDesign, getOne, sock, setDesigns, designs }) {
+
 
   const navigate = useNavigate()
   if(!sock) {
@@ -100,7 +102,9 @@ const handleSubmit = (e) => {
       <div style={{height: '200px'}}></div>
       </div>
      
-      {show && <div className='patternmodal'><SockPattern sock={sock} setShow={setShow} show={show} /></div>}
+      {show && <div   className='patternmodal'><div style={{margin:'30px'}} >
+      <SockPattern sock={sock} setShow={setShow} show={show} />
+      </div></div>}
       </div>
      </div>
     );

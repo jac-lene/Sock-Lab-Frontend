@@ -1,6 +1,11 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
+import ReactToPrint from 'react-to-print'
+
+
 
 function SockPattern({ sock, setShow}) {
+
+    const componentRef = useRef()
 
     // function checkColors() {
     //     const desColors =[sock?.ribColor, sock?.ankleColor, sock?.heelColor, sock?.footColor, sock?.toeColor]
@@ -21,10 +26,12 @@ function SockPattern({ sock, setShow}) {
 
   return (
     <div> 
+       
         <div>
             <button style={{float: 'right'}} onClick={() => setShow(prev => !prev)}>Close</button>
+            <ReactToPrint trigger={() => <button style={{float: 'right'}}>Print/Download</button>} content={() => componentRef.current}/>
         </div>
-        
+        <div ref={componentRef} style={{margin:'30px', marginTop:'0px'}}>
         <div className='pattern'>
         <br/><br/>
             <h1>Pattern</h1>
@@ -132,6 +139,7 @@ function SockPattern({ sock, setShow}) {
             <p>
                 Weave in all ends and block your socks!
             </p>
+        </div>
         </div>
   </div>
   )
