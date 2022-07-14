@@ -9,7 +9,7 @@ import RibS from '../components/sockshapes/Ribshape'
 import Header from '../components/Header'
 import SockPattern from '../components/SockPattern'
 
-function SockDetail({ url, getDesigns, deleteDesign, getOne, sock }) {
+function SockDetail({ url, getDesigns, deleteDesign, getOne, sock, setDesigns, designs }) {
 
   const navigate = useNavigate()
   if(!sock) {
@@ -19,6 +19,7 @@ function SockDetail({ url, getDesigns, deleteDesign, getOne, sock }) {
 
   const [knitStatus, setKnitStatus] = useState(sock?.knitStatus);
   const [show, setShow] = useState(false);
+  const [formShow, setFormShow] = useState(false);
  
   const id = useParams().id
   // console.log(id)
@@ -26,6 +27,10 @@ function SockDetail({ url, getDesigns, deleteDesign, getOne, sock }) {
   useEffect(() => {
       getOne(id)
   }, [])
+
+  useEffect(() => {
+    // setDesigns(designs)
+}, [])
 
 const handleSubmit = (e) => {
     e.preventDefault()
@@ -41,7 +46,10 @@ const handleSubmit = (e) => {
           body: JSON.stringify(updatedDesign),
       }).then(() => {
           console.log('updated design', updatedDesign)
+          setFormShow(prev => !prev)
+          getOne(id)
           getDesigns()
+          setDesigns(designs)
           navigate(`/design-library/socks/${id}`)
       })
 }
@@ -54,12 +62,19 @@ const handleSubmit = (e) => {
       <div className='sockpatt'>
       
       
-      <div className='designbuttons' ><h2>{sock?.name}</h2><br/>
+      <div className='designbuttons' >
+        <h2>{sock?.name}</h2> <h4>{sock?.knitStatus}</h4>
+        <br/>
+
+      <button onClick={() => setFormShow(prev => !prev)}>KNIT STATUS</button>
+
       <Link to={`/design-library/socks/${id}/edit`}><button>Edit Design</button></Link>
+
       <button onClick={() => setShow(prev => !prev)}>{show === false ? 'Show Pattern' : 'Hide Pattern'}</button>
+
       </div>
 
-      <form onSubmit={handleSubmit}>
+    {formShow === true ?  <form onSubmit={handleSubmit}>
         <div style={{display:'flex', justifyContent:'center', gap:'10px'}}>
           <label>Knit Status:</label>
           <select value={knitStatus} onChange={(e)=> {setKnitStatus(e.target.value)}}>
@@ -70,7 +85,8 @@ const handleSubmit = (e) => {
           </select>
           <button type='submit'>Save</button>
         </div>
-      </form>
+      </form> : null}
+     
 
 
       <div className='page-cont'>

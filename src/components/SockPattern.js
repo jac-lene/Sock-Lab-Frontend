@@ -40,22 +40,22 @@ function SockPattern({ sock, setShow}) {
             <h2 style={{marginBottom:'10px'}}>Color Guide</h2>
             <div style={{display:'flex', justifyContent:'center', alignItems:'center', gap:'20px'}}>
 
-            <div style={{display:'flex', flexDirection:'column', justifyContent:'center', alignItems:'center'}}>
+                <div style={{display:'flex', flexDirection:'column', justifyContent:'center', alignItems:'center'}}>
                 <p><b>Rib</b> </p>
-                <div style={{height:'30px', width:'30px', backgroundColor:sock?.ribColor}}></div>
-            </div>
+                <div style={{height:'30px', width:'30px',  border:"2px solid black", backgroundColor:sock?.ribColor}}></div>
+                </div>
 
-                { sock?.ankleColor !== '#fff' ?<div style={{display:'flex', flexDirection:'column', justifyContent:'center', alignItems:'center'}}><p><b>Leg</b> </p>
-                <div style={{height:'30px', width:'30px', backgroundColor: sock?.ankleColor}}></div></div> : null}
+                <div style={{display:'flex', flexDirection:'column', justifyContent:'center', alignItems:'center'}}><p><b>Leg</b> </p>
+                <div style={{height:'30px', width:'30px', border:"2px solid black", backgroundColor: sock?.ankleColor}}></div></div>
 
-                { sock?.ankleColor !== '#fff' ?<div style={{display:'flex', flexDirection:'column', justifyContent:'center', alignItems:'center'}}><p><b>Heel</b> </p>
-                <div style={{height:'30px', width:'30px', backgroundColor: sock?.heelColor}}></div></div> : null}
+                <div style={{display:'flex', flexDirection:'column', justifyContent:'center', alignItems:'center'}}><p><b>Heel</b> </p>
+                <div style={{height:'30px', width:'30px', border:"2px solid black", backgroundColor: sock?.heelColor}}></div></div> 
 
-                { sock?.ankleColor !== '#fff' ?<div style={{display:'flex', flexDirection:'column', justifyContent:'center', alignItems:'center'}}><p><b>Foot</b> </p>
-                <div style={{height:'30px', width:'30px', backgroundColor: sock?.footColor}}></div></div> : null}
+                <div style={{display:'flex', flexDirection:'column', justifyContent:'center', alignItems:'center'}}><p><b>Foot</b> </p>
+                <div style={{height:'30px', width:'30px', border:"2px solid black", backgroundColor: sock?.footColor}}></div></div>
 
-                { sock?.ankleColor !== '#fff' ?<div style={{display:'flex', flexDirection:'column', justifyContent:'center', alignItems:'center'}}><p><b>Toe</b> </p>
-                <div style={{height:'30px', width:'30px', backgroundColor: sock?.toeColor}}></div></div> : null}
+                <div style={{display:'flex', flexDirection:'column', justifyContent:'center', alignItems:'center'}}><p><b>Toe</b> </p>
+                <div style={{height:'30px', width:'30px', border:"2px solid black", backgroundColor: sock?.toeColor}}></div></div>
 
             </div>
             <br/>
