@@ -4,6 +4,7 @@ import './Library.css'
 import {Link} from 'react-router-dom'
 import '../components/SmallSockImage.css'
 import SmallSockImage from '../components/SmallSockImage'
+import SockDetail from './SockDetail'
 
 function Library({getDesigns, designs, setDesigns, revDesigns}) {
 
@@ -26,7 +27,7 @@ function Library({getDesigns, designs, setDesigns, revDesigns}) {
         {designs?.map((design) => 
             <div key={design.id} className='design-card'>
 
-            <Link to={`/design-library/socks/${design.id}`} key={design.id}>
+            <Link to={`/design-library/socks/${design.id}`} key={design.id} >
 
             
             <SmallSockImage rib={design.ribColor} ankle={design.ankleColor} heel={design.heelColor} foot={design.footColor} toe={design.toeColor}/>

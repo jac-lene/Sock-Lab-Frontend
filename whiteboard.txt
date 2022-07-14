@@ -1,5 +1,9 @@
 FRONTEND PLAN
 
+QUESTIONS: 
+    - why status and name aren't getting updated, how to do that
+    - where is the white space coming from :(
+
 What are my MVP goals?
     - an image of a sock that can be clicked and change color
     - a pattern that changes based on the user input
@@ -20,11 +24,11 @@ Overview
     - need to make it responsive for 3+ sizes
 
 Pattern 
-    - fix modal styling
     DONE
         - write up pattern
         - figure out information needed for model
         - figure out how to link to pdf or print
+        - fix modal styling
 
 Design Page
     - undo color change maybe
@@ -46,12 +50,11 @@ Design Page
         - generate pattern button
 
 Detail page
-    - add easy access rename button/form
-    
     DONE 
          - need form for editing
          - add pattern and toggle button
          - add new form for marking as complete/in progress
+         - add easy access rename button/form
 
 Update Page
     - organize button layout
@@ -81,6 +84,7 @@ THINGS I LEARNED
  - how to mass convert svgs to components
  - animations
  - useNavigate to redirect
+ - React to print
 
  Resources
 https://casesandberg.github.io/react-color/

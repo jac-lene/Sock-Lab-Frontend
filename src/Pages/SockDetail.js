@@ -18,10 +18,13 @@ function SockDetail({ url, getDesigns, deleteDesign, getOne, sock, setDesigns, d
     console.log('loading')
   } else {}
 
+  console.log()
 
-  const [knitStatus, setKnitStatus] = useState(sock?.knitStatus);
-  const [show, setShow] = useState(false);
-  const [formShow, setFormShow] = useState(false);
+  const [knitStatus, setKnitStatus] = useState(sock?.knitStatus)
+  const [name, setName] = useState(sock?.name)
+  const [show, setShow] = useState(false)
+  const [formShow, setFormShow] = useState(false)
+  const [renameShow, setRenameShow] = useState(false)
  
   const id = useParams().id
   // console.log(id)
@@ -30,14 +33,11 @@ function SockDetail({ url, getDesigns, deleteDesign, getOne, sock, setDesigns, d
       getOne(id)
   }, [])
 
-  useEffect(() => {
-    // setDesigns(designs)
-}, [])
 
 const handleSubmit = (e) => {
     e.preventDefault()
     const updatedDesign = {
-      knitStatus
+      name, knitStatus
   };
 
  fetch(url + id, {
@@ -48,11 +48,16 @@ const handleSubmit = (e) => {
           body: JSON.stringify(updatedDesign),
       }).then(() => {
           console.log('updated design', updatedDesign)
-          setFormShow(prev => !prev)
+          navigate(`/design-library/socks/${id}`)
           getOne(id)
           getDesigns()
           setDesigns(designs)
-          navigate(`/design-library/socks/${id}`)
+          if (formShow) {
+            setFormShow(false)
+          }
+          if (renameShow) {
+            setRenameShow(false)
+          }
       })
 }
 
@@ -67,7 +72,8 @@ const handleSubmit = (e) => {
      
 
       <div className='designbuttons' >
-      <div> <h2>{sock?.name}</h2> <h4 style={{marginTop:'0'}}>{sock?.knitStatus}</h4></div>
+      <div> <h2>{sock?.name}</h2> <h4 style={{marginTop:'0'}}>{sock?.knitStatus}</h4>
+      <button onClick={() => setRenameShow(true)}>Rename</button></div>
         <br/>
 
       <button onClick={() => setFormShow(prev => !prev)}>KNIT STATUS</button>
@@ -77,6 +83,17 @@ const handleSubmit = (e) => {
       <button onClick={() => setShow(prev => !prev)}>{!show ? 'Show Pattern' : 'Hide Pattern'}</button>
 
       </div>
+
+      {renameShow === true ?  <form onSubmit={handleSubmit}>
+        <div style={{display:'flex', justifyContent:'center', gap:'10px'}}>
+          <input 
+          type='text'
+          value={name} 
+          onChange={(e)=> {setName(e.target.value)}}></input>
+          
+          <button type='submit'>Save</button>
+        </div>
+      </form> : null}
 
     {formShow === true ?  <form onSubmit={handleSubmit}>
         <div style={{display:'flex', justifyContent:'center', gap:'10px'}}>
