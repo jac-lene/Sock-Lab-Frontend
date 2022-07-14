@@ -1,10 +1,47 @@
 import React from 'react'
 
-function SockPattern() {
+function SockPattern({ sock, setShow, show}) {
   return (
     <div> 
+        <div>
+            <button style={{float: 'right'}} onClick={() => setShow(prev => !prev)}>Close</button>
+        </div>
+        
         <div className='pattern'>
+        <br/><br/>
             <h1>Pattern</h1>
+
+            <h2>Materials</h2>
+            <p>Approximately 22 (29, 36, 43, 50, 57) grams/88 (116, 144, 172, 200, 228) yards TOTAL of fingering weight yarn.</p>
+            <p>US Size 1 (2.25mm) knitting needles</p>
+            <p>A tapestry needle for weaving in ends</p>
+
+            <h2>Gauge</h2>
+            <p>40 sts over 4"(10cm) and 28 rows, knit in stockinette in the round and blocked.</p>
+
+            <h2>Color Guide</h2>
+            <div style={{display:'flex', justifyContent:'center', alignItems:'center', gap:'20px'}}>
+
+            <div style={{display:'flex', flexDirection:'column', justifyContent:'center', alignItems:'center'}}>
+                <p><b>CC1</b> </p>
+                <div style={{height:'30px', width:'30px', backgroundColor:sock.ribColor}}></div>
+            </div>
+
+                { sock?.ankleColor !== '#fff' ?<div style={{display:'flex', flexDirection:'column', justifyContent:'center', alignItems:'center'}}><p><b>CC2</b> </p>
+                <div style={{height:'30px', width:'30px', backgroundColor: sock.ankleColor}}></div></div> : null}
+
+                { sock?.ankleColor !== '#fff' ?<div style={{display:'flex', flexDirection:'column', justifyContent:'center', alignItems:'center'}}><p><b>CC3</b> </p>
+                <div style={{height:'30px', width:'30px', backgroundColor: sock.heelColor}}></div></div> : null}
+
+                { sock?.ankleColor !== '#fff' ?<div style={{display:'flex', flexDirection:'column', justifyContent:'center', alignItems:'center'}}><p><b>CC4</b> </p>
+                <div style={{height:'30px', width:'30px', backgroundColor: sock.footColor}}></div></div> : null}
+
+                { sock?.ankleColor !== '#fff' ?<div style={{display:'flex', flexDirection:'column', justifyContent:'center', alignItems:'center'}}><p><b>CC5</b> </p>
+                <div style={{height:'30px', width:'30px', backgroundColor: sock.toeColor}}></div></div> : null}
+
+            </div>
+            <br/>
+
             <h2>Cuff</h2>
             <p>With CC1 and US size 1 (2.25mm) needles, CO 39 (48, 57, 63, 72, 81) sts and join for working in the rnd, being careful now to twist your sts. Establish 2 x 1 ribbing pattern: [k2, p1] to end.</p>
             <p>Work ribbing pattern for 11 more rnds, then break CC1. Join in CC2 and wok ribbing pattern for 12 rvds. Break CC2.</p>

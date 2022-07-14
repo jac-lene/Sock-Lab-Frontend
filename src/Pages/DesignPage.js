@@ -24,14 +24,12 @@ function DesignPage({url, designs, setDesigns}) {
   
   const [color, setColor] = useState('#fff')
 
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState(true);
   const [saveShow, setSaveShow] = useState(false);
 
   // FORM STUFF
 
   const [name, setName] = useState('My Sock Design');
-  const [completed, setCompleted] = useState('no');
-  const [inProg, setInProg] = useState('');
 
   const [toeColor, setToeColor] = useState('#fff')
   const [ankleColor, setAnkleColor] = useState('#fff')
@@ -197,7 +195,7 @@ function DesignPage({url, designs, setDesigns}) {
             </div>
   
             </div>
-            {show && <div className='patternmodal'><SockPattern/></div>}
+            {show && <div className='patternmodal'><SockPattern setShow={setShow} show={show} /></div>}
           
             <div style={{height:'100px'}}></div>   
         </div>

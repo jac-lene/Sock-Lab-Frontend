@@ -13,12 +13,16 @@ What are my stretch goals?
 How to accomplish each part: 
 
 Overview
+    - DRY up the code
     - add Are you sure? to all deletes
     - need to style all buttons in fun way
     - fix white space at the bottom of pages
     - need to make it responsive for 3+ sizes
 
 Pattern 
+    MODEL INFO 
+        -
+
     - figure out information needed for model
         - new model needed?
     - fix modal styling
@@ -46,9 +50,9 @@ Design Page
         - generate pattern button
 
 Detail page
+    - add pattern and toggle button
     - add easy access rename button/form
     - add new form for marking as complete/in progress
-    - add pattern and toggle button
     DONE 
          - need form for editing
 

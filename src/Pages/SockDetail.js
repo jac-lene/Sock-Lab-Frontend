@@ -7,12 +7,14 @@ import HeelS from '../components/sockshapes/Heelshape'
 import ToeS from '../components/sockshapes/Toeshape'
 import RibS from '../components/sockshapes/Ribshape'
 import Header from '../components/Header'
+import SockPattern from '../components/SockPattern'
 
-function SockDetail({ deleteDesign, getOne, sock }) {
+function SockDetail({ url, deleteDesign, getOne, sock }) {
+
+  const [knitStatus, setKnitStatus] = useState(false);
+  const [show, setShow] = useState(true);
  
   const id = useParams().id
-
-  
   console.log(id)
 
 
@@ -28,17 +30,24 @@ function SockDetail({ deleteDesign, getOne, sock }) {
       )
   }
 
+
+
   // console.log(sock.ankleColor, sock.ribColor, sock.footColor)
 
   return (
       <div >
         <Header/>
       <div className='main'>
-      <div className='page-cont'>
+      <div className='sockpatt'>
+      
+
+      
       <h2>{sock?.name}</h2>
-      <div><br/>
+      <div className='designbuttons' ><br/>
       <Link to={`/design-library/socks/${id}/edit`}><button>Edit Design</button></Link>
+      <button onClick={() => setShow(prev => !prev)}>{show === false ? 'Show Pattern Preview' : 'Hide Pattern Preview'}</button>
       </div>
+      <div className='page-cont'>
       <WholeSock />
       <RibS style={{fill: sock?.ribColor}}/>
       <AnkleS style={{fill: sock?.ankleColor}}/>
@@ -47,6 +56,9 @@ function SockDetail({ deleteDesign, getOne, sock }) {
       <ToeS style={{fill: sock?.toeColor}}/>
       </div>
       <div style={{height: '200px'}}></div>
+      </div>
+     
+      {show && <div className='patternmodal'><SockPattern sock={sock} setShow={setShow} show={show} /></div>}
       </div>
      </div>
     );

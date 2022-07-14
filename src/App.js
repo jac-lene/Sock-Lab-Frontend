@@ -84,7 +84,7 @@ function App() {
       <Route path="/" element={<Home/>}/>
       <Route path="/the-lab" element={<DesignPage url={url} designs={designs} setDesigns={setDesigns}/>}/>
       <Route path="/design-library" element={<Library getDesigns={getDesigns} designs={designs} />}/>
-      <Route path="/design-library/socks/:id" element={<SockDetail sock={sock} setSock={setSock} getOne={getOne} deleteDesign={deleteDesign} updateDesign={updateDesign}/>}/>
+      <Route path="/design-library/socks/:id" element={<SockDetail url={url} sock={sock} setSock={setSock} getOne={getOne} deleteDesign={deleteDesign} updateDesign={updateDesign}/>}/>
       <Route path="/design-library/socks/:id/edit" element={<UpdateDesign  url={url} sock={sock} setSock={setSock} getOne={getOne} deleteDesign={deleteDesign} designs={designs} getDesigns={getDesigns} updateDesign={updateDesign} />}/>
       </Routes>
 
