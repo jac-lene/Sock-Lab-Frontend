@@ -74,7 +74,7 @@ const handleSubmit = (e) => {
 
       <Link to={`/design-library/socks/${id}/edit`}><button>Edit Design</button></Link>
 
-      <button onClick={() => setShow(prev => !prev)}>Show Pattern</button>
+      <button onClick={() => setShow(prev => !prev)}>{!show ? 'Show Pattern' : 'Hide Pattern'}</button>
 
       </div>
 
@@ -93,7 +93,7 @@ const handleSubmit = (e) => {
      
 
 
-      <div className='page-cont'>
+      { !show ? <div className='page-cont'>
       <WholeSock />
       <RibS style={{fill: sock?.ribColor}}/>
       <AnkleS style={{fill: sock?.ankleColor}}/>
@@ -101,12 +101,15 @@ const handleSubmit = (e) => {
       <HeelS style={{fill: sock?.heelColor}}/>
       <ToeS style={{fill: sock?.toeColor}}/>
       </div>
+      : 
+      <div className='patternmodal'>
+      <SockPattern sock={sock} setShow={setShow} show={show} /></div> 
+      }
+      
       <div style={{height: '200px'}}></div>
-      </div>
-     
-      {show && <div className='patternmodal'>
-      <SockPattern sock={sock} setShow={setShow} show={show} />
-      </div>}
+      </div> 
+      
+      
       </div>
      </div>
     );

@@ -29,7 +29,7 @@ function SockPattern({ sock, setShow}) {
     <div> 
        
         <div>
-            <button style={{float: 'right'}} onClick={() => setShow(prev => !prev)}>Close</button>
+            {/* <button style={{float: 'right'}} onClick={() => setShow(prev => !prev)}>Close</button> */}
             <ReactToPrint trigger={() => <button style={{float: 'right'}}>Print/Download</button>} content={() => componentRef.current}/>
         </div>
 
