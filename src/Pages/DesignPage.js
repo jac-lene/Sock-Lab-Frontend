@@ -12,6 +12,7 @@ import HeelS from '../components/sockshapes/Heelshape'
 import ToeS from '../components/sockshapes/Toeshape'
 import RibS from '../components/sockshapes/Ribshape'
 import SockPattern from '../components/SockPattern'
+import { getNodeText } from '@testing-library/react'
 
 
 
@@ -21,8 +22,6 @@ function DesignPage({url, designs, setDesigns, randomColors}) {
   const navigate = useNavigate();
 
   const [swatches, setSwatches] = useState([]);
-
-  console.log(swatches)
   
   const [color, setColor] = useState('#fff');
 
