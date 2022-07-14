@@ -72,8 +72,25 @@ const handleSubmit = (e) => {
      
 
       <div className='designbuttons' >
-      <div> <h2>{sock?.name}</h2> <h4 style={{marginTop:'0'}}>{sock?.knitStatus}</h4>
-      <button onClick={() => setRenameShow(true)}>Rename</button></div>
+      <div> 
+      {renameShow === true ?  <form onSubmit={handleSubmit}>
+        <br/>
+        <div style={{display:'flex', flexDirection:'column', justifyContent:'center', alignItems:'center', gap:'10px'}}>
+          <input 
+          type='text'
+          value={name} 
+          onChange={(e)=> {setName(e.target.value)}} style={{fontSize:'23px', fontWeight:'bold', width:'180px', textAlign:'center'}}></input>
+           <h4 style={{marginTop:'5px', marginBottom:'5px'}}>{sock?.knitStatus}</h4>
+          <button type='submit'>Save</button>
+        </div>
+      </form> 
+      : <div>
+        <h2>{sock?.name}</h2> 
+      <h4 style={{marginTop:'0'}}>{sock?.knitStatus}</h4>
+      <button onClick={() => setRenameShow(true)}>Rename</button></div>}
+        
+      </div>
+      
         <br/>
 
       <button onClick={() => setFormShow(prev => !prev)}>KNIT STATUS</button>
@@ -84,16 +101,7 @@ const handleSubmit = (e) => {
 
       </div>
 
-      {renameShow === true ?  <form onSubmit={handleSubmit}>
-        <div style={{display:'flex', justifyContent:'center', gap:'10px'}}>
-          <input 
-          type='text'
-          value={name} 
-          onChange={(e)=> {setName(e.target.value)}}></input>
-          
-          <button type='submit'>Save</button>
-        </div>
-      </form> : null}
+     
 
     {formShow === true ?  <form onSubmit={handleSubmit}>
         <div style={{display:'flex', justifyContent:'center', gap:'10px'}}>
