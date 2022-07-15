@@ -1,4 +1,16 @@
+.addstashform {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
+.addyarn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
 .App {
   text-align: center;
@@ -37,6 +49,21 @@ a {
 body {
   background-color: white;
   /* min-height: 100vh; */
+}
+
+.colorPick {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.colors {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
 }
 
 .dash-divider {

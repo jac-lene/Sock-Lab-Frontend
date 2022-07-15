@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useParams, useNavigate, Link } from 'react-router-dom'
+import { ChromePicker } from 'react-color'
 import Header from '../components/Header'
 
 function StashEdit({ url, stash, setStash, getStash, yarn, setYarn, getYarn, updateYarn }) {
@@ -11,12 +12,16 @@ useEffect(() => {
     getYarn(id)
 }, [])
 
+
+const [colorCode, setColorCode] = useState(yarn?.colorCode)
+const [color, setColor] = useState(yarn?.colorCode)
 const [brand, setBrand] = useState(yarn?.brand)
 const [colorName, setColorName] = useState(yarn?.colorName)
-const [colorCode, setColorCode] = useState(yarn?.colorCode)
 const [yardage, setYardage] = useState(yarn?.yardage)
 const [grams, setGrams] = useState(yarn?.grams)
 const [description, setDescription] = useState(yarn?.description)
+const [show, setShow] = useState(false)
+
 
 const handleSubmit = (e) => {
     e.preventDefault();
@@ -50,8 +55,14 @@ if (!yarn) {
         
         <h1>Stash Edit</h1>
         
-        <form className='stashedit' onSubmit={handleSubmit}>
-            <label>Brand</label>
+
+        <Link to={`/stash/yarn/${id}`}><button>Cancel</button></Link>
+        
+        <form className='addstashform' onSubmit={handleSubmit}>
+            
+            <button type='submit'>Save</button>
+                <br/><br/>
+                <div className='addyarn'><label>Brand</label>
             <input
                 type='text'
                 required
@@ -62,12 +73,7 @@ if (!yarn) {
                 type='text'
                 value={colorName}
                 onChange={(e) => setColorName((e.target.value))}/>
-            <label>Color</label>
-            <input
-                type='text'
-                required
-                value={colorCode}
-                onChange={(e) => setColorCode((e.target.value))}/>
+
             <label>Yardage</label>
             <input
                 type='text'
@@ -82,14 +88,38 @@ if (!yarn) {
             <input
                 type='text'
                 value={description}
-                onChange={(e) => setDescription((e.target.value))}/>
+                onChange={(e) => setDescription((e.target.value))}/></div>
+            
+<br/><br/>
+<div className='colorPick'>
+<label>Color (click to change):</label>
+<input
+                className='invisible'
+                type='text'
+                required
+                value={colorCode}
+                onChange={() => setColorCode(color)}
+                />
+                <br/><br/>
+                <div style={{width:'100px', height:'100px', border:"1px solid black", backgroundColor:color}} onClick={() => setShow(prev => !prev)}></div>
 
-            <button type='submit'>Save</button>
-        </form>
-
-
-        <Link to={`/stash/yarn/${id}`}><button>Cancel</button></Link>
+{ show ? <div>
+                <br/><br/>
+            <ChromePicker disableAlpha={true} color={color} onChange={updatedColor => {return (setColor(updatedColor.hex), setColorCode(updatedColor.hex))}}/>
+            
         
+            {/* <h2>You picked {color}, {colorCode}</h2>  */}
+            </div> 
+ : null }
+
+
+</div> 
+
+            
+        </form>
+            
+        <div style={{height: '200px'}}></div>
+
         </div>
     
     
