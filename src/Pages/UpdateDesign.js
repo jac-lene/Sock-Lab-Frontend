@@ -73,6 +73,7 @@ console.log(sock)
           }).then(() => {
               console.log('updated design', updatedDesign)
               getDesigns()
+              getOne(id)
               navigate(`/design-library/socks/${id}`)
           })
 

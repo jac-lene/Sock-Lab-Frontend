@@ -7,6 +7,10 @@ import Library from './Pages/Library';
 import SockDetail from './Pages/SockDetail';
 import UpdateDesign from './Pages/UpdateDesign';
 import StashView from './Pages/StashView';
+import StashDetail from './Pages/StashDetail';
+import StashEdit from './Pages/StashEdit';
+import StashAdd from './Pages/StashAdd';
+
 
 
 
@@ -18,10 +22,16 @@ function App() {
 
   const [sock, setSock] = useState(null);
   const [designs, setDesigns] = useState(null);
-  const url = "http://localhost:8000/socks/"
+  const sockurl = "http://localhost:8000/socks/"
+
+  const [stash, setStash] = useState(null);
+  const [yarn, setYarn] = useState(null)
+  const stashurl = "http://localhost:8000/stash/"
+
+  //DESIGNS
 
   const getDesigns = async () => {
-    await fetch(url)
+    await fetch(sockurl)
       .then((res) => res.json())
       .then((res) => res.reverse())
       .then((res) => setDesigns(res))
@@ -29,14 +39,14 @@ function App() {
     }
 
   const getOne = async (id) => {
-    await fetch(url + id)
+    await fetch(sockurl + id)
     .then((res) => res.json())
     .then((res) => setSock(res))
     .catch(console.error);
   }
 
   const deleteDesign = async (id) => {
-    await fetch(url + id, {
+    await fetch(sockurl + id, {
       method: "delete",
     })
     .then(() => {
@@ -46,7 +56,7 @@ function App() {
   };
   
     const updateDesign = async (id) => {
-      await fetch(url + id, {
+      await fetch(sockurl + id, {
         method: "put",
         headers: {
           "Content-Type": "application/json",
@@ -55,6 +65,45 @@ function App() {
       });
       setDesigns(designs)
     };
+
+// STASH
+
+    const getStash = async () => {
+      await fetch(stashurl)
+        .then((res) => res.json())
+        .then((res) => res.reverse())
+        .then((res) => setStash(res))
+        .catch(console.error);
+      }
+  
+    const getYarn = async (id) => {
+      await fetch(stashurl + id)
+      .then((res) => res.json())
+      .then((res) => setYarn(res))
+      .catch(console.error);
+    }
+  
+    const deleteYarn = async (id) => {
+      await fetch(stashurl + id, {
+        method: "delete",
+      })
+      .then(() => {
+        setStash(stash)
+        navigate('/stash')
+      })
+      setStash(stash)
+    };
+    
+      const updateYarn = async (id) => {
+        await fetch(stashurl + id, {
+          method: "put",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(yarn),
+        });
+        setStash(stash)
+      };
 
   // const [ header, setHeader ] = useState('home')
 
@@ -76,6 +125,7 @@ const randomColors = () => {
 
   useEffect(() => {
     getDesigns()
+    getStash()
   }, [])
 
 
@@ -92,12 +142,19 @@ const randomColors = () => {
      
       <Routes>
       <Route path="/" element={<Home/>}/>
-      <Route path="/the-lab" element={<DesignPage url={url} designs={designs} setDesigns={setDesigns} randomColors={randomColors}/>}/>
+      <Route path="/the-lab" element={<DesignPage url={sockurl} designs={designs} setDesigns={setDesigns} randomColors={randomColors}/>}/>
       <Route path="/design-library" element={<Library getDesigns={getDesigns} designs={designs} />}/>
-      <Route path="/design-library/socks/:id" element={<SockDetail url={url} sock={sock} setSock={setSock} getOne={getOne} deleteDesign={deleteDesign} updateDesign={updateDesign} getDesigns={getDesigns} designs={designs} setDesigns={setDesigns} />}/>
-      <Route path="/design-library/socks/:id/edit" element={<UpdateDesign  url={url} sock={sock} setSock={setSock} getOne={getOne} deleteDesign={deleteDesign} designs={designs} getDesigns={getDesigns} updateDesign={updateDesign} />}/>
+      <Route path="/design-library/socks/:id" element={<SockDetail url={sockurl} sock={sock} setSock={setSock} getOne={getOne} deleteDesign={deleteDesign} updateDesign={updateDesign} getDesigns={getDesigns} designs={designs} setDesigns={setDesigns} />}/>
+      <Route path="/design-library/socks/:id/edit" element={<UpdateDesign  url={sockurl} sock={sock} setSock={setSock} getOne={getOne} deleteDesign={deleteDesign} designs={designs} getDesigns={getDesigns} updateDesign={updateDesign} />}/>
 
-      <Route path="/stash" element={<StashView/>}/>
+      <Route path="/stash" element={<StashView url={stashurl} stash={stash} setStash={setStash} getStash={getStash}/>}/>
+
+      <Route path="/stash/yarn/add" element={<StashAdd url={stashurl} stash={stash} setStash={setStash} getStash={getStash} yarn={yarn} setYarn={setYarn} getYarn={getYarn} />}/>
+
+      <Route path="/stash/yarn/:id" element={<StashDetail url={stashurl} stash={stash} setStash={setStash} getStash={getStash} yarn={yarn} setYarn={setYarn} getYarn={getYarn} deleteYarn={deleteYarn}/>}/>
+
+      <Route path="/stash/yarn/:id/edit" element={<StashEdit url={stashurl} stash={stash} setStash={setStash} getStash={getStash} yarn={yarn} setYarn={setYarn} getYarn={getYarn} updateYarn={updateYarn}/>}/>
+
       </Routes>
 
     
