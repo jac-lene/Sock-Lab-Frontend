@@ -14,12 +14,15 @@
   background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 120 120' version='1.1' xmlns='http://www.w3.org/2000/svg'><circle cx='60' cy='60' r='50' fill='transparent'/><circle cx='60' cy='60' r='45' stroke='%234dd0e1' stroke-width='15' stroke-dasharray='0 26' stroke-linecap='round' fill='transparent'/></svg>");
   background-size: 100% 100%;
   background-repeat: no-repeat;
-  filter: drop-shadow(0px 0px 5px black);
+  filter: drop-shadow(0px 0px 4px black);
   /* animation: spin infinite alternate .7s linear; */
+  animation: throb 5s linear infinite alternate;
   position: absolute; 
+  cursor: pointer;
+  /* animation: name duration timing-function delay iteration-count direction fill-mode; */
   z-index: 5;
-  bottom: 370px;
-  right: 300px;
+  bottom: 270px;
+  right: 75px;
 }
 
 .chaosButton:hover {
@@ -75,6 +78,7 @@
   gap: 0px;
   justify-content: space-between;
   align-items: center;
+  width: 500px;
 }
 
 .swatches {
@@ -91,15 +95,17 @@ to {
 
 }
 
-@keyframes shrink {
+@keyframes throb {
 
-from {
-  height:20px;
-  width:20px
+10% {
+  height:170px;
+  width:170px;
+
 }
-to {
-  height:40px;
-  width:40px
+20% {
+  height:160px;
+  width:160px;
+
 }
 
 }
