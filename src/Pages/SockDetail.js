@@ -96,6 +96,7 @@ const handleSubmit = (e) => {
       <button onClick={() => setFormShow(prev => !prev)}>KNIT STATUS</button>
 
       <Link to={`/design-library/socks/${id}/edit`}><button>Edit Design</button></Link>
+      <button onClick={() => deleteDesign(id)}>Delete</button>
 
       <button onClick={() => setShow(prev => !prev)}>{!show ? 'Show Pattern' : 'Hide Pattern'}</button>
 

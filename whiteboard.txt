@@ -11,17 +11,19 @@ What are my MVP goals?
 
 What are my stretch goals? 
     - user auth
-    - yarn store map
     - more than one type of garment/pattern
 
 How to accomplish each part: 
 
 Overview
+    - need to make it responsive for 3+ sizes
     - add ? how to modal
     - DRY up the code
     - add Are you sure? to all deletes
     - need to style all buttons in fun way
-    - need to make it responsive for 3+ sizes
+
+Splash Page
+    - Option to stop animations
 
 Pattern 
     DONE
@@ -59,6 +61,7 @@ Detail page
 
 Update Page
     - organize button layout
+    - figure out info updating for name and status
     DONE
         - add swatch palette
 
@@ -72,14 +75,11 @@ Visual Library
         - show when design is marked as in progress or complete
 
 Stash Page
-
+    - work on layouts
     DONE
         - main library/show page
         - add yarn and choose color
         - edit and delete 
-
-Splash Page
-    - Option to stop animations
 
 CHECK STRETCH GOALS 
 
