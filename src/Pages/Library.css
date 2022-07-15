@@ -18,3 +18,14 @@
     justify-content: center;
 }
 
+.libBody {
+    background-image: url("https://i.imgur.com/PZUjlvn.png");
+    height: auto;
+}
+
+.libmain {
+    background-color: white;
+    width: 80vw;
+    margin: 0 auto;
+}
+

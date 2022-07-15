@@ -10,6 +10,7 @@ import StashView from './Pages/StashView';
 import StashDetail from './Pages/StashDetail';
 import StashEdit from './Pages/StashEdit';
 import StashAdd from './Pages/StashAdd';
+import Footer from './components/Footer';
 
 
 
@@ -157,7 +158,7 @@ const randomColors = () => {
 
       </Routes>
 
-    
+    <Footer/>
     </div>
   );
 }

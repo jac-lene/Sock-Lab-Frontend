@@ -2,7 +2,6 @@ FRONTEND PLAN
 
 QUESTIONS: 
     - why status and name aren't getting updated, how to do that
-    - where is the white space coming from :(
     - redirect for saving using confirm box???
 
 What are my MVP goals?
@@ -22,7 +21,6 @@ Overview
     - DRY up the code
     - add Are you sure? to all deletes
     - need to style all buttons in fun way
-    - fix white space at the bottom of pages
     - need to make it responsive for 3+ sizes
 
 Pattern 
@@ -74,9 +72,11 @@ Visual Library
         - show when design is marked as in progress or complete
 
 Stash Page
-    - main library/show page
-    - add yarn and choose color
-    - edit and delete 
+
+    DONE
+        - main library/show page
+        - add yarn and choose color
+        - edit and delete 
 
 Splash Page
     - Option to stop animations

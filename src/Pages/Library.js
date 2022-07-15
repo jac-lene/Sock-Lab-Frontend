@@ -18,10 +18,12 @@ function Library({getDesigns, designs, setDesigns, revDesigns}) {
 
   return (
     
-    <div>
+    <div >
         
         <Header />
+
         <div className='main'>
+
         <div className='card-cont'>
         
         {designs?.map((design) => 
@@ -38,8 +40,9 @@ function Library({getDesigns, designs, setDesigns, revDesigns}) {
             </div>
         )}
 
+
         </div>
-        <div style={{height:'200px'}}></div>
+        <br/><br/><br/><br/>
         </div>
     </div>
   )

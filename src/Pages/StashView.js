@@ -19,24 +19,30 @@ useEffect(() => {
         <div className='card-cont'>
         
         {stash?.map((yarn) => 
+
+    <Link to={`/stash/yarn/${yarn.id}`} key={yarn.id} >
             <div key={yarn.id} className='design-card'>
 
-            <Link to={`/stash/yarn/${yarn.id}`} key={yarn.id} >
+           
 
             
+           <div style={{display:'flex', flexDirection:'column', justifyContent:'center', alignItems:'center'}}> 
            
-            <h1>{yarn.brand}</h1>
-            <h4>{yarn.colorName}</h4>
-            </Link>
+           <h1 style={{marginTop:'0px'}}>{yarn.brand}</h1>
+
+            <div style={{width:'50px', height:'50px', border:"2px solid black", backgroundColor:yarn?.colorCode}}></div>
             
             </div>
+            </div>
+            </Link>
         )}
 
         </div>
-        <div style={{height:'200px'}}></div>
+       
+        <br/><br/><br/><br/>     
         </div>
 
-        
+           
         </div>
         
   )

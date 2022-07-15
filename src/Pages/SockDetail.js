@@ -130,8 +130,7 @@ const handleSubmit = (e) => {
       <div className='patternmodal'>
       <SockPattern sock={sock} setShow={setShow} show={show} /></div> 
       }
-      
-      <div style={{height: '200px'}}></div>
+    
       </div> 
       
       

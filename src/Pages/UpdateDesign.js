@@ -194,9 +194,9 @@ console.log(sock)
             {show && <div className='patternmodal'><SockPattern/></div>}
           
                   <div className='color-picker'>
-                      <br/><br/>
-                      <div>
-                      <GithubPicker width={500} colors={swatches} height={75} onChange={updatedColor => setNewColor(updatedColor.hex)}/></div><br/>
+                      {/* <br/><br/> */}
+                      {/* <div>
+                      <GithubPicker width={500} colors={swatches} height={75} onChange={updatedColor => setNewColor(updatedColor.hex)}/></div><br/> */}
                       <SwatchesPicker width={1000} height={160} color={newColor} onChange={updatedColor => setNewColor(updatedColor.hex)}/>
                       <h2>You picked {newColor}</h2>  
                   </div>
