@@ -33,6 +33,7 @@ Pattern
         - fix modal styling
 
 Design Page
+    - save modal
     - modal when you try to navigate away from the design page
     - animation on selection
     - stripes!!!
@@ -71,6 +72,11 @@ Visual Library
         - design layout
         - figure out how to link to details!! q for ernest
         - show when design is marked as in progress or complete
+
+Stash Page
+    - main library/show page
+    - add yarn and choose color
+    - edit and delete 
 
 Splash Page
     - Option to stop animations

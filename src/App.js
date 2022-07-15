@@ -6,6 +6,7 @@ import Home from './Pages/Home';
 import Library from './Pages/Library';
 import SockDetail from './Pages/SockDetail';
 import UpdateDesign from './Pages/UpdateDesign';
+import StashView from './Pages/StashView';
 
 
 
@@ -95,6 +96,8 @@ const randomColors = () => {
       <Route path="/design-library" element={<Library getDesigns={getDesigns} designs={designs} />}/>
       <Route path="/design-library/socks/:id" element={<SockDetail url={url} sock={sock} setSock={setSock} getOne={getOne} deleteDesign={deleteDesign} updateDesign={updateDesign} getDesigns={getDesigns} designs={designs} setDesigns={setDesigns} />}/>
       <Route path="/design-library/socks/:id/edit" element={<UpdateDesign  url={url} sock={sock} setSock={setSock} getOne={getOne} deleteDesign={deleteDesign} designs={designs} getDesigns={getDesigns} updateDesign={updateDesign} />}/>
+
+      <Route path="/stash" element={<StashView/>}/>
       </Routes>
 
     
