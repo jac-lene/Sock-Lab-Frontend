@@ -143,9 +143,13 @@ const randomColors = () => {
      
       <Routes>
       <Route path="/" element={<Home/>}/>
+
       <Route path="/the-lab" element={<DesignPage url={sockurl} designs={designs} setDesigns={setDesigns} randomColors={randomColors}/>}/>
+
       <Route path="/design-library" element={<Library getDesigns={getDesigns} designs={designs} />}/>
+
       <Route path="/design-library/socks/:id" element={<SockDetail url={sockurl} sock={sock} setSock={setSock} getOne={getOne} deleteDesign={deleteDesign} updateDesign={updateDesign} getDesigns={getDesigns} designs={designs} setDesigns={setDesigns} />}/>
+
       <Route path="/design-library/socks/:id/edit" element={<UpdateDesign  url={sockurl} sock={sock} setSock={setSock} getOne={getOne} deleteDesign={deleteDesign} designs={designs} getDesigns={getDesigns} updateDesign={updateDesign} />}/>
 
       <Route path="/stash" element={<StashView url={stashurl} stash={stash} setStash={setStash} getStash={getStash}/>}/>

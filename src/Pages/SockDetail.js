@@ -10,7 +10,8 @@ import RibS from '../components/sockshapes/Ribshape'
 import Header from '../components/Header'
 import SockPattern from '../components/SockPattern'
 
-function SockDetail({ url, getDesigns, deleteDesign, getOne, sock, setDesigns, designs }) {
+function SockDetail({ url, getDesigns, deleteDesign, getOne, sock, setSock, setDesigns, designs }) {
+
 
 
   const navigate = useNavigate()
@@ -30,7 +31,22 @@ function SockDetail({ url, getDesigns, deleteDesign, getOne, sock, setDesigns, d
   // console.log(id)
 
   useEffect(() => {
+
+    const getOne = async (id) => {
+      await fetch(url + id)
+      .then((res) => res.json())
+      .then((res) => {
+        setName(res.name)
+        setKnitStatus(res.knitStatus)
+        setSock(res)
+      })
+      .catch(console.error);
+    }
+
       getOne(id)
+      
+      console.log(sock)
+      console.log(name)
   }, [])
 
 

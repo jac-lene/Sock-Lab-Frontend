@@ -1,7 +1,6 @@
 FRONTEND PLAN
 
 QUESTIONS: 
-    - why status and name aren't getting updated, how to do that
     - redirect for saving using confirm box???
 
 What are my MVP goals?
