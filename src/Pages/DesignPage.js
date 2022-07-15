@@ -119,7 +119,9 @@ function DesignPage({url, designs, setDesigns, randomColors}) {
         <div>
             <div><Header saving={saving} savePrompt={savePrompt}/></div>
             <div className="main">
-  
+
+            {/* <div className='designbuttons'>
+
           <form className='create' onSubmit={handleSubmit}>
             
             <label className='invisible'>Rib</label>
@@ -190,9 +192,10 @@ function DesignPage({url, designs, setDesigns, randomColors}) {
               </div>}
             </form>
 
-        <div className='designbuttons'>
-        <button onClick={clearColor}>Clear Colors</button>
-        </div>
+            <button onClick={clearColor}>Clear 
+          Colors</button>
+
+            </div> */}
             
         <div className='chaosButton' onClick={() => chaosMode()}><div style={{width:'60px'}}>CHAOS MODE</div></div>
 
@@ -210,8 +213,8 @@ function DesignPage({url, designs, setDesigns, randomColors}) {
             </div>
             
             <div className='color-picker'>
-                      <div>
-                      <GithubPicker width={500} colors={swatches} height={75} onChange={updatedColor => setColor(updatedColor.hex)}/></div><br/>
+                      {/* <div>
+                      <GithubPicker className='swatches' colors={swatches} height={75} onChange={updatedColor => setColor(updatedColor.hex)}/></div><br/> */}
                       <SwatchesPicker 
                       width={1000} height={160} color={color} onChange={updatedColor => setColor(updatedColor.hex)}/>
                       <h2>You picked {color}</h2>  

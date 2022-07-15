@@ -7,14 +7,16 @@
 
 .App-header {
   background-color: #f3bb00;
-  height: 100px;
+  height: 80px;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-  font-size: calc(10px + 2vmin);
+  font-size: 20px;
   color: black;
   font-family: 'Akzidenz Grotesk', sans-serif;
+  position: relative;
+  z-index: 999;
 }
 
 .main {
@@ -43,6 +45,13 @@ body {
   width: 120vw;
   animation: dash-border-slide infinite alternate 5s linear;
   background-color: white;
+}
+
+.logo {
+  width: 960px;
+  position: relative;
+  bottom: 150px;
+  
 }
 
 @keyframes dash-border-slide {

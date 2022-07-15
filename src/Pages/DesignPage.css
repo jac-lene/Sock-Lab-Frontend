@@ -11,16 +11,15 @@
   align-items: center;
   width: 160px;
   height: 160px;
-  background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 120 120' version='1.1' xmlns='http://www.w3.org/2000/svg'><circle cx='60' cy='60' r='50' fill='red'/><circle cx='60' cy='60' r='60' stroke='%234dd0e1' stroke-width='15' stroke-dasharray='0 25' stroke-linecap='round' fill='transparent'/></svg>");
+  background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 120 120' version='1.1' xmlns='http://www.w3.org/2000/svg'><circle cx='60' cy='60' r='50' fill='transparent'/><circle cx='60' cy='60' r='45' stroke='%234dd0e1' stroke-width='15' stroke-dasharray='0 26' stroke-linecap='round' fill='transparent'/></svg>");
   background-size: 100% 100%;
   background-repeat: no-repeat;
   filter: drop-shadow(0px 0px 5px black);
   /* animation: spin infinite alternate .7s linear; */
   position: absolute; 
   z-index: 5;
-  bottom: 210px;
-  right: 130px;
-  cursor: pointer;
+  bottom: 370px;
+  right: 300px;
 }
 
 .chaosButton:hover {
@@ -76,6 +75,10 @@
   gap: 0px;
   justify-content: space-between;
   align-items: center;
+}
+
+.swatches {
+  display: inline-block;
 }
 
 @keyframes spin {

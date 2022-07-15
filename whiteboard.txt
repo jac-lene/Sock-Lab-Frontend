@@ -5,7 +5,6 @@ QUESTIONS:
     - where is the white space coming from :(
     - redirect for saving using confirm box???
 
-
 What are my MVP goals?
     - an image of a sock that can be clicked and change color
     - a pattern that changes based on the user input
@@ -19,6 +18,7 @@ What are my stretch goals?
 How to accomplish each part: 
 
 Overview
+    - add ? how to modal
     - DRY up the code
     - add Are you sure? to all deletes
     - need to style all buttons in fun way
@@ -33,12 +33,12 @@ Pattern
         - fix modal styling
 
 Design Page
-    - undo color change maybe
     - modal when you try to navigate away from the design page
     - animation on selection
     - stripes!!!
-    - create chaos button
+    - undo color change maybe
     DONE
+        - create chaos button
         - figure out randomizer
         - prompt for name upon saving or add name as form element
         - color palette recently used colors or inkwell

@@ -81,7 +81,7 @@ const randomColors = () => {
 
   if (!designs) {
     console.log('loading...')
-  } else {console.log(designs)}
+  } 
 
   
 
