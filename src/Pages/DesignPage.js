@@ -27,8 +27,6 @@ function DesignPage({url, designs, setDesigns, randomColors}) {
   const [show, setShow] = useState(true);
   const [saveShow, setSaveShow] = useState(false);
 
-  const [saving, setSaving] = useState(null)
-
   // FORM STUFF
 
   const [name, setName] = useState('My Sock Design');
@@ -89,13 +87,6 @@ function DesignPage({url, designs, setDesigns, randomColors}) {
     setSwatches([...swatches, color])
   }
 
-  const savePrompt = () => {
-    if ( (ribColor !== '#fff') || (ankleColor !== '#fff') || (heelColor !== '#fff') || (footColor !== '#fff') || (toeColor !== '#fff') ) { 
-      let answer = window.confirm('You have an unsaved design. Would you like to save first?')
-      setSaving(answer)
-      }
-  }
-
   const chaosMode = () => {
     setRibColor(randomColors())
     setAnkleColor(randomColors())
@@ -104,19 +95,19 @@ function DesignPage({url, designs, setDesigns, randomColors}) {
     setToeColor(randomColors())
   }
 
-  useEffect(() => {
-    addSwatch()
-  }, [color])
+  // useEffect(() => {
+  //   addSwatch()
+  // }, [color])
 
   useEffect(() => {
-    savePrompt()
+  
   }, [])
 
   //END color picker stuff
 
   return (
         <div>
-            <div><Header saving={saving} savePrompt={savePrompt}/></div>
+            <div><Header/></div>
             <div className="main">
 
             <div className='designbuttons'>

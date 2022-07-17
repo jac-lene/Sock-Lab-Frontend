@@ -10,6 +10,10 @@ import RibS from '../components/sockshapes/Ribshape'
 import Header from '../components/Header'
 import SockPattern from '../components/SockPattern'
 
+import Check from './images/icons/check.png'
+import Cancel from './images/icons/close.png'
+import Draw from './images/icons/draw.png'
+
 function SockDetail({ url, getDesigns, deleteDesign, getOne, sock, setSock, setDesigns, designs }) {
 
 
@@ -89,22 +93,31 @@ const handleSubmit = (e) => {
 
       <div className='designbuttons' >
       <div> 
-      {renameShow === true ?  <form onSubmit={handleSubmit}>
+      {renameShow === true ?  <form >
         <br/>
         <div style={{display:'flex', flexDirection:'column', justifyContent:'center', alignItems:'center', gap:'10px'}}>
+        <div style={{display:'flex', alignItems:'center', justifyContent:'center', gap:'10px'}}>
           <input 
           type='text'
           value={name} 
           onChange={(e)=> {setName(e.target.value)}} style={{fontSize:'23px', fontWeight:'bold', width:'180px', textAlign:'center'}}></input>
            <h4 style={{marginTop:'5px', marginBottom:'5px'}}>{sock?.knitStatus}</h4>
-          <button type='submit'>Save</button>
+          {/* <button type='submit'>Save</button> */}
+          
+          <img src={Check} onClick={handleSubmit} alt='save' style={{width:'25px'}}/>
+          <img src={Cancel} alt='cancel' style={{width:'20px'}} onClick={() => setRenameShow(false)}/></div>
         </div>
+       
       </form> 
-      : <div>
+      
+      : <div style={{display:'flex', alignItems:'center', justifyContent:'center', gap:'5px'}}>
         <h2>{sock?.name}</h2> 
       <h4 style={{marginTop:'0'}}>{sock?.knitStatus}</h4>
-      <button onClick={() => setRenameShow(true)}>Rename</button></div>}
-        
+      {/* <button onClick={() => setRenameShow(true)}>Rename</button> */}
+      <img src={Draw} alt='edit' style={{width:'20px'}} onClick={() => setRenameShow(true)}/>
+      </div>}
+      
+      
       </div>
       
         <br/>
