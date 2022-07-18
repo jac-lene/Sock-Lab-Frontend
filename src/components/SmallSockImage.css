@@ -26,8 +26,8 @@ path{
 .smallrib {
     /* position:absolute; */
     position: relative;
-    bottom: 220px;
-    right: 37px;
+    bottom: 222px;
+    right: 36px;
     width: 61px;
     
 }
@@ -35,7 +35,7 @@ path{
 .smallankle {
     /* position:absolute; */
     position: relative;
-    bottom: 157px;
+    bottom: 159px;
     right: 87px;
     width: 65px;
     /* z-index: -999; */
@@ -44,23 +44,23 @@ path{
 .smallheel {
     /* position:fixed; */
     position: relative;
-    bottom: 204px;
-    right: 146px;
+    bottom: 209px;
+    right: 145px;
     width: 35px;
     /* z-index: -999; */
 }
 .smallfoot {
     /* position:absolute; */
     position: relative;
-    bottom: 191px;
-    left: 17px;
+    bottom: 195px;
+    left: 18px;
     width: 164px;
     /* z-index: -999; */
 }
 .smalltoe {
     /* position:absolute; */
     position: relative;
-    bottom: 242px;
+    bottom: 248px;
     left: 85px;
     width: 30px;
     /* z-index: -999; */

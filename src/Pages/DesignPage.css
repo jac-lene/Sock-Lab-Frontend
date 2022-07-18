@@ -5,6 +5,7 @@
 .chaosButton{
   background-color: rgb(227, 4, 4);
   border-radius: 100%;
+  font-family: 'Akzidenz Grotesk', sans-serif;  
   font-weight: bold;
   display: flex;
   justify-content: center;
@@ -27,6 +28,11 @@
 
 .chaosButton:hover {
   animation: spin .7s;
+}
+
+.chaosText {
+  font-size: 20px;
+  text-align: center;
 }
 
 .color-picker {

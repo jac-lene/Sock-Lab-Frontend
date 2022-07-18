@@ -33,8 +33,8 @@ function Library({getDesigns, designs, setDesigns, revDesigns}) {
 
             
             <SmallSockImage rib={design.ribColor} ankle={design.ankleColor} heel={design.heelColor} foot={design.footColor} toe={design.toeColor}/>
-            <h1>{design.name}</h1>
-            <h4>{design.knitStatus}</h4>
+            <h1 style={{margin:'5px'}}>{design.name}</h1>
+            <h4 style={{margin:'5px'}}>{design.knitStatus}</h4>
             </Link>
             
             </div>

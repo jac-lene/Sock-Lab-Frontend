@@ -11,6 +11,7 @@ import StashDetail from './Pages/StashDetail';
 import StashEdit from './Pages/StashEdit';
 import StashAdd from './Pages/StashAdd';
 import Footer from './components/Footer';
+import HowTo from './Pages/HowTo';
 
 
 
@@ -161,6 +162,8 @@ const randomColors = () => {
       <Route path="/stash/yarn/:id" element={<StashDetail url={stashurl} stash={stash} setStash={setStash} getStash={getStash} yarn={yarn} setYarn={setYarn} getYarn={getYarn} deleteYarn={deleteYarn}/>}/>
 
       <Route path="/stash/yarn/:id/edit" element={<StashEdit url={stashurl} stash={stash} setStash={setStash} getStash={getStash} yarn={yarn} setYarn={setYarn} getYarn={getYarn} updateYarn={updateYarn}/>}/>
+
+      <Route path="/how-to" element={<HowTo />}/>
 
       </Routes>
 

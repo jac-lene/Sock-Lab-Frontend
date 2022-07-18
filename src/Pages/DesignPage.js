@@ -190,7 +190,7 @@ function DesignPage({ url, designs, setDesigns, randomColors, stash, getStash })
 
             </div>
             
-        <div className='chaosButton' onClick={() => chaosMode()}><div style={{width:'60px'}}>CHAOS MODE</div></div>
+        <div className='chaosButton' onClick={() => chaosMode()}><div style={{}}><p className='chaosText'>CHAOS <br/> MODE</p></div></div>
 
 
         <div className='sockpatt'>
@@ -211,7 +211,7 @@ function DesignPage({ url, designs, setDesigns, randomColors, stash, getStash })
                       </div>
                       <br/>
                       <SwatchesPicker 
-                      width={400} height={60} color={color} colors={mycolors} onChange={updatedColor => setColor(updatedColor.hex)}/>
+                      width={1000} height={55} color={color} colors={mycolors} onChange={updatedColor => setColor(updatedColor.hex)}/>
                       <br/>
                       <SwatchesPicker 
                       width={1000} height={160} color={color} onChange={updatedColor => setColor(updatedColor.hex)}/>
