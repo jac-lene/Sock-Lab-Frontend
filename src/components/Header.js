@@ -9,11 +9,11 @@ function Header({  }) {
 
 <header className="App-header">
         
-        <Link to='/'><h1 className='site-title' style={{position:'relative', top:'10px'}}>SOCK LAB</h1></Link>
-        <Link to='/the-lab' ><h2 style={{position:'relative', bottom:'15px'}}>DESIGN</h2></Link>
-        <Link to='/design-library'><h2 style={{position:'relative', top:'10px'}}>LIBRARY</h2></Link>
-        <Link to='/stash'><h2 style={{position:'relative', bottom:'10px'}}>STASH</h2></Link>
-        <Link to='/how-to'><h2>?</h2></Link>
+        <Link to='/'><h1 className='site-title' style={{position:'relative', bottom:'17px'}}>SOCK LAB</h1></Link>
+        <Link to='/the-lab' ><h2 style={{position:'relative', bottom:'38px'}}>DESIGN</h2></Link>
+        <Link to='/design-library'><h2 style={{position:'relative', bottom:'13px'}}>LIBRARY</h2></Link>
+        <Link to='/stash'><h2 style={{position:'relative', bottom:'30px'}}>STASH</h2></Link>
+        <Link to='/how-to'><h2 style={{position:'relative', bottom:'20px'}}>?</h2></Link>
 </header>
 
 

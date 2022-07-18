@@ -32,6 +32,10 @@
   z-index: 999;
 }
 
+h1, h2 {
+  margin-bottom: 0px;
+}
+
 .main {
   display: flex;
   flex-direction: column;
