@@ -16,11 +16,10 @@ import { getNodeText } from '@testing-library/react'
 
 
 
-function DesignPage({url, designs, setDesigns, randomColors}) {
+function DesignPage({ url, designs, setDesigns, randomColors, stash, getStash }) {
 
   const navigate = useNavigate();
 
-  const [swatches, setSwatches] = useState([]);
   
   const [color, setColor] = useState('#fff');
 
@@ -36,7 +35,21 @@ function DesignPage({url, designs, setDesigns, randomColors}) {
   const [heelColor, setHeelColor] = useState('#fff')
   const [footColor, setFootColor] = useState('#fff')
   const [ribColor, setRibColor] = useState('#fff')
+
+
+  useEffect(() => {
+  getStash()
+  }, [])
+
+  const mycolors = []
+
   
+  stash?.map((mycolor) => {
+     mycolors.push([mycolor.colorCode]) 
+  })
+
+  console.log(mycolors)
+
   const handleSubmit = (e) => {
       e.preventDefault();
       const newDesign = {
@@ -83,9 +96,6 @@ function DesignPage({url, designs, setDesigns, randomColors}) {
       setToeColor('#fff')
   }
 
-  const addSwatch = () => {
-    setSwatches([...swatches, color])
-  }
 
   const chaosMode = () => {
     setRibColor(randomColors())
@@ -95,13 +105,6 @@ function DesignPage({url, designs, setDesigns, randomColors}) {
     setToeColor(randomColors())
   }
 
-  // useEffect(() => {
-  //   addSwatch()
-  // }, [color])
-
-  useEffect(() => {
-  
-  }, [])
 
   //END color picker stuff
 
@@ -203,8 +206,13 @@ function DesignPage({url, designs, setDesigns, randomColors}) {
             </div>
             
             <div className='color-picker'>
-                      {/* <div>
-                      <GithubPicker className='swatches' colors={swatches} height={75} onChange={updatedColor => setColor(updatedColor.hex)}/></div><br/> */}
+                      <div>
+                      {/* <GithubPicker className='swatches' colors={mycolors} height={75} onChange={updatedColor => setColor(updatedColor.hex)}/> */}
+                      </div>
+                      <br/>
+                      <SwatchesPicker 
+                      width={400} height={60} color={color} colors={mycolors} onChange={updatedColor => setColor(updatedColor.hex)}/>
+                      <br/>
                       <SwatchesPicker 
                       width={1000} height={160} color={color} onChange={updatedColor => setColor(updatedColor.hex)}/>
                       {/* <h2>You picked {color}</h2>   */}

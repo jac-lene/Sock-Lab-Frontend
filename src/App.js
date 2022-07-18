@@ -124,6 +124,8 @@ const randomColors = () => {
    
 }
 
+ 
+
   useEffect(() => {
     getDesigns()
     getStash()
@@ -144,7 +146,7 @@ const randomColors = () => {
       <Routes>
       <Route path="/" element={<Home/>}/>
 
-      <Route path="/the-lab" element={<DesignPage url={sockurl} designs={designs} setDesigns={setDesigns} randomColors={randomColors}/>}/>
+      <Route path="/the-lab" element={<DesignPage stash={stash} url={sockurl} designs={designs} setDesigns={setDesigns} randomColors={randomColors} getStash={getStash}/>}/>
 
       <Route path="/design-library" element={<Library getDesigns={getDesigns} designs={designs} />}/>
 

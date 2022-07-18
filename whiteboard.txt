@@ -35,6 +35,7 @@ Pattern
         - fix modal styling
 
 Design Page
+    - add Your Swatches section
     - save modal
     - modal when you try to navigate away from the design page
     - animation on selection

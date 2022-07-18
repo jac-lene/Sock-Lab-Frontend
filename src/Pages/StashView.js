@@ -6,7 +6,7 @@ function StashView({ url, stash, setStash, getStash }) {
 
 useEffect(() => {
   getStash()
-}, [])
+}, [stash])
 
 
 
@@ -31,6 +31,8 @@ useEffect(() => {
            <h1 style={{marginTop:'0px'}}>{yarn.brand}</h1>
 
             <div style={{width:'50px', height:'50px', border:"2px solid black", backgroundColor:yarn?.colorCode}}></div>
+
+            <h1>{yarn?.colorCode}</h1>
             
             </div>
             </div>
