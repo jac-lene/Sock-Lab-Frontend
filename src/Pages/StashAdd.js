@@ -87,14 +87,16 @@ const handleSubmit = (e) => {
                 type='text'
                 required
                 value={colorCode}
-                onChange={() => setColorCode(color)}
+                onChange={() => {
+                    setColorCode(color);
+                    console.log(color)}}
                 
                 />
                 <br/><br/>
                 <div style={{width:'100px', height:'100px', border:"1px solid black", backgroundColor:color}} onClick={() => setShow(prev => !prev)}></div>
 {show ? <div>
                 <br/><br/>
-            <ChromePicker disableAlpha={true} color={color} onChange={updatedColor => setColor(updatedColor.hex)}/>
+            <ChromePicker disableAlpha={true} color={color} onChange={updatedColor => {return (setColor(updatedColor.hex), setColorCode(updatedColor.hex))}}/>
             
         
             {/* <h2>You picked {color}</h2>  */}

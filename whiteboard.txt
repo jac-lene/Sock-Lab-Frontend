@@ -19,7 +19,10 @@ Overview
     - add ? how to modal
     - DRY up the code
     - add Are you sure? to all deletes
+
+Styling
     - need to style all buttons in fun way
+    - Change FONTS
 
 Splash Page
     - Option to stop animations
@@ -60,9 +63,9 @@ Detail page
 
 Update Page
     - organize button layout
-    - figure out info updating for name and status
     DONE
         - add swatch palette
+        - figure out info updating for name and status
 
 Visual Library
     - maybe have different tabs with completed items

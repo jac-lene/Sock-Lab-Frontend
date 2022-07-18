@@ -91,37 +91,14 @@ const handleSubmit = (e) => {
       
      
 
-      <div className='designbuttons' >
-      <div> 
-      {renameShow === true ?  <form >
-        <br/>
-        <div style={{display:'flex', flexDirection:'column', justifyContent:'center', alignItems:'center', gap:'10px'}}>
-        <div style={{display:'flex', alignItems:'center', justifyContent:'center', gap:'10px'}}>
-          <input 
-          type='text'
-          value={name} 
-          onChange={(e)=> {setName(e.target.value)}} style={{fontSize:'23px', fontWeight:'bold', width:'180px', textAlign:'center'}}></input>
-           <h4 style={{marginTop:'5px', marginBottom:'5px'}}>{sock?.knitStatus}</h4>
-          {/* <button type='submit'>Save</button> */}
-          
-          <img src={Check} onClick={handleSubmit} alt='save' style={{width:'25px'}}/>
-          <img src={Cancel} alt='cancel' style={{width:'20px'}} onClick={() => setRenameShow(false)}/></div>
-        </div>
-       
-      </form> 
       
-      : <div style={{display:'flex', alignItems:'center', justifyContent:'center', gap:'5px'}}>
-        <h2>{sock?.name}</h2> 
+      
+      
+      <div style={{display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center', gap:'5px'}}>
+      <h2 style={{marginBottom:'0'}}>{sock?.name}</h2> 
       <h4 style={{marginTop:'0'}}>{sock?.knitStatus}</h4>
-      {/* <button onClick={() => setRenameShow(true)}>Rename</button> */}
-      <img src={Draw} alt='edit' style={{width:'20px'}} onClick={() => setRenameShow(true)}/>
-      </div>}
-      
-      
       </div>
-      
-        <br/>
-
+      <div className='designbuttons' >
       <button onClick={() => setFormShow(prev => !prev)}>KNIT STATUS</button>
 
       <Link to={`/design-library/socks/${id}/edit`}><button>Edit Design</button></Link>
@@ -160,10 +137,9 @@ const handleSubmit = (e) => {
       <div className='patternmodal'>
       <SockPattern sock={sock} setShow={setShow} show={show} /></div> 
       }
-    
-      </div> 
+  
       
-      
+      </div>
       </div>
      </div>
     );

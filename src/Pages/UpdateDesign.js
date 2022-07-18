@@ -16,10 +16,13 @@ import RibS from '../components/sockshapes/Ribshape'
 import SockPattern from '../components/SockPattern'
 import DesignPage from './DesignPage'
 
+import Check from './images/icons/check.png'
+import Cancel from './images/icons/close.png'
+import Draw from './images/icons/draw.png'
 
 
 
-function UpdateDesign({url, getDesigns, getOne, sock, deleteDesign }) {
+function UpdateDesign({url, getDesigns, getOne, sock, setSock, deleteDesign }) {
 
   const navigate = useNavigate()
 
@@ -41,6 +44,8 @@ console.log(sock)
   const [name, setName] = useState('');
   const [completed, setCompleted] = useState('no');
   const [inProg, setInProg] = useState('');
+  const [renameShow, setRenameShow] = useState(false)
+  const [knitStatus, setKnitStatus] = useState(sock?.knitStatus)
 
   const [toeColor, setToeColor] = useState(sock?.toeColor)
   const [ankleColor, setAnkleColor] = useState(sock?.ankleColor)
@@ -61,7 +66,7 @@ console.log(sock)
   const handleSubmit = (e) => {
       e.preventDefault();
       const updatedDesign = {
-          toeColor, ankleColor, heelColor, footColor, ribColor
+          name, toeColor, ankleColor, heelColor, footColor, ribColor
       };
 
      fetch(url+id, {
@@ -115,15 +120,77 @@ console.log(sock)
 
   //END color picker stuff
 
+  useEffect(() => {
+
+    const getOne = async (id) => {
+      await fetch(url + id)
+      .then((res) => res.json())
+      .then((res) => {
+        setName(res.name)
+        setKnitStatus(res.knitStatus)
+        setSock(res)
+      })
+      .catch(console.error);
+    }
+
+      getOne(id)
+      
+      console.log(sock)
+      console.log(name)
+  }, [])
+
 
   return (
         <div>
             <Header />
             <div className="main">
-                <h2>Edit {sock?.name}</h2>
+
+
+                {/* <h2>Edit {sock?.name}</h2> */}
+
+
+
         <div className='designbuttons'>
+
+
+
+
           <form className='create' onSubmit={handleSubmit}>
-            
+
+<div>
+{renameShow === true ? <div>
+        <br/>
+        <div style={{display:'flex', flexDirection:'column', justifyContent:'center', alignItems:'center', gap:'10px'}}>
+        
+        <div style={{display:'flex', alignItems:'center', justifyContent:'center', gap:'10px'}}>
+          <input 
+          type='text'
+          value={name} 
+          onChange={(e)=> {setName(e.target.value)}} style={{fontSize:'23px', fontWeight:'bold', width:'180px', textAlign:'center'}}></input>
+          
+          {/* <button type='submit'>Save</button> */}
+          
+          <img src={Check} onClick={handleSubmit} alt='save' style={{width:'25px'}}/>
+          <img src={Cancel} alt='cancel' style={{width:'20px'}} onClick={() => setRenameShow(false)}/></div>
+          <h4 style={{marginTop:'0px'}}>{sock?.knitStatus}</h4>
+        </div>
+
+        
+        </div>
+      
+      
+      : 
+      <div style={{display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center'}}>
+      <div style={{display:'flex', alignItems:'center', justifyContent:'center', gap:'10px'}}>
+        <h2 style={{marginBottom:'0px'}}>{sock?.name}</h2> 
+      {/* <button onClick={() => setRenameShow(true)}>Rename</button> */}
+      <img src={Draw} alt='edit' style={{width:'20px', marginBottom:'-20px'}} onClick={() => setRenameShow(true)}/>
+      </div>
+      <h4 style={{marginTop:'0px'}}>{sock?.knitStatus}</h4>
+      </div>}
+      </div>
+
+<div>
             <label className='invisible'>Rib</label>
             <input
                 className='invisible'
@@ -170,12 +237,13 @@ console.log(sock)
             />
        
             <button className='save'>Save Design</button>
-
+            </div> 
           </form>
         <button onClick={clearColor}>Clear Colors</button>
         <button onClick={() => setShow(prev => !prev)}>{show === false ? 'Show Pattern Preview' : 'Hide Pattern Preview'}</button>
         <button onClick={() => navigate('/design-library')}>Cancel</button>
         </div>
+          
             
         <div className='sockpatt'>
             <div className='page-cont'>
