@@ -240,7 +240,6 @@ console.log(sock)
             </div> 
           </form>
         <button onClick={clearColor}>Clear Colors</button>
-        <button onClick={() => setShow(prev => !prev)}>{show === false ? 'Show Pattern Preview' : 'Hide Pattern Preview'}</button>
         <button onClick={() => navigate('/design-library')}>Cancel</button>
         </div>
           
