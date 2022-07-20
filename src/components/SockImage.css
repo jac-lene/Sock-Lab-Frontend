@@ -1,6 +1,6 @@
 .page-cont {
     margin: 0 auto;
-    height: 600px;
+    height: 475px;
     width:750px;
 }
 
@@ -13,53 +13,52 @@ path{
 }
 
 .sock {
-    height:600px;
-    width: 600px;
-    /* padding-top: 100px; */
+    height: 475px;
+    width: 475px;
+    margin-top: -10px;
     /* margin: 0 auto; */
-    position: relative;
-    /* top: -50px; */
+    position: absolute;
     z-index: 1;
 }
 
 .rib {
     /* position:absolute; */
     position: relative;
-    bottom: 657px;
-    right: 109px;
-    width: 185px;
+    bottom: 76px;
+    left:2px;
+    width: 145px;
 }
 
 .ankle {
     /* position:absolute; */
     position: relative;
-    bottom: 466px;
-    right: 260px;
-    width: 198px;
+    top: 75px;
+    right: 119px;
+    width: 155px;
     /* z-index: -999; */
 }
 
 .heel {
     /* position:absolute; */
     position: relative;
-    bottom: 607px;
-    right: 390px;
-    width: 103px;
+    top: 59px;
+    right: 222px;
+    width: 83px;
     /* z-index: -999; */
 }
 .foot {
     /* position:absolute; */
     position: relative;
-    bottom: 565px;
-    left: 100px;
-    width: 490px;
+    top: 207px;
+    right: 255px;
+    width: 390px;
     /* z-index: -999; */
 }
 .toe {
     /* position:absolute; */
     position: relative;
-    bottom: 565px;
-    right: 42px;
-    width: 90px;
+    top: 89px;
+    left: 53px;
+    width: 70px;
     /* z-index: -999; */
 }

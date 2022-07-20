@@ -1,5 +1,8 @@
 FRONTEND PLAN
 
+QUESTIONS: 
+    - redirect for saving using confirm box???
+
 What are my MVP goals?
     - an image of a sock that can be clicked and change color
     - a pattern that changes based on the user input
@@ -7,22 +10,45 @@ What are my MVP goals?
 
 What are my stretch goals? 
     - user auth
-    - yarn store map
     - more than one type of garment/pattern
+    - stripes/patterns
 
 How to accomplish each part: 
 
+Overview
+    - need to make it responsive for 3+ sizes
+    - add ? how to modal
+    - DRY up the code
+    - add Are you sure? to all deletes
 
-Design Page 
-    - create save button 
-    - prompt for name upon saving
-    - generate pattern button
-    - if there are colors in the sock, have a modal when you try to navigate away from the page
-    - color palette recently used colors
-    - animation on selection
-    - figure out randomizer
-    - create chaos button
+Styling
     DONE
+        - need to style all buttons in fun way
+        - Change FONTS
+
+Splash Page
+    - Option to stop animations
+
+Pattern 
+    DONE
+        - write up pattern
+        - figure out information needed for model
+        - figure out how to link to pdf or print
+        - fix modal styling
+
+Design Page
+    - play with chaos mode button
+    - save modal
+    - modal when you try to navigate away from the design page
+    - animation on selection
+    - stripes!!!
+    - undo color change maybe
+    DONE
+        - add Your Swatches section
+        - create chaos button
+        - figure out randomizer
+        - prompt for name upon saving or add name as form element
+        - color palette recently used colors or inkwell
         - need color palette plan 
         - image cut into pieces and placed in an absolute positioning
         - need to set up form for create
@@ -30,35 +56,54 @@ Design Page
         - Create onclick event to change fill styling
             -need to research how to drill down into svg settings
         - information will link to a form internally
-
-Pattern 
-    - write up pattern logic
-        - think about gauge changes maybe
-    - figure out information needed for model
-    - link to pdf or print
-
-Visual Library
-    - need to copy image from design page and have it show preview w/sock name
-        - create mini "card" with image like on design page
-    - design layout
-    - figure out how to link to details!! q for ernest
-    DONE
-        - Simply a show page, should be easy.
+        - generate pattern button
 
 Detail page
-    - need form for editing
-    - edit button
-    - delete button
+    DONE 
+         - need form for editing
+         - add pattern and toggle button
+         - add new form for marking as complete/in progress
+         - add easy access rename button/form
 
-Splash Page 
-    - Option to stop animations
+Update Page
+    DONE
+        - add swatch palette
+        - figure out info updating for name and status
+        - organize button layout
+
+Visual Library
+    - maybe have different tabs with completed items
+    DONE
+        - create mini "card" with image like on design page
+        - Simply a show page, should be easy.
+        - design layout
+        - figure out how to link to details!! q for ernest
+        - show when design is marked as in progress or complete
+
+Stash Page
+    - work on layouts
+    DONE
+        - main library/show page
+        - add yarn and choose color
+        - edit and delete 
 
 CHECK STRETCH GOALS 
 
 
 THINGS I LEARNED
+ - React Color
  - PROPs on the SVGS. props.fill wow im screaming
  - how to use SVGs in general
  - i learned how to use forms the right way lol
  - how to mass convert svgs to components
  - animations
+ - useNavigate to redirect
+ - React to print
+
+ Resources
+https://casesandberg.github.io/react-color/
+https://www.codegrepper.com/code-examples/javascript/how+to+hide+button+in+react
+https://upmostly.com/tutorials/how-to-refresh-a-page-or-component-in-react
+https://www.npmjs.com/package/react-to-print
+https://codepen.io/jsnkuhn/pen/XWJGPx
+https://stackoverflow.com/questions/38132700/css-wiggle-shake-effect

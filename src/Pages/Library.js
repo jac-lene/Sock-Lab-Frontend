@@ -2,41 +2,47 @@ import React, { useEffect } from 'react'
 import Header from '../components/Header'
 import './Library.css'
 import {Link} from 'react-router-dom'
+import '../components/SmallSockImage.css'
 import SmallSockImage from '../components/SmallSockImage'
+import SockDetail from './SockDetail'
 
-function Library({getDesigns, designs}) {
-if (!designs) {
-    console.log('loading')
-}
-    console.log(designs)
+function Library({getDesigns, designs, setDesigns, revDesigns}) {
+
+    
 
   useEffect(() => {
     getDesigns()
   }, [])
 
+  
 
   return (
     
-    <div>
+    <div >
         
         <Header />
+
         <div className='main'>
+
         <div className='card-cont'>
-        {/* <SmallSockImage style={{width:'200px'}}/> */}
+        
         {designs?.map((design) => 
             <div key={design.id} className='design-card'>
 
-            <Link to={`/design-library/socks/${design.id}`} key={design.id}>
+            <Link to={`/design-library/socks/${design.id}`} key={design.id} >
 
-            <img src={design.user_photo} alt={`design${design.id}`} width='200px' />
-            <h1>{design.name}</h1>
+            
+            <SmallSockImage rib={design.ribColor} ankle={design.ankleColor} heel={design.heelColor} foot={design.footColor} toe={design.toeColor}/>
+            <h1 style={{margin:'5px'}}>{design.name}</h1>
+            <h4 style={{margin:'5px'}}>{design.knitStatus}</h4>
             </Link>
             
             </div>
         )}
 
+
         </div>
-       
+        <br/><br/><br/><br/>
         </div>
     </div>
   )

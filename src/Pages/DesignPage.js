@@ -1,10 +1,8 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 import './DesignPage.css'
 import Header from '../components/Header'
-import ColorPicker from '../components/ColorPicker'
-import { SwatchesPicker } from 'react-color'
-import SockImage from '../components/SockImage'
-import CreateForm from '../components/CreateForm'
+import { SwatchesPicker, GithubPicker } from 'react-color'
 import '../components/SockImage.css'
 import WholeSock from '../components/sockshapes/Wholesock'
 import AnkleS from '../components/sockshapes/Ankleshape'
@@ -12,38 +10,53 @@ import FootS from '../components/sockshapes/Footshape'
 import HeelS from '../components/sockshapes/Heelshape'
 import ToeS from '../components/sockshapes/Toeshape'
 import RibS from '../components/sockshapes/Ribshape'
+import SockPattern from '../components/SockPattern'
+import { getNodeText } from '@testing-library/react'
 
-function DesignPage({url}) {
+
+
+
+function DesignPage({ url, designs, setDesigns, randomColors, stash, getStash }) {
+
+  const navigate = useNavigate();
+
   
-  const [color, setColor] = useState('#fff')
+  const [color, setColor] = useState('#fff');
+
+  const [show, setShow] = useState(true);
+  const [saveShow, setSaveShow] = useState(false);
 
   // FORM STUFF
 
-  const [name, setName] = useState('');
-  const [ankle_height, setAnkle] = useState('crew');
-  const [CC1, setCC1] = useState('');
-  const [CC2, setCC2] = useState('');
-  const [CC3, setCC3] = useState('');
-  const [size, setSize] = useState('');
-  const [rib, setRib] = useState('');
-  const [heel, setHeel] = useState('');
-  const [toe, setToe] = useState('');
-  const [completed, setCompleted] = useState('no');
-  const [inProg, setInProg] = useState('');
+  const [name, setName] = useState('My Sock Design');
 
   const [toeColor, setToeColor] = useState('#fff')
   const [ankleColor, setAnkleColor] = useState('#fff')
   const [heelColor, setHeelColor] = useState('#fff')
   const [footColor, setFootColor] = useState('#fff')
   const [ribColor, setRibColor] = useState('#fff')
+
+
+  useEffect(() => {
+  getStash()
+  }, [])
+
+  const mycolors = []
+
   
+  stash?.map((mycolor) => {
+     mycolors.push([mycolor.colorCode]) 
+  })
+
+  console.log(mycolors)
+
   const handleSubmit = (e) => {
       e.preventDefault();
       const newDesign = {
-          toeColor, ankleColor, heelColor, footColor, ribColor
+         name, toeColor, ankleColor, heelColor, footColor, ribColor
       };
 
-     fetch("http://localhost:8000/socks/", {
+     fetch(url, {
               method: "post",
               headers: {
                   "Content-Type": "application/json",
@@ -51,6 +64,8 @@ function DesignPage({url}) {
               body: JSON.stringify(newDesign),
           }).then(() => {
               console.log('new design', newDesign)
+              setDesigns([...designs], newDesign)
+              navigate('/design-library')
           })
 
   }
@@ -73,15 +88,34 @@ function DesignPage({url}) {
     }
   }
 
-  //END color picker stuff
+  const clearColor = () => {
+      setRibColor('#fff');
+      setAnkleColor('#fff')
+      setFootColor('#fff')
+      setHeelColor('#fff')
+      setToeColor('#fff')
+  }
 
+
+  const chaosMode = () => {
+    setRibColor(randomColors())
+    setAnkleColor(randomColors())
+    setHeelColor(randomColors())
+    setFootColor(randomColors())
+    setToeColor(randomColors())
+  }
+
+
+  //END color picker stuff
 
   return (
         <div>
-            <Header />
+            <div><Header/></div>
             <div className="main">
-        
-            <form className='create' onSubmit={handleSubmit}>
+
+            <div className='designbuttons'>
+
+          <form className='create' >
             
             <label className='invisible'>Rib</label>
             <input
@@ -127,13 +161,65 @@ function DesignPage({url}) {
                 value={toeColor}
                 onChange={(e) => setToeColor(e.target.value)}
             />
-       
-            <button className='save'>Save Design</button>
 
-        </form>
+       {saveShow === true ?  
+       <div className='create'>
+            <br/><br/>
+            <div>
 
+              
+            <div className='designbuttons' style={{display:'flex', width:'70vw', justifyContent:'space-between', alignItems:'center'}}>
+
+  <div className='knitStatus custButt' onClick={() => setSaveShow(prev => !prev)}style={{backgroundColor:'orange'}}>CANCEL</div>
+
+<div>
+  
+<label className='name'>Name your design: </label>
+<input
+                className='name'
+                type='text' 
+                required
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+            />
+            
+</div>
+
+<div className='knitStatus custButt' onClick={handleSubmit}>SAVE</div>
+
+            </div>
+</div>
+        </div>
+            : 
+            <div>
+              <br/>
+  <div className='designbuttons' style={{display:'flex', width:'70vw', justifyContent:'space-between', alignItems:'center'}}>
+
+<div>
+<div className='knitStatus custButt' onClick={clearColor} style={{backgroundColor:'orange'}}>CLEAR</div>
+</div>
+ 
+
+<h1 style={{margin:'0px'}}>Design Lab</h1>
+
+<div className='knitStatus custButt' onClick={() => setSaveShow(prev => !prev)}>SAVE</div>
+
+</div>
+
+</div>
+           
+              }
+
+            </form>
+
+            </div>
+            
+      
+
+
+        <div className='sockpatt'>
+<br/>
             <div className='page-cont'>
-
                     <WholeSock />
                     <RibS onClick={() => getColor('rib')} style={{fill: ribColor}}/>
                     <AnkleS onClick={() => getColor('ankle')} style={{fill: ankleColor}}/>
@@ -142,12 +228,24 @@ function DesignPage({url}) {
                     <ToeS onClick={() => getColor('toe')} style={{fill: toeColor}}/>
 
             </div>
-          
-                  <div className='color-picker'>
-                      <br/><br/>
-                      <SwatchesPicker width={1000} height={160} color={color} onChange={updatedColor => setColor(updatedColor.hex)}/>
-                      <h2>You picked {color}</h2>  
-                  </div>
+            
+            <div className='color-picker'>
+                      
+                      <h3 style={{marginBottom:'10px'}}>Stash Colors</h3>
+                      <SwatchesPicker 
+                      width={1000} height={55} color={color} colors={mycolors} onChange={updatedColor => setColor(updatedColor.hex)}/>
+                     
+                    
+                      <br/>
+                      <SwatchesPicker 
+                      width={1000} height={160} color={color} onChange={updatedColor => setColor(updatedColor.hex)}/>
+                      {/* <h2>You picked {color}</h2>   */}
+            </div>
+  
+            </div>
+            <br/><br/><br/>
+<div className='chaosButton custButt' onClick={() => chaosMode()}><div style={{}}><p className='chaosText'>CHAOS <br/> MODE</p></div></div>
+            <div style={{height:'100px'}}></div>   
         </div>
 
             

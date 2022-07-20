@@ -1,8 +1,7 @@
 .smallpage-cont {
     margin: 0 auto;
-    height: 600px;
-    width:750px;
-    background-color: red;
+    height: 200px;
+    width:200px;
 }
 
 svg {
@@ -27,8 +26,8 @@ path{
 .smallrib {
     /* position:absolute; */
     position: relative;
-    bottom: 140px;
-    right: 199px;
+    bottom: 222px;
+    right: 36px;
     width: 61px;
     
 }
@@ -36,33 +35,33 @@ path{
 .smallankle {
     /* position:absolute; */
     position: relative;
-    bottom: 77px;
-    right: 250px;
+    bottom: 159px;
+    right: 87px;
     width: 65px;
     /* z-index: -999; */
 }
 
 .smallheel {
-    /* position:absolute; */
+    /* position:fixed; */
     position: relative;
-    bottom: 35px;
-    right: 497px;
+    bottom: 209px;
+    right: 145px;
     width: 35px;
     /* z-index: -999; */
 }
 .smallfoot {
     /* position:absolute; */
     position: relative;
-    top: 85px;
-    left: 100px;
-    width: 190px;
+    bottom: 195px;
+    left: 18px;
+    width: 164px;
     /* z-index: -999; */
 }
 .smalltoe {
     /* position:absolute; */
     position: relative;
-    bottom: 165px;
-    right: 42px;
-    width: 20px;
+    bottom: 248px;
+    left: 85px;
+    width: 30px;
     /* z-index: -999; */
 }
