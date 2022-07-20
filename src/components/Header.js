@@ -44,13 +44,6 @@ function Header({  }) {
 </header> */}
 
 
-
-
-
-
-
-
-
       <div className='dash-divider'></div>
     </div>
   )

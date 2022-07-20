@@ -22,7 +22,7 @@ import Draw from './images/icons/draw.png'
 
 
 
-function UpdateDesign({url, getDesigns, getOne, sock, setSock, deleteDesign }) {
+function UpdateDesign({url, getDesigns, getOne, sock, setSock, deleteDesign, stash }) {
 
   const navigate = useNavigate()
 
@@ -38,6 +38,15 @@ console.log(sock)
   const [newColor, setNewColor] = useState('#fff')
 
   const [show, setShow] = useState(false);
+
+  const mycolors = []
+
+  
+  stash?.map((mycolor) => {
+     mycolors.push([mycolor.colorCode]) 
+  })
+
+  console.log(mycolors)
 
   // FORM STUFF
 
@@ -145,20 +154,14 @@ console.log(sock)
             <Header />
             <div className="main">
 
-
-                {/* <h2>Edit {sock?.name}</h2> */}
-
-
-
         <div className='designbuttons'>
 
-
-
-
+   
           <form className='create' onSubmit={handleSubmit}>
 
-<div>
-{renameShow === true ? <div>
+          <div style={{display:'flex', flexDirection:'column'}}>
+            <div>
+            {renameShow === true ? <div>
         <br/>
         <div style={{display:'flex', flexDirection:'column', justifyContent:'center', alignItems:'center', gap:'10px'}}>
         
@@ -172,25 +175,24 @@ console.log(sock)
           
           <img src={Check} onClick={handleSubmit} alt='save' style={{width:'25px'}}/>
           <img src={Cancel} alt='cancel' style={{width:'20px'}} onClick={() => setRenameShow(false)}/></div>
-          <h4 style={{marginTop:'0px'}}>{sock?.knitStatus}</h4>
         </div>
-
-        
         </div>
       
       
       : 
-      <div style={{display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center'}}>
+     
       <div style={{display:'flex', alignItems:'center', justifyContent:'center', gap:'10px'}}>
         <h2 style={{marginBottom:'0px'}}>{sock?.name}</h2> 
       {/* <button onClick={() => setRenameShow(true)}>Rename</button> */}
       <img src={Draw} alt='edit' style={{width:'20px', marginBottom:'-20px'}} onClick={() => setRenameShow(true)}/>
       </div>
-      <h4 style={{marginTop:'0px'}}>{sock?.knitStatus}</h4>
-      </div>}
-      </div>
+      }
+            </div>
 
-<div>
+
+
+      
+    <div>
             <label className='invisible'>Rib</label>
             <input
                 className='invisible'
@@ -235,12 +237,24 @@ console.log(sock)
                 value={toeColor}
                 onChange={(e) => setToeColor(e.target.value)}
             />
-       
-            <button className='save'>Save Design</button>
-            </div> 
+<br/>
+<div className='designbuttons'> 
+
+<div className='custButt saveButt' onClick={handleSubmit}>SAVE</div>
+            
+            <div className='custButt clearButt' onClick={clearColor} style={{backgroundColor:'orange'}}>CLEAR</div>
+  
+            <div className='custButt clearButt' onClick={() => navigate('/design-library')}>CANCEL</div>
+            
+</div>
+         
+
+          </div>
+          
+          </div>
+      
           </form>
-        <button onClick={clearColor}>Clear Colors</button>
-        <button onClick={() => navigate('/design-library')}>Cancel</button>
+       
         </div>
           
             
@@ -263,8 +277,15 @@ console.log(sock)
                       {/* <br/><br/> */}
                       {/* <div>
                       <GithubPicker width={500} colors={swatches} height={75} onChange={updatedColor => setNewColor(updatedColor.hex)}/></div><br/> */}
+
+                       <h3 style={{marginBottom:'10px'}}>Stash Colors</h3>
+                      <SwatchesPicker 
+                      width={1000} height={55} color={newColor} colors={mycolors} onChange={updatedColor => setNewColor(updatedColor.hex)}/>
+                     
+                    
+                      <br/>
                       <SwatchesPicker width={1000} height={160} color={newColor} onChange={updatedColor => setNewColor(updatedColor.hex)}/>
-                      <h2>You picked {newColor}</h2>  
+                      {/* <h2>You picked {newColor}</h2>   */}
                   </div>
         </div>
 

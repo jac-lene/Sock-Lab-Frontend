@@ -153,7 +153,7 @@ const randomColors = () => {
 
       <Route path="/design-library/socks/:id" element={<SockDetail url={sockurl} sock={sock} setSock={setSock} getOne={getOne} deleteDesign={deleteDesign} updateDesign={updateDesign} getDesigns={getDesigns} designs={designs} setDesigns={setDesigns} />}/>
 
-      <Route path="/design-library/socks/:id/edit" element={<UpdateDesign  url={sockurl} sock={sock} setSock={setSock} getOne={getOne} deleteDesign={deleteDesign} designs={designs} getDesigns={getDesigns} updateDesign={updateDesign} />}/>
+      <Route path="/design-library/socks/:id/edit" element={<UpdateDesign  url={sockurl} sock={sock} setSock={setSock} getOne={getOne} deleteDesign={deleteDesign} designs={designs} getDesigns={getDesigns} updateDesign={updateDesign} stash={stash}/>}/>
 
       <Route path="/stash" element={<StashView url={stashurl} stash={stash} setStash={setStash} getStash={getStash}/>}/>
 

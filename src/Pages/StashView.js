@@ -14,8 +14,10 @@ useEffect(() => {
     <div>
         <Header />
         <div className='main'>
-        <h1>StashView</h1>
-        <Link to='/stash/yarn/add'><button>Add</button></Link>
+        <h1>My Stash</h1>
+        <br/>
+        <Link to='/stash/yarn/add'><div className='knitStatus custButt'>ADD YARN</div></Link>
+        
         <div className='card-cont'>
         
         {stash?.map((yarn) => 

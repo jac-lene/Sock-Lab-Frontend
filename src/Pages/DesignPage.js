@@ -216,7 +216,7 @@ function DesignPage({ url, designs, setDesigns, randomColors, stash, getStash })
                       </div>
                       <br/>
                       
-                      <h2>Stash Colors</h2>
+                      <h3 style={{marginBottom:'10px'}}>Stash Colors</h3>
                       <SwatchesPicker 
                       width={1000} height={55} color={color} colors={mycolors} onChange={updatedColor => setColor(updatedColor.hex)}/>
                      
