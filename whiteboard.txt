@@ -22,8 +22,9 @@ Overview
     - add Are you sure? to all deletes
 
 Styling
-    - need to style all buttons in fun way
-    - Change FONTS
+    DONE
+        - need to style all buttons in fun way
+        - Change FONTS
 
 Splash Page
     - Option to stop animations
@@ -36,6 +37,7 @@ Pattern
         - fix modal styling
 
 Design Page
+    - play with chaos mode button
     - save modal
     - modal when you try to navigate away from the design page
     - animation on selection
@@ -64,10 +66,10 @@ Detail page
          - add easy access rename button/form
 
 Update Page
-    - organize button layout
     DONE
         - add swatch palette
         - figure out info updating for name and status
+        - organize button layout
 
 Visual Library
     - maybe have different tabs with completed items

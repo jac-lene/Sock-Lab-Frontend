@@ -173,8 +173,7 @@ function DesignPage({ url, designs, setDesigns, randomColors, stash, getStash })
   <div className='knitStatus custButt' onClick={() => setSaveShow(prev => !prev)}style={{backgroundColor:'orange'}}>CANCEL</div>
 
 <div>
-  <h1 style={{margin:'0px'}}>Design Lab</h1>
-  <br/>
+  
 <label className='name'>Name your design: </label>
 <input
                 className='name'
@@ -196,7 +195,10 @@ function DesignPage({ url, designs, setDesigns, randomColors, stash, getStash })
               <br/>
   <div className='designbuttons' style={{display:'flex', width:'70vw', justifyContent:'space-between', alignItems:'center'}}>
 
-  <div className='knitStatus custButt' onClick={clearColor} style={{backgroundColor:'orange'}}>CLEAR</div>
+<div>
+<div className='knitStatus custButt' onClick={clearColor} style={{backgroundColor:'orange'}}>CLEAR</div>
+</div>
+ 
 
 <h1 style={{margin:'0px'}}>Design Lab</h1>
 
@@ -212,7 +214,7 @@ function DesignPage({ url, designs, setDesigns, randomColors, stash, getStash })
 
             </div>
             
-        <div className='chaosButton' onClick={() => chaosMode()}><div style={{}}><p className='chaosText'>CHAOS <br/> MODE</p></div></div>
+      
 
 
         <div className='sockpatt'>
@@ -241,7 +243,8 @@ function DesignPage({ url, designs, setDesigns, randomColors, stash, getStash })
             </div>
   
             </div>
-          
+            <br/><br/><br/>
+<div className='chaosButton custButt' onClick={() => chaosMode()}><div style={{}}><p className='chaosText'>CHAOS <br/> MODE</p></div></div>
             <div style={{height:'100px'}}></div>   
         </div>
 
