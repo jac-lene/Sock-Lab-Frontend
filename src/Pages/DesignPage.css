@@ -22,8 +22,8 @@
   /* animation: name duration timing-function delay iteration-count direction fill-mode; */
   z-index: 10;
   position: absolute; 
-  top: 160px;
-  left: 975px;
+  top: 220px;
+  left: 875px;
 }
 
 .chaosButton:hover {

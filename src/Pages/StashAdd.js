@@ -45,7 +45,7 @@ const handleSubmit = (e) => {
         <Header/>
         <div className='main'>
             
-           
+           <br/>
 
             <form className='addstashform' >
 
