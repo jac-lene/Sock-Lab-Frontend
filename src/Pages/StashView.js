@@ -28,11 +28,9 @@ useEffect(() => {
             
            <div style={{display:'flex', flexDirection:'column', justifyContent:'center', alignItems:'center'}}> 
            
-           <h1 style={{marginTop:'0px'}}>{yarn.brand}</h1>
+           <h1 style={{marginTop:'0px', marginBottom:'30px'}}>{yarn.brand}</h1>
 
-            <div style={{width:'50px', height:'50px', border:"2px solid black", backgroundColor:yarn?.colorCode}}></div>
-
-            <h1>{yarn?.colorCode}</h1>
+            <div style={{width:'100px', height:'100px', border:"2px solid black", backgroundColor:yarn?.colorCode}}></div>
             
             </div>
             </div>

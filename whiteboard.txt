@@ -11,6 +11,7 @@ What are my MVP goals?
 What are my stretch goals? 
     - user auth
     - more than one type of garment/pattern
+    - stripes/patterns
 
 How to accomplish each part: 
 
@@ -103,3 +104,4 @@ https://www.codegrepper.com/code-examples/javascript/how+to+hide+button+in+react
 https://upmostly.com/tutorials/how-to-refresh-a-page-or-component-in-react
 https://www.npmjs.com/package/react-to-print
 https://codepen.io/jsnkuhn/pen/XWJGPx
+https://stackoverflow.com/questions/38132700/css-wiggle-shake-effect

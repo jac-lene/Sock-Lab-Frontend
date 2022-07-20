@@ -115,7 +115,7 @@ function DesignPage({ url, designs, setDesigns, randomColors, stash, getStash })
 
             <div className='designbuttons'>
 
-          <form className='create' onSubmit={handleSubmit}>
+          <form className='create' >
             
             <label className='invisible'>Rib</label>
             <input
@@ -164,7 +164,7 @@ function DesignPage({ url, designs, setDesigns, randomColors, stash, getStash })
 
        {saveShow === true ?  
        <div className='create'>
-            
+            <br/><br/>
             <div>
             
             <label className='name'>Name your design: </label>
@@ -176,17 +176,22 @@ function DesignPage({ url, designs, setDesigns, randomColors, stash, getStash })
                 onChange={(e) => setName(e.target.value)}
             />
             </div>
-            
-            <button className='save' >REAL Save Design</button>
-            <button className='save' onClick={() => setSaveShow(prev => !prev)}>Cancel</button> 
+            <div className='custButt saveButt' onClick={handleSubmit}>SAVE</div>
+            <div className='custButt clearButt' onClick={() => setSaveShow(prev => !prev)}>CANCEL</div>
         </div>
-            : <div>
-              <button className='save' onClick={() => setSaveShow(prev => !prev)}>FAKE Save Design</button> 
-              </div>}
-            </form>
+            : 
+            <div>
 
-            <button onClick={clearColor}>Clear 
-          Colors</button>
+          <br/>
+            <div  className='designbuttons'>
+              <div className='custButt saveButt' onClick={() => setSaveShow(prev => !prev)}>SAVE</div>
+              <div className='custButt clearButt' onClick={clearColor}>CLEAR</div>
+              </div>
+            </div>
+           
+              }
+
+            </form>
 
             </div>
             
@@ -210,8 +215,12 @@ function DesignPage({ url, designs, setDesigns, randomColors, stash, getStash })
                       {/* <GithubPicker className='swatches' colors={mycolors} height={75} onChange={updatedColor => setColor(updatedColor.hex)}/> */}
                       </div>
                       <br/>
+                      
+                      <h2>Stash Colors</h2>
                       <SwatchesPicker 
                       width={1000} height={55} color={color} colors={mycolors} onChange={updatedColor => setColor(updatedColor.hex)}/>
+                     
+                    
                       <br/>
                       <SwatchesPicker 
                       width={1000} height={160} color={color} onChange={updatedColor => setColor(updatedColor.hex)}/>

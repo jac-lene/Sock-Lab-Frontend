@@ -88,30 +88,37 @@ const handleSubmit = (e) => {
       <div className='main'>
       <div className='sockpatt'>
       
-      
+      <div style={{display:'flex', flexDirection:'row', alignItems:'center', justifyContent:'space-between', gap:'50px', width:'70vw'}}>
+      <div className='custButt delete' onClick={() => deleteDesign(id)}>DELETE</div>
      
-
-      
-      
-      
       <div style={{display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center', gap:'5px'}}>
-      <h2 style={{marginBottom:'0'}}>{sock?.name}</h2> 
-      <h4 style={{marginTop:'0'}}>{sock?.knitStatus}</h4>
+
+      <h2 style={{marginBottom:'0', fontSize:'30px'}}>{sock?.name}</h2> 
+      <h4 style={{marginTop:'0', fontSize:'20px'}}>{sock?.knitStatus}</h4>
+
       </div>
+
+      <Link to={`/design-library/socks/${id}/edit`}><div className='custButt editDesign'>EDIT</div></Link>
+    
+      </div>
+      <form onSubmit={handleSubmit} className='statForm'>
+      
       <div className='designbuttons' >
-      <button onClick={() => setFormShow(prev => !prev)}>KNIT STATUS</button>
+      
+      {formShow === false ?
+      <div className='knitStatus custButt' onClick={() => setFormShow(prev => !prev)}>KNIT STATUS</div>
+      : <div className='knitStatus custButt' onClick={handleSubmit}>SAVE STATUS</div>}
 
-      <Link to={`/design-library/socks/${id}/edit`}><button>Edit Design</button></Link>
-      <button onClick={() => deleteDesign(id)}>Delete</button>
-
-      <button onClick={() => setShow(prev => !prev)}>{!show ? 'Show Pattern' : 'Hide Pattern'}</button>
+      <div className='showPatt custButt' onClick={() => setShow(prev => !prev)}>{!show ? 'SHOW PATTERN' : 'HIDE PATTERN'}</div>
 
       </div>
 
      
 
-    {formShow === true ?  <form onSubmit={handleSubmit}>
-        <div style={{display:'flex', justifyContent:'center', gap:'10px'}}>
+    {formShow === true ?  
+      <div>
+      <br/>
+      <div style={{display:'flex', justifyContent:'center', gap:'10px'}}>
           <label>Knit Status:</label>
           <select value={knitStatus} onChange={(e)=> {setKnitStatus(e.target.value)}}>
             <option value=''>Be honest...</option>
@@ -119,10 +126,12 @@ const handleSubmit = (e) => {
             <option value='Single Sock Syndrome'>Single Sock Syndrome</option>
             <option value='Completed'>Completed</option>
           </select>
-          <button type='submit'>Save</button>
         </div>
-      </form> : null}
-     
+        </div>
+      
+        
+     : null}
+      </form> 
 
 
       { !show ? <div className='page-cont'>
