@@ -30,12 +30,12 @@ function SockPattern({ sock, setShow}) {
        
         <div>
             {/* <button style={{float: 'right'}} onClick={() => setShow(prev => !prev)}>Close</button> */}
-            <ReactToPrint trigger={() => <button style={{float: 'right'}}>Print/Download</button>} content={() => componentRef.current}/>
+            <br/> <br/>
+            <ReactToPrint trigger={() => <div className='knitStatus custButt' style={{margin:'0 auto', backgroundColor:'orange', width:'160px'}}>Print/Download</div>} content={() => componentRef.current}/>
         </div>
 
         <div ref={componentRef} className='print' >
             <div className='centered'>
-            <br/><br/>
 
             <h1>{sock?.name} Pattern</h1>
             

@@ -159,7 +159,11 @@ console.log(sock)
    
           <form className='create' onSubmit={handleSubmit}>
 
-          <div style={{display:'flex', flexDirection:'column'}}>
+          <div className='designbuttons' style={{display:'flex', width:'70vw', justifyContent:'space-between', alignItems:'center'}}>
+
+
+<div className='knitStatus custButt' style={{backgroundColor:'orange'}} onClick={() => navigate('/design-library')}>CANCEL</div>
+
             <div>
             {renameShow === true ? <div>
         <br/>
@@ -183,16 +187,10 @@ console.log(sock)
      
       <div style={{display:'flex', alignItems:'center', justifyContent:'center', gap:'10px'}}>
         <h2 style={{marginBottom:'0px'}}>{sock?.name}</h2> 
-      {/* <button onClick={() => setRenameShow(true)}>Rename</button> */}
       <img src={Draw} alt='edit' style={{width:'20px', marginBottom:'-20px'}} onClick={() => setRenameShow(true)}/>
       </div>
       }
-            </div>
-
-
-
-      
-    <div>
+        <div>
             <label className='invisible'>Rib</label>
             <input
                 className='invisible'
@@ -238,21 +236,19 @@ console.log(sock)
                 onChange={(e) => setToeColor(e.target.value)}
             />
 <br/>
-<div className='designbuttons'> 
-
-<div className='custButt saveButt' onClick={handleSubmit}>SAVE</div>
-            
-            <div className='custButt clearButt' onClick={clearColor} style={{backgroundColor:'orange'}}>CLEAR</div>
-  
-            <div className='custButt clearButt' onClick={() => navigate('/design-library')}>CANCEL</div>
-            
 </div>
-         
+            </div>
 
-          </div>
+
+
+      
+  
+        
+        
+        
+          <div className='knitStatus custButt' onClick={handleSubmit}>SAVE</div>
           
           </div>
-      
           </form>
        
         </div>

@@ -20,9 +20,22 @@ if (!yarn) {
         <Header/>
         <div className='main'>
             
-            <h1>Stash Detail</h1>
-            <Link to={`/stash/yarn/${id}/edit`}><button>Edit</button></Link>
-            <button onClick={() => deleteYarn(id)}>Delete</button>
+            
+            <br/>
+            <div className='designbuttons' style={{display:'flex', width:'70vw', justifyContent:'space-between', alignItems:'center'}}>
+
+            <div className='custButt knitStatus' style={{backgroundColor:'orange'}} onClick={() => deleteYarn(id)}>DELETE</div>
+
+            <h1 style={{margin:'0px'}}>Yarn Detail</h1>
+
+            <Link to={`/stash/yarn/${id}/edit`}><div className='custButt knitStatus' style={{backgroundColor:'orange'}}>EDIT</div></Link>
+
+            
+
+            </div>
+
+            <br/><br/>
+          
             <h3>{yarn?.brand}</h3>
             <div style={{width:'50px', height:'50px', border:"2px solid black", backgroundColor:yarn?.colorCode}}></div>
             <h3>{yarn?.colorName}</h3>

@@ -7,7 +7,7 @@ import ColorPicker from '../components/ColorPicker'
 function StashAdd({ url, stash, setStash, getStash, yarn, setYarn, getYarn }) {
 
     const navigate = useNavigate()
-const [color, setColor] = useState('#02ff64')
+const [color, setColor] = useState('#701619')
 const [brand, setBrand] = useState('')
 const [colorName, setColorName] = useState('')
 const [colorCode, setColorCode] = useState(color)
@@ -45,34 +45,51 @@ const handleSubmit = (e) => {
         <Header/>
         <div className='main'>
             
-            <h1>Stash Add</h1>
+           
 
-            <form className='addstashform' onSubmit={handleSubmit}>
-            
-            <button type='submit'>Save</button>
-                <br/><br/>
+            <form className='addstashform' >
+
+            <div className='designbuttons' style={{display:'flex', width:'70vw', justifyContent:'space-between', alignItems:'center'}}>
+
+            <div className='designbuttons'>
+
+            <div className='knitStatus custButt' style={{backgroundColor:'orange'}} onClick={() => navigate('/stash')}>CANCEL</div>  </div>
+
+<h1 style={{margin:'0px'}}>Add Yarn</h1>
+
+<div className='custButt knitStatus' onClick={handleSubmit}>SAVE</div> 
+
+</div>
+            <br/>
+
+                <div style={{display:'flex', justifyContent:'space-evenly', alignItems:'center', width:'60vw'}}>
+                    <div>
+                    <br/><br/>     
                 <div className='addyarn'><label>Brand</label>
             <input
                 type='text'
                 required
                 value={brand}
                 onChange={(e) => setBrand((e.target.value))}/>
+                <br/>
             <label>Color Name</label>
             <input
                 type='text'
                 value={colorName}
                 onChange={(e) => setColorName((e.target.value))}/>
-
+<br/>
             <label>Yardage</label>
             <input
                 type='text'
                 value={yardage}
                 onChange={(e) => setYardage((e.target.value))}/>
+                <br/>
             <label>Grams</label>
             <input
                 type='text'
                 value={grams}
                 onChange={(e) => setGrams((e.target.value))}/>
+                <br/>
             <label>Description</label>
             <input
                 type='text'
@@ -80,8 +97,12 @@ const handleSubmit = (e) => {
                 onChange={(e) => setDescription((e.target.value))}/></div>
             
 <br/><br/>
-<div className='colorPick'>
-<label>Color (click to change):</label>
+                    </div> 
+                    
+                    <div>
+               
+                    <div className='colorPick'>
+<label>Color</label>
 <input
                 className='invisible'
                 type='text'
@@ -92,19 +113,28 @@ const handleSubmit = (e) => {
                     console.log(color)}}
                 
                 />
-                <br/><br/>
-                <div style={{width:'100px', height:'100px', border:"1px solid black", backgroundColor:color}} onClick={() => setShow(prev => !prev)}></div>
-{show ? <div>
-                <br/><br/>
+               
+                <div style={{width:'223px', height:'50px', border:"1px solid black", backgroundColor:color}} onClick={() => setShow(prev => !prev)}>
+                <br/>
+                </div>
+<div>
+                
             <ChromePicker disableAlpha={true} color={color} onChange={updatedColor => {return (setColor(updatedColor.hex), setColorCode(updatedColor.hex))}}/>
             
         
             {/* <h2>You picked {color}</h2>  */}
-            </div> : null}
+            </div>
  
 </div>
+                    </div>
 
+                </div>
             
+           
+
+<br/><br/>
+
+
         </form>
             
         <div style={{height: '200px'}}></div>

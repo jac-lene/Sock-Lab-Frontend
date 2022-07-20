@@ -166,28 +166,45 @@ function DesignPage({ url, designs, setDesigns, randomColors, stash, getStash })
        <div className='create'>
             <br/><br/>
             <div>
-            
-            <label className='name'>Name your design: </label>
-            <input
+
+              
+            <div className='designbuttons' style={{display:'flex', width:'70vw', justifyContent:'space-between', alignItems:'center'}}>
+
+  <div className='knitStatus custButt' onClick={() => setSaveShow(prev => !prev)}style={{backgroundColor:'orange'}}>CANCEL</div>
+
+<div>
+  <h1 style={{margin:'0px'}}>Design Lab</h1>
+  <br/>
+<label className='name'>Name your design: </label>
+<input
                 className='name'
                 type='text' 
                 required
                 value={name}
                 onChange={(e) => setName(e.target.value)}
             />
+            
+</div>
+
+<div className='knitStatus custButt' onClick={handleSubmit}>SAVE</div>
+
             </div>
-            <div className='custButt saveButt' onClick={handleSubmit}>SAVE</div>
-            <div className='custButt clearButt' onClick={() => setSaveShow(prev => !prev)}>CANCEL</div>
+</div>
         </div>
             : 
             <div>
+              <br/>
+  <div className='designbuttons' style={{display:'flex', width:'70vw', justifyContent:'space-between', alignItems:'center'}}>
 
-          <br/>
-            <div  className='designbuttons'>
-              <div className='custButt saveButt' onClick={() => setSaveShow(prev => !prev)}>SAVE</div>
-              <div className='custButt clearButt' onClick={clearColor}>CLEAR</div>
-              </div>
-            </div>
+  <div className='knitStatus custButt' onClick={clearColor} style={{backgroundColor:'orange'}}>CLEAR</div>
+
+<h1 style={{margin:'0px'}}>Design Lab</h1>
+
+<div className='knitStatus custButt' onClick={() => setSaveShow(prev => !prev)}>SAVE</div>
+
+</div>
+
+</div>
            
               }
 
@@ -199,7 +216,7 @@ function DesignPage({ url, designs, setDesigns, randomColors, stash, getStash })
 
 
         <div className='sockpatt'>
-
+<br/>
             <div className='page-cont'>
                     <WholeSock />
                     <RibS onClick={() => getColor('rib')} style={{fill: ribColor}}/>
@@ -211,10 +228,6 @@ function DesignPage({ url, designs, setDesigns, randomColors, stash, getStash })
             </div>
             
             <div className='color-picker'>
-                      <div>
-                      {/* <GithubPicker className='swatches' colors={mycolors} height={75} onChange={updatedColor => setColor(updatedColor.hex)}/> */}
-                      </div>
-                      <br/>
                       
                       <h3 style={{marginBottom:'10px'}}>Stash Colors</h3>
                       <SwatchesPicker 

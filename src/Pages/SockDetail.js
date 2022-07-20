@@ -89,7 +89,7 @@ const handleSubmit = (e) => {
       <div className='sockpatt'>
       
       <div style={{display:'flex', flexDirection:'row', alignItems:'center', justifyContent:'space-between', gap:'50px', width:'70vw'}}>
-      <div className='custButt delete' onClick={() => deleteDesign(id)}>DELETE</div>
+      <div className='custButt knitStatus' style={{backgroundColor:'orange'}} onClick={() => deleteDesign(id)}>DELETE</div>
      
       <div style={{display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center', gap:'5px'}}>
 
@@ -98,7 +98,7 @@ const handleSubmit = (e) => {
 
       </div>
 
-      <Link to={`/design-library/socks/${id}/edit`}><div className='custButt editDesign'>EDIT</div></Link>
+      <Link to={`/design-library/socks/${id}/edit`}><div className='custButt knitStatus' style={{backgroundColor:'orange'}}>EDIT</div></Link>
     
       </div>
       <form onSubmit={handleSubmit} className='statForm'>
