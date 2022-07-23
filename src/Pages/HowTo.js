@@ -4,17 +4,16 @@ import Header from '../components/Header'
 function HowTo() {
   return (
     <div>
-        <Header/>
-        <div className='main'>
-            <h1>How To Use</h1>
-            
-
-
-
-
-
-            
+            <Header/>
+            <div className='howto main'>
+              <h1 className='howtotext'>select your color below</h1>
             </div>
+
+
+
+
+            
+      
         
     </div>
   )

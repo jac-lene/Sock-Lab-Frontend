@@ -5,7 +5,7 @@ import Menu from '../Pages/images/icons/menu.png'
 import Hamburger from './Hamburger';
 
 
-function Header({  }) {
+function Header({ howShow, setHowShow  }) {
 
   const [isPhone, setIsPhone] = useState(false)
   const [show, setShow] = useState(false)
@@ -49,7 +49,7 @@ useEffect(() => {
         <Link to='/the-lab' ><h2 style={{position:'relative', bottom:'38px'}}>DESIGN</h2></Link>
         <Link to='/design-library'><h2 style={{position:'relative', bottom:'13px'}}>LIBRARY</h2></Link>
         <Link to='/stash'><h2 style={{position:'relative', bottom:'30px'}}>STASH</h2></Link>
-        <Link to='/how-to'><h2 style={{position:'relative', bottom:'20px'}}>?</h2></Link>
+        <h2 style={{position:'relative', bottom:'20px'}} onClick={() => setHowShow(prev => !prev)}>?</h2>
 </header>
 }
 

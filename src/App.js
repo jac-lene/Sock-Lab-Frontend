@@ -28,6 +28,8 @@ function App() {
   const stashurl = "http://localhost:8000/stash/"
   // const stashurl = "https://socklab.herokuapp.com/stash/"
 
+  const [howShow, setHowShow] = useState(false)
+
   //DESIGNS
 
   const getDesigns = async () => {
@@ -146,7 +148,7 @@ const randomColors = () => {
       <Routes>
       <Route path="/" element={<Home />}/>
 
-      <Route path="/the-lab" element={<DesignPage stash={stash} url={sockurl} designs={designs} setDesigns={setDesigns} randomColors={randomColors} getStash={getStash}  />}/>
+      <Route path="/the-lab" element={<DesignPage stash={stash} url={sockurl} designs={designs} setDesigns={setDesigns} randomColors={randomColors} getStash={getStash}  howShow={howShow} setHowShow={setHowShow}/>}/>
 
       <Route path="/design-library" element={<Library getDesigns={getDesigns} designs={designs} />}/>
 

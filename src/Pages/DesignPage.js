@@ -16,7 +16,7 @@ import { getNodeText } from '@testing-library/react'
 
 
 
-function DesignPage({ url, designs, setDesigns, randomColors, stash, getStash }) {
+function DesignPage({ url, designs, setDesigns, randomColors, stash, getStash, howShow, setHowShow }) {
 
   const navigate = useNavigate();
 
@@ -110,8 +110,28 @@ function DesignPage({ url, designs, setDesigns, randomColors, stash, getStash })
 
   return (
         <div>
-            <div><Header/></div>
+            <div><Header howShow={howShow} setHowShow={setHowShow}/></div>
             <div className="main">
+
+
+          { howShow ?   <div className='howto main'>
+              <h1 className='exit' onClick={() => setHowShow(false)}>X</h1>
+
+              <h2 className='click'>click a part of the sock to change color</h2>
+
+              <h2 className='chaos'>press here to randomize</h2>
+
+              <div style={{display:'flex', flexDirection:'row', alignItems:'center'}}>
+
+              <h2 className='howtotext select'>select your color below </h2>
+
+              </div>
+             
+
+            </div> : null }
+          
+
+
 
             <div className='designbuttons'>
 
