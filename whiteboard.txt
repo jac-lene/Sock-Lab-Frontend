@@ -99,6 +99,7 @@ THINGS I LEARNED
  - animations
  - useNavigate to redirect
  - React to print
+ - resize event listener
 
  Resources
 https://casesandberg.github.io/react-color/
@@ -107,3 +108,4 @@ https://upmostly.com/tutorials/how-to-refresh-a-page-or-component-in-react
 https://www.npmjs.com/package/react-to-print
 https://codepen.io/jsnkuhn/pen/XWJGPx
 https://stackoverflow.com/questions/38132700/css-wiggle-shake-effect
+https://thewebdev.info/2021/11/20/how-to-conditionally-render-items-based-on-viewport-size-in-react/

@@ -93,6 +93,29 @@ console.log(sock)
 
   }
 
+  const handleNameSubmit = (e) => {
+    e.preventDefault()
+    const updatedDesign = {
+      name
+  };
+
+ fetch(url + id, {
+          method: "put",
+          headers: {
+              "Content-Type": "application/json",
+          },
+          body: JSON.stringify(updatedDesign),
+      }).then(() => {
+          console.log('updated design', updatedDesign)
+          navigate(`/design-library/socks/${id}/edit`)
+          getOne(id)
+          getDesigns()
+          if (renameShow) {
+            setRenameShow(false)
+          }
+      })
+}
+
   //END FORM STUFF
 
   //color picker stuff
@@ -159,10 +182,12 @@ console.log(sock)
    
           <form className='create' onSubmit={handleSubmit}>
 
-          <div className='designbuttons' style={{display:'flex', width:'70vw', justifyContent:'space-between', alignItems:'center'}}>
+          <div className='designbuttons' style={{display:'flex', width:'60vw', justifyContent:'space-between', alignItems:'center'}}>
 
+<div>
 
 <div className='knitStatus custButt' style={{backgroundColor:'orange'}} onClick={() => navigate('/design-library')}>CANCEL</div>
+</div>
 
             <div>
             {renameShow === true ? <div>
@@ -177,7 +202,9 @@ console.log(sock)
           
           {/* <button type='submit'>Save</button> */}
           
-          <img src={Check} onClick={handleSubmit} alt='save' style={{width:'25px'}}/>
+          <img src={Check} onClick={handleNameSubmit} 
+          
+          alt='save' style={{width:'25px'}}/>
           <img src={Cancel} alt='cancel' style={{width:'20px'}} onClick={() => setRenameShow(false)}/></div>
         </div>
         </div>

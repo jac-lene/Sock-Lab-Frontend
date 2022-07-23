@@ -1,12 +1,48 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
+
+import Menu from '../Pages/images/icons/menu.png'
+import Hamburger from './Hamburger';
 
 
 function Header({  }) {
 
+  const [isPhone, setIsPhone] = useState(false)
+  const [show, setShow] = useState(false)
+
+  console.log(window.screen.width)
+
+  console.log(isPhone)
+
+  const resize = () => {
+    if (window.screen.width < 450) {
+      setIsPhone(true)
+    } else if (window.screen.width > 450) {
+      setIsPhone(false)
+    } 
+  }
+
+useEffect(() => {
+  window.addEventListener("resize", resize)
+})
+
   return (
     <div>
 
+{ isPhone ? 
+
+<header className="App-header">
+        <Link to='/'><h1 style={{position:'relative', bottom:'30px', right:'10px'}}>SOCK LAB</h1></Link>
+        <Link to='/how-to'><h2 style={{width:'30px', position:'relative', bottom:'31px'}}>?</h2></Link>
+        <img src={Menu} alt='menu-hamburger' style={{width:'30px', position:'relative', bottom:'15px'}} onClick={() => setShow(prev => !prev)} />
+{!show ?   
+
+<Hamburger/>
+        
+: null}
+      
+</header>
+: 
 <header className="App-header">
         
         <Link to='/'><h1 className='site-title' style={{position:'relative', bottom:'17px'}}>SOCK LAB</h1></Link>
@@ -15,6 +51,7 @@ function Header({  }) {
         <Link to='/stash'><h2 style={{position:'relative', bottom:'30px'}}>STASH</h2></Link>
         <Link to='/how-to'><h2 style={{position:'relative', bottom:'20px'}}>?</h2></Link>
 </header>
+}
 
 
 {/* <header className="App-header" style={{justifyContent:'space-between'}}>

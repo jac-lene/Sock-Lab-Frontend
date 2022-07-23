@@ -22,7 +22,7 @@ if (!yarn) {
             
             
             <br/>
-            <div className='designbuttons' style={{display:'flex', width:'70vw', justifyContent:'space-between', alignItems:'center'}}>
+            <div className='designbuttons' style={{display:'flex', width:'60vw', justifyContent:'space-between', alignItems:'center'}}>
 
             <div className='custButt knitStatus' style={{backgroundColor:'orange'}} onClick={() => deleteYarn(id)}>DELETE</div>
 

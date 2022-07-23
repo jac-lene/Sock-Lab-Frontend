@@ -24,12 +24,15 @@
 
 .App-header {
   background-color: #f3bb00;
-  height: 80px;
+  width:100vw;
+  height: 52px;
+  margin: 0 auto;
+  padding-top: 20px;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-  font-size: 42px;
+  font-size: 2em;
   font-family: 'Akzidenz Grotesk', sans-serif;
   position: relative;
   z-index: 999;
@@ -44,9 +47,9 @@ h1, h2 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 80vw;
+  width: 70vw;
   margin: 0 auto;
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   height: auto;
 }
 
@@ -80,7 +83,7 @@ body {
 .dash-divider {
   border-top: 10px dashed black;
   min-height: fit-content;
-  width: 80vw;
+  width: 70vw;
   /* animation: dash-border-slide infinite alternate 5s linear; */
   background-color: white;
   margin: 0 auto;
@@ -167,40 +170,32 @@ body {
   }
 }
 
-@media (max-width : 400px) {
+@media (max-width : 1260px) {
 
-  @keyframes dash-border-slide {
-    from {
-      transform: translateX(0px);
-    }
-    to {
-      transform: translateX(-100px);
-    }
-  }
-
-  .dash-divider {
-      animation: dash-border-slide infinite alternate 3s linear;
-    }
+.App-header {
+  font-size: 2.0em;
+  padding-top: 20px;
+  height: 50px;
+}
 
 }
 
-@media (max-width : 400px) {
-/* 
+@media (max-width : 950px) {
+
   .App-header {
-    height: 100px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 30px;
-    align-items: center;
-    justify-content: space-around;
-    padding: 0px 20px 0px 10px;
-  } */
+    font-size: 1.75em;
+    padding-top: 25px;
+    height: 40px;
+  }
   
-  .check-cont {
-    display: none;
   }
 
+  @media (max-width : 825px) {
 
-  
-}
+    .App-header {
+      font-size: 1.5em;
+      padding-top: 30px;
+      height: 30px;
+    }
+    
+    }

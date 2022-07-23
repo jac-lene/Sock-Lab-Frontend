@@ -88,7 +88,7 @@ const handleSubmit = (e) => {
       <div className='main'>
       <div className='sockpatt'>
       
-      <div style={{display:'flex', flexDirection:'row', alignItems:'center', justifyContent:'space-between', gap:'50px', width:'70vw'}}>
+      <div style={{display:'flex', flexDirection:'row', alignItems:'center', justifyContent:'space-between', gap:'50px', width:'60vw'}}>
       <div className='custButt knitStatus' style={{backgroundColor:'orange'}} onClick={() => deleteDesign(id)}>DELETE</div>
      
       <div style={{display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center', gap:'5px'}}>

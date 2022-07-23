@@ -193,7 +193,7 @@ function DesignPage({ url, designs, setDesigns, randomColors, stash, getStash })
             : 
             <div>
               <br/>
-  <div className='designbuttons' style={{display:'flex', width:'70vw', justifyContent:'space-between', alignItems:'center'}}>
+  <div className='designbuttons' style={{display:'flex', width:'60vw', justifyContent:'space-between', alignItems:'center'}}>
 
 <div>
 <div className='knitStatus custButt' onClick={clearColor} style={{backgroundColor:'orange'}}>CLEAR</div>
