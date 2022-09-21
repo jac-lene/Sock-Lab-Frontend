@@ -144,7 +144,7 @@ const randomColors = () => {
 
   return (
     <div className="App">
-     
+     <div className='bg'></div>
       <Routes>
       <Route path="/" element={<Home />}/>
 
