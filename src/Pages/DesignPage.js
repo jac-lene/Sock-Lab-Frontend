@@ -215,15 +215,15 @@ function DesignPage({ url, designs, setDesigns, randomColors, stash, getStash, h
               <br/>
   <div className='designbuttons' style={{display:'flex', width:'60vw', justifyContent:'space-between', alignItems:'center'}}>
 
-<div>
-<div className='knitStatus custButt' onClick={clearColor} style={{backgroundColor:'orange'}}>CLEAR</div>
-</div>
+
  
 
 <h1 style={{margin:'0px'}}>Design Lab</h1>
 
 <div className='knitStatus custButt' onClick={() => setSaveShow(prev => !prev)}>SAVE</div>
-
+<div>
+<div className='knitStatus custButt' onClick={clearColor} style={{backgroundColor:'orange'}}>CLEAR</div>
+</div>
 </div>
 
 </div>
