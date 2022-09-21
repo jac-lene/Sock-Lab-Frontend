@@ -32,7 +32,9 @@ useEffect(() => {
 { isPhone ? 
 
 <header className="App-header">
-        <Link to='/'><h1 style={{position:'relative', bottom:'30px', right:'10px'}}>SOCK LAB</h1></Link>
+        <Link to='/'><h1 style={{
+          position:'relative', bottom:'30px', right:'10px'
+          }}>SOCK LAB</h1></Link>
         <Link to='/how-to'><h2 style={{width:'30px', position:'relative', bottom:'31px'}}>?</h2></Link>
         <img src={Menu} alt='menu-hamburger' style={{width:'30px', position:'relative', bottom:'15px'}} onClick={() => setShow(prev => !prev)} />
 {!show ?   
@@ -43,14 +45,31 @@ useEffect(() => {
       
 </header>
 : 
+<div className='fixedheader'>
 <header className="App-header">
-        
-        <Link to='/'><h1 className='site-title' style={{position:'relative', bottom:'17px'}}>SOCK LAB</h1></Link>
-        <Link to='/the-lab' ><h2 style={{position:'relative', bottom:'38px'}}>DESIGN</h2></Link>
-        <Link to='/design-library'><h2 style={{position:'relative', bottom:'13px'}}>LIBRARY</h2></Link>
-        <Link to='/stash'><h2 style={{position:'relative', bottom:'30px'}}>STASH</h2></Link>
-        <h2 style={{position:'relative', bottom:'20px'}} onClick={() => setHowShow(prev => !prev)}>?</h2>
+  <div>
+        <Link to='/'><h1 className='site-title' style={{
+          // position:'relative', bottom:'17px'
+          }}>SockLab Pattern Designer</h1></Link>
+
+  </div>
+  <div className='navlinks'>
+        <Link to='/the-lab' ><h2 style={{
+          // position:'relative', bottom:'38px'
+          }}>design</h2></Link>
+        <Link to='/design-library'><h2 style={{
+          // position:'relative', bottom:'13px'
+      }}>library</h2></Link>
+        <Link to='/stash'><h2 style={{
+          // position:'relative', bottom:'30px'
+      }}>stash</h2></Link>
+        <h2 style={{
+          // position:'relative', bottom:'20px'
+      }} onClick={() => setHowShow(prev => !prev)}>?</h2>
+    </div> 
 </header>
+ <div className='dash-divider'></div>
+ </div>
 }
 
 
@@ -81,7 +100,8 @@ useEffect(() => {
 </header> */}
 
 
-      <div className='dash-divider'></div>
+     
+
     </div>
   )
 }

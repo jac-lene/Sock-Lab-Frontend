@@ -19,28 +19,38 @@
 .App {
   text-align: center;
   background-image: url("https://i.imgur.com/PZUjlvn.png");
-  height: auto;
   width: 100vw;
 }
 
+.fixedheader {
+  position: fixed;
+  z-index: 999;
+}
+
 .App-header {
-  background-color: #f3bb00;
-  width:100vw;
-  height: 52px;
+  /* background-color: #f3bb00; */
+  background-color: #ffff00;
+  height: 60px;
   margin: 0 auto;
-  padding-top: 20px;
+  padding: 0 40px 0 20px;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-around;
-  font-size: 2em;
+  justify-content: space-between;
+  font-size: 1.25em;
   font-family: 'Akzidenz Grotesk', sans-serif;
   position: relative;
   z-index: 999;
 }
 
+.navlinks {
+  font-size: .85em;
+  display: flex;
+  gap: 30px;
+}
+
 h1, h2 {
-  margin-bottom: 0px;
+  /* margin-bottom: 0px; */
 }
 
 .main {
@@ -48,8 +58,9 @@ h1, h2 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 70vw;
+  width: 85vw;
   margin: 0 auto;
+  padding-top: 75px;
   background-color: rgb(255, 255, 255);
   height: auto;
 }
@@ -82,9 +93,9 @@ body {
 }
 
 .dash-divider {
-  border-top: 10px dashed black;
+  border-top: 15px solid black;
   min-height: fit-content;
-  width: 70vw;
+  width: 100vw;
   /* animation: dash-border-slide infinite alternate 5s linear; */
   background-color: white;
   margin: 0 auto;
