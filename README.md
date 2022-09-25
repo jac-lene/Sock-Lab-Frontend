@@ -1,5 +1,7 @@
 # SockLab Customizer (In Progress)
 
+Link to Try: https://socklab-customizer.netlify.app/
+
 SockLab is a design experience that allows the user to customize a sock knitting pattern using a visual laboratory inspired by the custom design experience of shoe brands like Nike and Vans.
 
 ## Software
