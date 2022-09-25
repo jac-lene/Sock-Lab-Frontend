@@ -20,13 +20,13 @@ function App() {
 
   const [sock, setSock] = useState(null);
   const [designs, setDesigns] = useState(null);
-  const sockurl = "http://localhost:8000/socks/"
-  // const sockurl = "https://socklab.herokuapp.com/socks/"
+  // const sockurl = "http://localhost:8000/socks/"
+  const sockurl = "https://socklab.herokuapp.com/socks/"
 
   const [stash, setStash] = useState(null);
   const [yarn, setYarn] = useState(null)
-  const stashurl = "http://localhost:8000/stash/"
-  // const stashurl = "https://socklab.herokuapp.com/stash/"
+  // const stashurl = "http://localhost:8000/stash/"
+  const stashurl = "https://socklab.herokuapp.com/stash/"
 
   const [howShow, setHowShow] = useState(false)
 
